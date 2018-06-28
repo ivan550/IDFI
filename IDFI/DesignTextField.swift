@@ -7,15 +7,28 @@
 //
 
 import UIKit
-
+@IBDesignable
 class DesignTextField: UITextField {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet{
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = (cornerRadius > 0)
+        }
     }
-    */
-
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet{
+            layer.borderWidth = borderWidth
+        }
+    }
+    @IBInspectable var bgColor: UIColor? {
+        didSet{
+            backgroundColor = bgColor
+        }
+    }
+    @IBInspectable var borderColor: UIColor? {
+        didSet{
+            layer.borderColor = borderColor?.cgColor
+        }
+    }
 }

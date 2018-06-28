@@ -14,6 +14,7 @@
 		C80CE35620DF69B7006B1083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C80CE35520DF69B7006B1083 /* Assets.xcassets */; };
 		C80CE35920DF69B7006B1083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80CE35720DF69B7006B1083 /* LaunchScreen.storyboard */; };
 		C86DD78120DF6D40003C7204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */; };
+		C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		C80CE35820DF69B7006B1083 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C80CE35A20DF69B7006B1083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		D4DEBB282057D79D357915CC /* Pods_IDFI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDFI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				C80CE35720DF69B7006B1083 /* LaunchScreen.storyboard */,
 				C80CE35A20DF69B7006B1083 /* Info.plist */,
 				C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */,
+				C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */,
 			);
 			path = IDFI;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				C80CE35120DF69B6006B1083 /* LoginViewController.swift in Sources */,
 				C80CE34F20DF69B6006B1083 /* AppDelegate.swift in Sources */,
+				C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
