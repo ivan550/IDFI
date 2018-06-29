@@ -1,5 +1,5 @@
 //
-//  DesignTextField.swift
+//  DesignButton.swift
 //  IDFI
 //
 //  Created by IvánMS on 28/06/18.
@@ -8,8 +8,8 @@
 
 import UIKit
 @IBDesignable
-class DesignTextField: UITextField {
-    
+class DesignButton: UIButton {
+
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet{
             layer.cornerRadius = cornerRadius
@@ -31,12 +31,5 @@ class DesignTextField: UITextField {
             layer.borderColor = borderColor?.cgColor
         }
     }
-    @IBInspectable var placeholderColor: UIColor? {
-        didSet{
-            let rawString = attributedPlaceholder?.string != nil ? attributedPlaceholder!.string 	: ""
-            let att = NSAttributedString(string:rawString,
-                                         attributes: [.foregroundColor : placeholderColor as Any])
-            attributedPlaceholder = att
-        }
-    }
+
 }
