@@ -27,6 +27,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     @IBAction func loginPressed(_ sender: Any) {
         if let email = self.emailTextField.text,
             let password = self.passwordTextField.text,

@@ -16,6 +16,7 @@
 		C86DD78120DF6D40003C7204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */; };
 		C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */; };
 		C8B4628620E59F850082ED09 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B4628520E59F850082ED09 /* DesignButton.swift */; };
+		C8B5B94420EC9C0500687C2E /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B5B94320EC9C0500687C2E /* SignupViewController.swift */; };
 		C8D29FD020E5FF7200F93A3A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D29FCF20E5FF7200F93A3A /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		C8B4628520E59F850082ED09 /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		C8B5B94320EC9C0500687C2E /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C8D29FCF20E5FF7200F93A3A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D4DEBB282057D79D357915CC /* Pods_IDFI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDFI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,8 +88,10 @@
 		C80CE34D20DF69B6006B1083 /* IDFI */ = {
 			isa = PBXGroup;
 			children = (
+				C8B5B94220EC9A5F00687C2E /* model */,
+				C8B5B94120EC9A5700687C2E /* view */,
+				C8B5B94020EC9A1900687C2E /* controller */,
 				C80CE34E20DF69B6006B1083 /* AppDelegate.swift */,
-				C80CE35020DF69B6006B1083 /* LoginViewController.swift */,
 				C80CE35220DF69B6006B1083 /* Main.storyboard */,
 				C80CE35520DF69B7006B1083 /* Assets.xcassets */,
 				C80CE35720DF69B7006B1083 /* LaunchScreen.storyboard */,
@@ -98,6 +102,29 @@
 				C8D29FCF20E5FF7200F93A3A /* AuthService.swift */,
 			);
 			path = IDFI;
+			sourceTree = "<group>";
+		};
+		C8B5B94020EC9A1900687C2E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				C80CE35020DF69B6006B1083 /* LoginViewController.swift */,
+				C8B5B94320EC9C0500687C2E /* SignupViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		C8B5B94120EC9A5700687C2E /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		C8B5B94220EC9A5F00687C2E /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B5B94420EC9C0500687C2E /* SignupViewController.swift in Sources */,
 				C80CE35120DF69B6006B1083 /* LoginViewController.swift in Sources */,
 				C80CE34F20DF69B6006B1083 /* AppDelegate.swift in Sources */,
 				C8D29FD020E5FF7200F93A3A /* AuthService.swift in Sources */,
