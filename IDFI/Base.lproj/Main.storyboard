@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SuR-Jw-X3z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -130,6 +130,10 @@
                                         <state key="normal" title="Pre-Registrarse">
                                             <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedRegisterBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cl6-jA-qoe"/>
+                                            <segue destination="SuR-Jw-X3z" kind="show" identifier="showRegister" id="tl7-kR-rwt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.16862745098039217" blue="0.47843137254901957" alpha="0.7902761130136986" colorSpace="custom" customColorSpace="sRGB"/>
@@ -498,6 +502,9 @@ CQk
                                                 <color key="value" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="GyF-Iv-qcv" kind="show" id="rdJ-cV-Mtc"/>
+                                        </connections>
                                     </button>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJa-S6-UnO">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -559,6 +566,34 @@ CQk
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="868" y="32.833583208395808"/>
+        </scene>
+        <!--Student Form View Controller-->
+        <scene sceneID="qWu-qB-4mZ">
+            <objects>
+                <viewController id="GyF-Iv-qcv" customClass="StudentFormViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hRd-OM-dLE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWW-Xd-rt3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="81P-gK-8LY"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r1X-VI-UQC" firstAttribute="trailing" secondItem="QWW-Xd-rt3" secondAttribute="trailing" id="3l3-Dg-kO4"/>
+                            <constraint firstItem="QWW-Xd-rt3" firstAttribute="leading" secondItem="r1X-VI-UQC" secondAttribute="leading" id="Q5a-6w-ILX"/>
+                            <constraint firstItem="QWW-Xd-rt3" firstAttribute="top" secondItem="r1X-VI-UQC" secondAttribute="top" id="iJw-jd-ytm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r1X-VI-UQC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjB-8u-fiG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="32.833583208395808"/>
         </scene>
     </scenes>
     <resources>

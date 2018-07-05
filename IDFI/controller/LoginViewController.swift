@@ -22,10 +22,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /* Se oculta el teclado cada que se presione enter */
+    /* Se oculta el teclado cada que se presione enter o se presiona en otro lugar de la vista*/
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    @IBAction func pressedRegisterBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "showRegister", sender: nil)
     }
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
