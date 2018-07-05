@@ -15,6 +15,8 @@
 		C80CE35920DF69B7006B1083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80CE35720DF69B7006B1083 /* LaunchScreen.storyboard */; };
 		C834D36320EDB34D0079CB8E /* StudentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D36220EDB34D0079CB8E /* StudentFormView.swift */; };
 		C834D36520EDB3A00079CB8E /* StudentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D36420EDB3A00079CB8E /* StudentFormViewController.swift */; };
+		C834D38520EDF5A10079CB8E /* CertificatesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D38420EDF5A10079CB8E /* CertificatesCollectionViewController.swift */; };
+		C834D38720EDF8BE0079CB8E /* CertificateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D38620EDF8BE0079CB8E /* CertificateCollectionViewCell.swift */; };
 		C86DD78120DF6D40003C7204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */; };
 		C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */; };
 		C8B4628620E59F850082ED09 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B4628520E59F850082ED09 /* DesignButton.swift */; };
@@ -34,6 +36,8 @@
 		C80CE35A20DF69B7006B1083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C834D36220EDB34D0079CB8E /* StudentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFormView.swift; sourceTree = "<group>"; };
 		C834D36420EDB3A00079CB8E /* StudentFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFormViewController.swift; sourceTree = "<group>"; };
+		C834D38420EDF5A10079CB8E /* CertificatesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesCollectionViewController.swift; sourceTree = "<group>"; };
+		C834D38620EDF8BE0079CB8E /* CertificateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateCollectionViewCell.swift; sourceTree = "<group>"; };
 		C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		C8B4628520E59F850082ED09 /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				C80CE35020DF69B6006B1083 /* LoginViewController.swift */,
 				C8B5B94320EC9C0500687C2E /* SignupViewController.swift */,
 				C834D36420EDB3A00079CB8E /* StudentFormViewController.swift */,
+				C834D38420EDF5A10079CB8E /* CertificatesCollectionViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C834D36220EDB34D0079CB8E /* StudentFormView.swift */,
+				C834D38620EDF8BE0079CB8E /* CertificateCollectionViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 				C8D29FD020E5FF7200F93A3A /* AuthService.swift in Sources */,
 				C834D36520EDB3A00079CB8E /* StudentFormViewController.swift in Sources */,
 				C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */,
+				C834D38720EDF8BE0079CB8E /* CertificateCollectionViewCell.swift in Sources */,
+				C834D38520EDF5A10079CB8E /* CertificatesCollectionViewController.swift in Sources */,
 				C8B4628620E59F850082ED09 /* DesignButton.swift in Sources */,
 				C834D36320EDB34D0079CB8E /* StudentFormView.swift in Sources */,
 			);

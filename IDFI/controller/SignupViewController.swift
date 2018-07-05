@@ -28,5 +28,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    @IBAction func cancelRegister(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
