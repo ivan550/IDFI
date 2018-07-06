@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EEl-3q-ry0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -566,7 +566,7 @@ CQk
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="GyF-Iv-qcv" kind="show" id="rdJ-cV-Mtc"/>
+                                            <action selector="registerUser:" destination="SuR-Jw-X3z" eventType="touchUpInside" id="w97-PK-GJT"/>
                                         </connections>
                                     </button>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJa-S6-UnO">
@@ -626,6 +626,11 @@ CQk
                             <outletCollection property="gestureRecognizers" destination="kfv-1V-GeI" appends="YES" id="dc7-qb-UhL"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Zrx-VU-CE9" id="h8y-9m-Rs7"/>
+                        <outlet property="passwordTextField" destination="Mbd-51-JvX" id="pP8-ce-UKf"/>
+                        <segue destination="GyF-Iv-qcv" kind="show" identifier="showStudentForm" id="zpa-zq-qKJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ucw-hM-uBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="kfv-1V-GeI">
