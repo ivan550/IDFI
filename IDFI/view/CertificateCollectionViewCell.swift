@@ -11,8 +11,6 @@ import UIKit
 class CertificateCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var certificateImage: UIImageView!
-    
-    
     @IBOutlet weak var placesLbl: UILabel!
     
     

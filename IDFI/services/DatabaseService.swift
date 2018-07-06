@@ -5,6 +5,8 @@
 //  Created by IvánMS on 05/07/18.
 //  Copyright © 2018 ivanSo3. All rights reserved.
 //
+let CHILD_STUDENTS = "students"
+let CHILD_CERTIFICATES = "certificates"
 
 import Foundation
 import FirebaseDatabase
@@ -18,17 +20,20 @@ class DatabaseService{
         return Database.database().reference()
     }
     var studentRef: DatabaseReference!{
-        return mainRef.child("students")
+        return mainRef.child(CHILD_STUDENTS)
+    }
+    var certificateRef: DatabaseReference!{
+        return mainRef.child(CHILD_CERTIFICATES)
     }
     
     
     
     
     var certificates: DatabaseReference{
-        return mainRef.child("certificates")
+        return mainRef.child(CHILD_CERTIFICATES)
     }
     func saveStudent(uuid: String) {
         let name: [String:AnyObject] = ["name": "" as AnyObject]
-        self.studentRef.child(uuid).child("name").setValue(name)
+        self.studentRef.child(uuid).setValue(name)
     }
 }
