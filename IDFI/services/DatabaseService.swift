@@ -10,12 +10,14 @@ let CHILD_CERTIFICATES = "certificates"
 
 import Foundation
 import FirebaseDatabase
+import FirebaseStorage
 
 class DatabaseService{
     private static let _shared = DatabaseService()
     static var shared: DatabaseService{
         return _shared
     }
+    /* Referencias a la base de datos */
     var mainRef: DatabaseReference!{
         return Database.database().reference()
     }
@@ -24,6 +26,13 @@ class DatabaseService{
     }
     var certificateRef: DatabaseReference!{
         return mainRef.child(CHILD_CERTIFICATES)
+    }
+    /* Referencias al storage */
+    var storageRef: StorageReference{
+        return Storage.storage().reference()
+    }
+    var imageStoreRef: StorageReference{
+        return storageRef.child("certificatesImages")
     }
     
     

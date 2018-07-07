@@ -9,15 +9,13 @@
 import UIKit
 
 class Certificate: NSObject{
-//    var id: Int
     var name: String
-//    var image: UIImage
+    var imageURL: String
     var places: Int
     
-    init(name: String,places: Int) {
-//        self.id = id
+    init(name: String,imageURL: String ,places: Int) {
         self.name = name
-//        self.image = image
+        self.imageURL = imageURL
         self.places = places
     }
 }

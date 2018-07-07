@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 private let reuseIdentifier = "CertificateCell"
 
@@ -15,6 +16,7 @@ class CertificatesCollectionViewController: UICollectionViewController {
     
     
     var certificates = [Certificate]()
+    var selectedCert: [String:Certificate] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +26,12 @@ class CertificatesCollectionViewController: UICollectionViewController {
             var temporal = [Certificate]()
             for user in snapshot.children.allObjects as! [DataSnapshot]{
                 let data = user.value as? [String: AnyObject]
-                
-                if let name = data!["name"] as? String, let places = data!["places"] as? Int{
-                    temporal.append(Certificate(name: name, places: places))
+            
+                if let name = data!["name"] as? String,
+                    let places = data!["places"] as? Int,
+                    let imageURL = data!["imageURL"] as? String{
+                    temporal.append(Certificate(name: name, imageURL: imageURL,places: places))
+
                 }
             }
             self.certificates = temporal
@@ -65,14 +70,17 @@ class CertificatesCollectionViewController: UICollectionViewController {
     /*Se castea la celda como la que se está personalizando */
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CertificateCollectionViewCell
-        cell.placesLbl.text = self.certificates[indexPath.row].name
-//        cell.nameL.text = self.certificates[indexPath.row].places
-        // Configure the cell
-        
+        /* Se obtiene el diplomados y se actualiza en cada celda */
+        let certificate = self.certificates[indexPath.row]
+        cell.updateCertificate(certificate: certificate)
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Diplomado seleccionado")
+    }
+    
+    func downloadCertificateInfo()  {
+        
     }
     
     // MARK: UICollectionViewDelegate

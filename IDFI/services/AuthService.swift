@@ -17,6 +17,9 @@ class AuthService{
     static var shared: AuthService{
         return _shared
     }
+    var user: User? {
+        return Auth.auth().currentUser
+    }
     
     func loginUser(email: String, password: String, onComplete: Completion?) {
         /* Mètodo signIn para iniciar sesión */
