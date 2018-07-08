@@ -52,6 +52,9 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69450984589999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fzn-wN-xL2">
+                                            <rect key="frame" x="157" y="115.5" width="37" height="37"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,6 +67,8 @@
                                     <constraint firstItem="uWG-xr-QXk" firstAttribute="top" secondItem="RoY-hs-kd2" secondAttribute="topMargin" id="XUj-UO-iOO"/>
                                     <constraint firstItem="cPh-BZ-gMj" firstAttribute="top" secondItem="uWG-xr-QXk" secondAttribute="bottom" constant="234" id="c2c-lt-c3a"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="uWG-xr-QXk" secondAttribute="trailing" id="d04-wb-28D"/>
+                                    <constraint firstItem="fzn-wN-xL2" firstAttribute="centerY" secondItem="nL7-7q-6MI" secondAttribute="centerY" id="ej0-91-nNk"/>
+                                    <constraint firstItem="fzn-wN-xL2" firstAttribute="centerX" secondItem="nL7-7q-6MI" secondAttribute="centerX" id="lPF-Z2-ePQ"/>
                                     <constraint firstItem="cPh-BZ-gMj" firstAttribute="top" secondItem="nL7-7q-6MI" secondAttribute="bottom" id="lYk-dE-s88"/>
                                     <constraint firstAttribute="trailing" secondItem="cPh-BZ-gMj" secondAttribute="trailing" constant="10" id="ouV-qY-q0h"/>
                                     <constraint firstAttribute="trailing" secondItem="nL7-7q-6MI" secondAttribute="trailing" id="zk6-1r-PH6"/>
@@ -72,6 +77,7 @@
                                     <outlet property="certificateImage" destination="nL7-7q-6MI" id="2ZT-eP-HxD"/>
                                     <outlet property="nameLbl" destination="cPh-BZ-gMj" id="6Cp-mY-a3B"/>
                                     <outlet property="placesLbl" destination="uWG-xr-QXk" id="4b8-fH-CTV"/>
+                                    <outlet property="spinner" destination="fzn-wN-xL2" id="deo-du-f3j"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

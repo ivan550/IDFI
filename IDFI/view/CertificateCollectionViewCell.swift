@@ -14,8 +14,11 @@ class CertificateCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var certificateImage: UIImageView!
     @IBOutlet weak var placesLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    
     func styleImage() {
-        certificateImage.image = UIImage(named: "load")
+        self.spinner.startAnimating()
         certificateImage.translatesAutoresizingMaskIntoConstraints = false
         certificateImage.layer.cornerRadius = 20
         certificateImage.layer.masksToBounds = true
@@ -29,6 +32,8 @@ class CertificateCollectionViewCell: UICollectionViewCell {
             }else{
                 DispatchQueue.main.async(execute: {
                     self.certificateImage?.image = UIImage(data: data!)
+                    self.spinner.stopAnimating()
+                    self.spinner.isHidden = true
                 })
             }
             
