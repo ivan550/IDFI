@@ -31,11 +31,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    @IBAction func pressedRegisterBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: "showRegister", sender: nil)
-    }
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    @IBAction func showSignup(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func loginPressed(_ sender: Any) {
         /* Se valida la existencia de los datos */

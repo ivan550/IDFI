@@ -77,6 +77,7 @@ class CertificatesCollectionViewController: UICollectionViewController {
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Diplomado seleccionado")
+        performSegue(withIdentifier: "showRegister", sender: nil)
     }
     
     func downloadCertificateInfo()  {

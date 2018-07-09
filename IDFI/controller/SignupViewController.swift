@@ -37,6 +37,9 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         continueRegister()
 //        performSegue(withIdentifier: "showStudentForm", sender: continueRegister())
     }
+    @IBAction func pressedLogin(_ sender: UIButton) {
+        performSegue(withIdentifier: "showLogin", sender: nil)
+    }
     func continueRegister() {
         /* Se valida la existencia de los datos */
         if let email = self.emailTextField.text,
