@@ -15,8 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
+        // Create an VoucherStore
+        let voucherStore = VoucherStore()
+        // Access the ItemsViewController and set its item store
+        let vouchersController = window!.rootViewController as! VoucherViewController
+        vouchersController.voucherStore = voucherStore
         return true
     }
 

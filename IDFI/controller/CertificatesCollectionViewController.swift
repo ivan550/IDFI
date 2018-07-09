@@ -20,6 +20,7 @@ class CertificatesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addPaddingToTop() /* Espacio en la parte superior para el collectionView */
         DatabaseService.shared.certificateRef.observeSingleEvent(of: .value) { (snapshot) in
             print("snapshot\(snapshot)")
             
@@ -83,7 +84,12 @@ class CertificatesCollectionViewController: UICollectionViewController {
     func downloadCertificateInfo()  {
         
     }
-    
+    func addPaddingToTop(){
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        collectionView?.contentInset = insets
+        collectionView?.scrollIndicatorInsets = insets
+    }
     // MARK: UICollectionViewDelegate
     
     /*
