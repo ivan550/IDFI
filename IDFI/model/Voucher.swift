@@ -6,13 +6,16 @@
 //  Copyright © 2018 ivanSo3. All rights reserved.
 //
 
-import Foundation
+import UIKit
 class Voucher: NSObject {
     var name: String
     var amount: Float
     var folio: String
     let date: Date
     var imageURL: String?
+    var image: UIImage? = UIImage(named: "icon")!
+    let voucherKey: String
+    
     
     
     init(name: String, amount: Float, folio: String,date: Date,imageURL: String) {
@@ -21,7 +24,7 @@ class Voucher: NSObject {
         self.folio = folio
         self.date = Date()
         self.imageURL = imageURL
-        
+        self.voucherKey = UUID().uuidString
         super.init()
     }
     convenience init(random: Bool = false) {

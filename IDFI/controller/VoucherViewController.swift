@@ -10,7 +10,13 @@ import UIKit
 
 class VoucherViewController: UITableViewController{
     var voucherStore: VoucherStore!
+    var voucherImageStore: VoucherImageStore!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem
+        editButtonItem.title = "Borrar"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         addPaddingToTop() /* Espacio en la parte superior para el collectionView */
@@ -18,6 +24,11 @@ class VoucherViewController: UITableViewController{
         tableView.estimatedRowHeight = 117
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -50,7 +61,7 @@ class VoucherViewController: UITableViewController{
             let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive, handler: { (action) -> Void in
                 /* Se elemina tanto del store como de la tabla */
                 self.voucherStore.removeVoucher(voucher)
-                //            self.voucherStore.deleteImage(forKey: item.itemKey)
+                self.voucherImageStore.deleteImage(forKey: voucher.voucherKey)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             })
             alert.addAction(deleteAction)
@@ -61,7 +72,8 @@ class VoucherViewController: UITableViewController{
         /* Actualiza en el store */
         voucherStore.moveVoucher(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
-    @IBAction func addNewVoucher(_ sender: UIButton) {
+//    @IBAction func addNewItem(_ sender: UIButton) {
+   @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         /* Se crea primero el voucher y se agrega al store */
         let newVoucher = voucherStore.createVoucher()
         /* Se buscado dónde está tal elemento en el array */
@@ -100,21 +112,13 @@ class VoucherViewController: UITableViewController{
                 let voucher = voucherStore.allIVouchers[row]
                 let infoVoucherViewController = segue.destination as! InfoVoucherViewController
                 infoVoucherViewController.voucher = voucher
+                infoVoucherViewController.voucherImageStore = voucherImageStore
+                infoVoucherViewController.voucherNum = row
+                print(row)
             }
         default:
             preconditionFailure("Identificador de segue inesperado")
         }
     }
-    //    func alertDelete(){
-    //
-    //    }
-    //    func <#name#>(<#parameters#>) -> <#return type#> {
-    //        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-    //        ac.addAction(cancelAction)
-    //        let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive,
-    //                                         handler: { (action) -> Void in    })
-    //        ac.addAction(deleteAction)
-    //        present(ac, animated: true, completion: nil )
-    //    }
     
 }

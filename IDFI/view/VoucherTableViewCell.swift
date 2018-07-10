@@ -12,6 +12,7 @@ class VoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var amountLbl: UILabel!
     @IBOutlet weak var folioLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet var img: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +32,7 @@ class VoucherTableViewCell: UITableViewCell {
         self.amountLbl.text = String(voucher.amount)
         self.folioLbl.text = voucher.folio
         self.dateLbl.text = voucher.date.toString(dateFormat: "yyyy/MMM/dd HH:mm:ss")
+        self.img.image = voucher.image
     }
     
 }

@@ -16,11 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        // Create an VoucherStore
+        /* Se crean los stores */
         let voucherStore = VoucherStore()
-        // Access the ItemsViewController and set its item store
-        let vouchersController = window!.rootViewController as! VoucherViewController
+        let voucherImageStore = VoucherImageStore()
+        /* Indica al NavController que la vista top será será VVC por el comento */
+//        let vouchersController = window!.rootViewController as! VoucherViewController
+        let navController = window!.rootViewController as! UINavigationController
+        let vouchersController = navController.topViewController as! VoucherViewController
         vouchersController.voucherStore = voucherStore
+        vouchersController.voucherImageStore = voucherImageStore
         return true
     }
 
