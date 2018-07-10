@@ -423,7 +423,7 @@ CQk
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="awC-cb-cKu">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="91.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="92"/>
                                                                         </imageView>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Monto" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mnd-mc-LeQ">
                                                                             <rect key="frame" x="168.5" y="4" width="118" height="30"/>
@@ -528,6 +528,100 @@ CQk
             </objects>
             <point key="canvasLocation" x="-614.0625" y="1734.375"/>
         </scene>
+        <!--Info Voucher View Controller-->
+        <scene sceneID="RiZ-Os-KZ1">
+            <objects>
+                <viewController id="9QV-YL-Iho" customClass="InfoVoucherViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EE0-gr-wxQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6fL-xa-ooe">
+                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="45B-xf-34W" customClass="Info">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="158"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAX-v8-v77">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="158"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="StS-h5-kdA">
+                                                <rect key="frame" x="57" y="0.0" width="302" height="158"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6jm-S0-hPm">
+                                        <rect key="frame" x="0.0" y="158" width="359" height="157.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MP-DQ-CbP">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="157.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVX-32-hr7">
+                                                <rect key="frame" x="57" y="0.0" width="302" height="157.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="De7-44-FhF">
+                                        <rect key="frame" x="0.0" y="315.5" width="359" height="158"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTC-6M-6gb">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="158"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oQv-Ys-Rse">
+                                                <rect key="frame" x="57" y="0.0" width="302" height="158"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvv-BJ-bA8">
+                                        <rect key="frame" x="0.0" y="473.5" width="359" height="157.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="StS-h5-kdA" firstAttribute="leading" secondItem="RVX-32-hr7" secondAttribute="leading" id="AZu-BC-UW1"/>
+                                    <constraint firstItem="RVX-32-hr7" firstAttribute="leading" secondItem="oQv-Ys-Rse" secondAttribute="leading" id="zmV-eW-83J"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lee-0K-Iyw" firstAttribute="trailing" secondItem="6fL-xa-ooe" secondAttribute="trailing" constant="8" id="94k-pB-qX4"/>
+                            <constraint firstItem="6fL-xa-ooe" firstAttribute="leading" secondItem="Lee-0K-Iyw" secondAttribute="leading" constant="8" id="keF-Tn-pJd"/>
+                            <constraint firstItem="6fL-xa-ooe" firstAttribute="top" secondItem="Lee-0K-Iyw" secondAttribute="top" constant="8" id="vsD-Hz-jov"/>
+                            <constraint firstItem="Lee-0K-Iyw" firstAttribute="bottom" secondItem="6fL-xa-ooe" secondAttribute="bottom" constant="8" id="zxG-te-0ti"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lee-0K-Iyw"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="StS-h5-kdA" id="LfY-yb-9Oc"/>
+                        <outlet property="dateTextField" destination="oQv-Ys-Rse" id="3Jh-qd-Rcl"/>
+                        <outlet property="folioTextField" destination="RVX-32-hr7" id="50h-QN-d7b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3w-2c-Xhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="2602"/>
+        </scene>
         <!--Voucher View Controller-->
         <scene sceneID="c1h-WQ-sXT">
             <objects>
@@ -583,19 +677,19 @@ CQk
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="monto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVt-c5-G9Q">
                                                     <rect key="frame" x="42.5" y="0.0" width="49" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="folio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8G-1o-ChK">
                                                     <rect key="frame" x="51" y="32" width="32.5" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fecha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G71-El-NjF">
                                                     <rect key="frame" x="45.5" y="64" width="43" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -617,6 +711,7 @@ CQk
                                     <outlet property="amountLbl" destination="wVt-c5-G9Q" id="mca-f0-GRT"/>
                                     <outlet property="dateLbl" destination="G71-El-NjF" id="caS-hp-jwh"/>
                                     <outlet property="folioLbl" destination="Z8G-1o-ChK" id="WtP-0S-jxQ"/>
+                                    <segue destination="9QV-YL-Iho" kind="show" identifier="editVoucher" id="Nk6-zH-HH7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -860,6 +955,6 @@ CQk
         <image name="escudofi_rojo" width="331" height="392"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7U8-6G-Hrk"/>
+        <segue reference="Lo9-dK-Imc"/>
     </inferredMetricsTieBreakers>
 </document>

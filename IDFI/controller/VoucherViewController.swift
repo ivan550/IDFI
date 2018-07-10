@@ -14,6 +14,8 @@ class VoucherViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         addPaddingToTop() /* Espacio en la parte superior para el collectionView */
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 117
         
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,6 +89,21 @@ class VoucherViewController: UITableViewController{
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /* Sí el segue disparado es editVoucher */
+        switch segue.identifier {
+        case "editVoucher"?:
+            /* Checamos que fila se seleccionó */
+            if let row = tableView.indexPathForSelectedRow?.row {
+                /* Tomamos el voucher selccionado y se lo pasamos al controlador que llenará los datos del comprobante */
+                let voucher = voucherStore.allIVouchers[row]
+                let infoVoucherViewController = segue.destination as! InfoVoucherViewController
+                infoVoucherViewController.voucher = voucher
+            }
+        default:
+            preconditionFailure("Identificador de segue inesperado")
+        }
     }
     //    func alertDelete(){
     //

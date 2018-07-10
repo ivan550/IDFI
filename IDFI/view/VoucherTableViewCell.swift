@@ -16,6 +16,9 @@ class VoucherTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        amountLbl.adjustsFontForContentSizeCategory = true
+        folioLbl.adjustsFontForContentSizeCategory = true
+        dateLbl.adjustsFontForContentSizeCategory = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
