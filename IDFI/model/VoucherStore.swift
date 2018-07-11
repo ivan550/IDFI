@@ -10,7 +10,13 @@ import UIKit
 
 class VoucherStore {
     var allIVouchers = [Voucher]()
-    
+    /* Obtiene la URL apropiada del sistema de archivos donde se guardarán los comprobantes */
+    let voucherArchiveURL: URL = {
+        let documentsDirectories =
+            FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("voucher.archive")
+    }()
     @discardableResult func createVoucher() -> Voucher {
         let newVoucher = Voucher(random: true)
         allIVouchers.append(newVoucher)
@@ -30,5 +36,17 @@ class VoucherStore {
         /* Se elimina el elemento y se inserta en la nueva posición */
         allIVouchers.remove(at: fromIndex)
         allIVouchers.insert(movedVoucher, at: toIndex)
+    }
+    /* Guardarán los comprobantes y el mètodo será llamado cuando la aplicación se mande a background */
+    func saveChanges() -> Bool {
+//        print("Guardando comprobantes en: \(voucherArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(allIVouchers, toFile: voucherArchiveURL.path)
+    }
+    /* Carga los comprobantes que se hayan guardado cuando se mandó a background */
+    init() {
+        if let archivedItems =
+            NSKeyedUnarchiver.unarchiveObject(withFile: voucherArchiveURL.path) as? [Voucher] {
+            allIVouchers = archivedItems
+        }
     }
 }
