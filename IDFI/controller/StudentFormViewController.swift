@@ -96,8 +96,14 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     @objc func sendData() {
         print("Send data")
+        let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
+        present(voucherNavBar, animated: true, completion: nil)
         
     }
     
+    @IBAction func tapped(_ sender: UIButton) {
+        print("tapped")
+
+    }
 }
 

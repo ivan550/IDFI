@@ -19,6 +19,7 @@
 		C834D36520EDB3A00079CB8E /* StudentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D36420EDB3A00079CB8E /* StudentFormViewController.swift */; };
 		C834D38520EDF5A10079CB8E /* CertificatesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D38420EDF5A10079CB8E /* CertificatesCollectionViewController.swift */; };
 		C834D38720EDF8BE0079CB8E /* CertificateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C834D38620EDF8BE0079CB8E /* CertificateCollectionViewCell.swift */; };
+		C836E6B420F5EBB100120F0F /* VoucherNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C836E6B320F5EBB100120F0F /* VoucherNavigationController.swift */; };
 		C83FCD7720EECE77005F35EC /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83FCD7620EECE77005F35EC /* Certificate.swift */; };
 		C83FCD7B20EEE996005F35EC /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83FCD7A20EEE996005F35EC /* DatabaseService.swift */; };
 		C86DD78120DF6D40003C7204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */; };
@@ -50,6 +51,7 @@
 		C834D36420EDB3A00079CB8E /* StudentFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFormViewController.swift; sourceTree = "<group>"; };
 		C834D38420EDF5A10079CB8E /* CertificatesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesCollectionViewController.swift; sourceTree = "<group>"; };
 		C834D38620EDF8BE0079CB8E /* CertificateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateCollectionViewCell.swift; sourceTree = "<group>"; };
+		C836E6B320F5EBB100120F0F /* VoucherNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherNavigationController.swift; sourceTree = "<group>"; };
 		C83FCD7620EECE77005F35EC /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		C83FCD7A20EEE996005F35EC /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				C8810E6120F30955001D6FAC /* FormViewController.swift */,
 				C8810E6520F326E7001D6FAC /* VoucherViewController.swift */,
 				C831B4BE20F448690055BA65 /* InfoVoucherViewController.swift */,
+				C836E6B320F5EBB100120F0F /* VoucherNavigationController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				C80CE34F20DF69B6006B1083 /* AppDelegate.swift in Sources */,
 				C8810E7020F3696D001D6FAC /* extensions.swift in Sources */,
 				C8D29FD020E5FF7200F93A3A /* AuthService.swift in Sources */,
+				C836E6B420F5EBB100120F0F /* VoucherNavigationController.swift in Sources */,
 				C8810E6A20F33006001D6FAC /* VoucherStore.swift in Sources */,
 				C834D36520EDB3A00079CB8E /* StudentFormViewController.swift in Sources */,
 				C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v3u-8C-M1e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GyF-Iv-qcv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -526,7 +526,7 @@ CQk
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nl-qL-a1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="1733.8830584707648"/>
+            <point key="canvasLocation" x="4894" y="-442"/>
         </scene>
         <!--Info Voucher View Controller-->
         <scene sceneID="RiZ-Os-KZ1">
@@ -643,7 +643,7 @@ CQk
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="396" y="2601.9490254872567"/>
+            <point key="canvasLocation" x="4966" y="426"/>
         </scene>
         <!--Voucher View Controller-->
         <scene sceneID="c1h-WQ-sXT">
@@ -754,7 +754,7 @@ CQk
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsW-fe-dlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-444" y="2220.5397301349326"/>
+            <point key="canvasLocation" x="4126" y="45"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Kln-Dl-GBc">
@@ -963,7 +963,9 @@ CQk
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWW-Xd-rt3">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="81P-gK-8LY"/>
+                                    <navigationItem title="Title" id="81P-gK-8LY">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="uf4-w4-Tq8"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -980,10 +982,10 @@ CQk
             </objects>
             <point key="canvasLocation" x="1828" y="32.833583208395808"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Voucher Navigation Controller-->
         <scene sceneID="BVp-aV-KTv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v3u-8C-M1e" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="VoucherNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="v3u-8C-M1e" customClass="VoucherNavigationController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HTO-aw-qbU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -996,7 +998,7 @@ CQk
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wn5-y6-8oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1383.2" y="2220.5397301349326"/>
+            <point key="canvasLocation" x="3186" y="45"/>
         </scene>
     </scenes>
     <resources>

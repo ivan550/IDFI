@@ -12,19 +12,19 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let voucherStore = VoucherStore()
+//    let voucherStore = VoucherStore()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         /* Se crean los stores */
-        let voucherImageStore = VoucherImageStore()
+//        let voucherImageStore = VoucherImageStore()
         /* Indica al NavController que la vista top será será VVC por el comento */
 //        let vouchersController = window!.rootViewController as! VoucherViewController
-        let navController = window!.rootViewController as! UINavigationController
-        let vouchersController = navController.topViewController as! VoucherViewController
-        vouchersController.voucherStore = voucherStore
-        vouchersController.voucherImageStore = voucherImageStore
+//        let navController = window!.rootViewController as! UINavigationController
+//        let vouchersController = navController.topViewController as! VoucherViewController
+//        vouchersController.voucherStore = voucherStore
+//        vouchersController.voucherImageStore = voucherImageStore
         return true
     }
 
@@ -34,12 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        let success = voucherStore.saveChanges()
-        if (success) {
-            print("Se guardaron todos los comprobantes")
-        } else {
-            print("No se han podido guardar los comprobantes ")
-        }
+//        let success = voucherStore.saveChanges()
+//        if (success) {
+//            print("Se guardaron todos los comprobantes")
+//        } else {
+//            print("No se han podido guardar los comprobantes ")
+//        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
