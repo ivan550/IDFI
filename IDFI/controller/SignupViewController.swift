@@ -12,6 +12,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var passwordTextField: DesignTextField!
     @IBOutlet weak var emailTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +40,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
 //        performSegue(withIdentifier: "showStudentForm", sender: continueRegister())
     }
     @IBAction func pressedLogin(_ sender: UIButton) {
-        performSegue(withIdentifier: "showLogin", sender: nil)
+//        performSegue(withIdentifier: "showLogin", sender: nil)
     }
     func continueRegister() {
         /* Se valida la existencia de los datos */

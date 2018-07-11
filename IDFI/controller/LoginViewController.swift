@@ -12,10 +12,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: DesignTextField!
     @IBOutlet weak var passwordTextField: DesignTextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,9 +34,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    @IBAction func showSignup(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func showSignup(_ sender: UIBarButtonItem) {
+//        dismiss(animated: true, completion: nil)
+//    }
     @IBAction func loginPressed(_ sender: Any) {
         /* Se valida la existencia de los datos */
         if let email = self.emailTextField.text,

@@ -12,6 +12,7 @@ class VoucherViewController: UITableViewController{
     var voucherStore: VoucherStore!
     var voucherImageStore: VoucherImageStore!
     
+    /* Coloca el item en el navigation controller para poder editar algún renglón */
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.leftBarButtonItem = editButtonItem
@@ -22,7 +23,9 @@ class VoucherViewController: UITableViewController{
         addPaddingToTop() /* Espacio en la parte superior para el collectionView */
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 117
-        
+        /* Se le dá transparencia al navigation bar */
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -37,6 +37,10 @@ class CertificatesCollectionViewController: UICollectionViewController {
             }
             self.certificates = temporal
             self.collectionView?.reloadData()
+            
+            /* Se le dá transparencia al navigation bar */
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()            
         }
     }
     
@@ -78,7 +82,7 @@ class CertificatesCollectionViewController: UICollectionViewController {
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Diplomado seleccionado")
-        performSegue(withIdentifier: "showRegister", sender: nil)
+//        performSegue(withIdentifier: "showRegister", sender: nil)
     }
     
     func downloadCertificateInfo()  {

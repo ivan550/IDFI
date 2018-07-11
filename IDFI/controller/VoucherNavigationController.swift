@@ -14,12 +14,14 @@ class VoucherNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nav = topViewController as! VoucherViewController
-        nav.voucherStore = voucherStore
-        nav.voucherImageStore = voucherImageStore
+        /* Se intancían los stores que guardarán los comprobantes que el alumno ingrese */
+        let vvc = topViewController as! VoucherViewController
+        vvc.voucherStore = voucherStore
+        vvc.voucherImageStore = voucherImageStore
+        
+        /* Notification center ayudará a saber cuando entra en background y cuando esto suceda, los datos de los comprobantes que se estén registrando se guardarán en disco */
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
-        
     }
 
     override func didReceiveMemoryWarning() {
