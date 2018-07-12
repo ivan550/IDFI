@@ -7,6 +7,7 @@
 //
 let CHILD_STUDENTS = "students"
 let CHILD_CERTIFICATES = "certificates"
+let CHILD_GENERATIONS = "generations"
 
 import Foundation
 import FirebaseDatabase
@@ -27,6 +28,9 @@ class DatabaseService{
     var certificateRef: DatabaseReference!{
         return mainRef.child(CHILD_CERTIFICATES)
     }
+    var generationRef: DatabaseReference!{
+        return mainRef.child(CHILD_GENERATIONS)
+    }
     /* Referencias al storage */
     var storageRef: StorageReference{
         return Storage.storage().reference()
@@ -34,15 +38,11 @@ class DatabaseService{
     var imageStoreRef: StorageReference{
         return storageRef.child("certificatesImages")
     }
+
     
-    
-    
-    
-    var certificates: DatabaseReference{
-        return mainRef.child(CHILD_CERTIFICATES)
-    }
     func saveStudent(uuid: String) {
         let name: [String:AnyObject] = ["name": "" as AnyObject]
         self.studentRef.child(uuid).setValue(name)
     }
+    
 }

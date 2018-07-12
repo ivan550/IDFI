@@ -94,7 +94,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTB-Li-fdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160.80000000000001" y="1056.5217391304348"/>
+            <point key="canvasLocation" x="86" y="1056"/>
         </scene>
         <!--  -->
         <scene sceneID="tne-QT-ifu">
@@ -266,7 +266,7 @@ CQk
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2767.1999999999998" y="863.1184407796103"/>
+            <point key="canvasLocation" x="1190" y="1904"/>
         </scene>
         <!--Form View Controller-->
         <scene sceneID="R6W-sz-sZ8">
@@ -517,7 +517,7 @@ CQk
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nl-qL-a1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5832.8000000000002" y="-442.12893553223392"/>
+            <point key="canvasLocation" x="-692" y="-509"/>
         </scene>
         <!--Info Voucher View Controller-->
         <scene sceneID="RiZ-Os-KZ1">
@@ -634,7 +634,7 @@ CQk
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="6844" y="425.93703148425789"/>
+            <point key="canvasLocation" x="1190" y="243"/>
         </scene>
         <!--Voucher View Controller-->
         <scene sceneID="c1h-WQ-sXT">
@@ -649,7 +649,7 @@ CQk
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m36-2O-8ZL">
-                                    <rect key="frame" x="191.5" y="56.5" width="175.5" height="30"/>
+                                    <rect key="frame" x="191.5" y="-15" width="175.5" height="30"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                     <state key="normal" title="Agregar"/>
                                     <connections>
@@ -657,7 +657,7 @@ CQk
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-ZP-lIv">
-                                    <rect key="frame" x="8" y="56.5" width="175.5" height="30"/>
+                                    <rect key="frame" x="8" y="-15" width="175.5" height="30"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                     <state key="normal" title="Borrar"/>
                                     <connections>
@@ -746,7 +746,7 @@ CQk
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsW-fe-dlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5064.8000000000002" y="44.527736131934034"/>
+            <point key="canvasLocation" x="86" y="243"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Kln-Dl-GBc">
@@ -919,7 +919,7 @@ CQk
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="-7.6461769115442282"/>
+            <point key="canvasLocation" x="1190" y="1057"/>
         </scene>
         <!--Student Form View Controller-->
         <scene sceneID="qWu-qB-4mZ">
@@ -934,7 +934,7 @@ CQk
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjB-8u-fiG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767.1999999999998" y="32.833583208395808"/>
+            <point key="canvasLocation" x="2204" y="1056"/>
         </scene>
         <!--Voucher Navigation Controller-->
         <scene sceneID="BVp-aV-KTv">
@@ -953,7 +953,7 @@ CQk
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wn5-y6-8oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4124" y="44.527736131934034"/>
+            <point key="canvasLocation" x="-778" y="244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pu4-ZL-IVp">
@@ -981,6 +981,46 @@ CQk
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1I-Vk-RRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-778.39999999999998" y="1056.5217391304348"/>
+        </scene>
+        <!--Generations View Controller-->
+        <scene sceneID="4QF-qV-2Ru">
+            <objects>
+                <tableViewController id="f6x-VQ-Qwk" customClass="GenerationsViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2ye-28-fbK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="h6h-nt-n8l">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h6h-nt-n8l" id="Wr2-KU-dAg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generaciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYW-39-PXv">
+                                            <rect key="frame" x="134.5" y="11" width="106" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IYW-39-PXv" firstAttribute="centerY" secondItem="Wr2-KU-dAg" secondAttribute="centerY" id="OKC-Dr-bSl"/>
+                                        <constraint firstItem="IYW-39-PXv" firstAttribute="centerX" secondItem="Wr2-KU-dAg" secondAttribute="centerX" id="bfM-5Y-Uq2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f6x-VQ-Qwk" id="4Sp-on-jW1"/>
+                            <outlet property="delegate" destination="f6x-VQ-Qwk" id="Gec-WC-2XW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CL-6t-2cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="2617"/>
         </scene>
     </scenes>
     <resources>
