@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f6x-VQ-Qwk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K2M-zW-kcq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -208,6 +208,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lgK-AK-Bx7"/>
+                                                            <segue destination="f6x-VQ-Qwk" kind="show" id="fwG-1u-KkJ"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmu-Rz-POD">
@@ -271,6 +272,7 @@ CQk
         <!--Form View Controller-->
         <scene sceneID="R6W-sz-sZ8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nl-qL-a1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gmH-Mk-xJv" customClass="FormViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UEq-fp-zEn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -515,9 +517,8 @@ CQk
                         <outlet property="stackComunidadUnam" destination="wZs-j3-eKN" id="1Se-SQ-9IK"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nl-qL-a1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-692" y="-509"/>
+            <point key="canvasLocation" x="-779" y="-509"/>
         </scene>
         <!--Info Voucher View Controller-->
         <scene sceneID="RiZ-Os-KZ1">
@@ -982,6 +983,49 @@ CQk
             </objects>
             <point key="canvasLocation" x="-778.39999999999998" y="1056.5217391304348"/>
         </scene>
+        <!--Students View Controller-->
+        <scene sceneID="xof-Ds-Cf1">
+            <objects>
+                <tableViewController id="AZn-Q1-sFQ" customClass="StudentsViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EeT-1N-Pim">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" rowHeight="108" id="Sbm-1W-mAf" customClass="StudentTableViewCell" customModule="IDFI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="108"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sbm-1W-mAf" id="cBK-h5-Q2P">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-vR-Ip2">
+                                            <rect key="frame" x="166" y="43.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UKh-vR-Ip2" firstAttribute="centerY" secondItem="cBK-h5-Q2P" secondAttribute="centerY" id="5R0-RL-KCQ"/>
+                                        <constraint firstItem="UKh-vR-Ip2" firstAttribute="centerX" secondItem="cBK-h5-Q2P" secondAttribute="centerX" id="IuK-VJ-2F8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLbl" destination="UKh-vR-Ip2" id="e79-8q-jmH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AZn-Q1-sFQ" id="DTl-Ec-UIv"/>
+                            <outlet property="delegate" destination="AZn-Q1-sFQ" id="bDo-py-fmG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eUl-B6-NdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.80000000000001" y="2615.4422788605698"/>
+        </scene>
         <!--Generations View Controller-->
         <scene sceneID="4QF-qV-2Ru">
             <objects>
@@ -1012,6 +1056,7 @@ CQk
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLbl" destination="IYW-39-PXv" id="Tcm-bj-C4d"/>
+                                    <segue destination="AZn-Q1-sFQ" kind="show" identifier="listStudents" id="mUS-9c-adc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

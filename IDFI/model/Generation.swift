@@ -11,12 +11,12 @@ import UIKit
 class Generation: NSObject{
     var name: String
     var id: String?
-//    var students: [Student]?
+    var studentsId: [String]
     
-    init(name: String,id: String?) {
-//        self.students.append(student)
+    init(name: String,id: String?,studentsId: [String]) {
         self.name = name
-        self.id = id 
+        self.id = id
+        self.studentsId = studentsId
         super.init()
     }
 }

@@ -29,12 +29,11 @@ class VoucherNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     @objc func appMovedToBackground() {
-        print("App moved to background!")
         let success = voucherStore.saveChanges()
         if (success) {
-            print("Se guardaron todos los comprobantes")
+            print("Se guardaron todos los comprobantes en disco")
         } else {
-            print("No se han podido guardar los comprobantes ")
+            print("No se han podido guardar los comprobantes en disco")
         }
     }
 
