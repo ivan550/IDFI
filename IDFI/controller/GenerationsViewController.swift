@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
+private let reuseIdentifier = "generationCell"
 class GenerationsViewController: UITableViewController {
 
+    var generations = [Generation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        DatabaseService.shared.generationRef.observeSingleEvent(of: .value) { (snapshot) in
+            print("snapshot\(snapshot)")
+            
+            var temporal = [Generation]()
+            for generation in snapshot.children.allObjects as! [DataSnapshot]{
+                let data = generation.value as? [String: AnyObject]
+                if let name = data!["name"] as? String{
+                    temporal.append(Generation(name: name, id: nil))
+                }
+            }
+            self.generations = temporal
+            self.tableView?.reloadData()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,23 +41,25 @@ class GenerationsViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return generations.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! GenerationTableViewCell
+        let generation = self.generations[indexPath.row]
+        cell.updateGeneration(generation)
 
         // Configure the cell...
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

@@ -32,6 +32,7 @@
 		C8A3F98320F72B7700AFA4EC /* GenerationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3F98220F72B7700AFA4EC /* GenerationsViewController.swift */; };
 		C8A3F98520F72BB900AFA4EC /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3F98420F72BB900AFA4EC /* Generation.swift */; };
 		C8A3F98720F72C4A00AFA4EC /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3F98620F72C4A00AFA4EC /* Student.swift */; };
+		C8A3F98920F733A400AFA4EC /* GenerationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3F98820F733A400AFA4EC /* GenerationTableViewCell.swift */; };
 		C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */; };
 		C8B4628620E59F850082ED09 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B4628520E59F850082ED09 /* DesignButton.swift */; };
 		C8B5B94420EC9C0500687C2E /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B5B94320EC9C0500687C2E /* SignupViewController.swift */; };
@@ -67,6 +68,7 @@
 		C8A3F98220F72B7700AFA4EC /* GenerationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationsViewController.swift; sourceTree = "<group>"; };
 		C8A3F98420F72BB900AFA4EC /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		C8A3F98620F72C4A00AFA4EC /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		C8A3F98820F733A400AFA4EC /* GenerationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationTableViewCell.swift; sourceTree = "<group>"; };
 		C8AF46E920E58D4800DEA2B8 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		C8B4628520E59F850082ED09 /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
 		C8B5B94320EC9C0500687C2E /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				C834D36220EDB34D0079CB8E /* StudentFormView.swift */,
 				C834D38620EDF8BE0079CB8E /* CertificateCollectionViewCell.swift */,
 				C8810E6B20F339E6001D6FAC /* VoucherTableViewCell.swift */,
+				C8A3F98820F733A400AFA4EC /* GenerationTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				C8A3F98320F72B7700AFA4EC /* GenerationsViewController.swift in Sources */,
 				C8A3F98720F72C4A00AFA4EC /* Student.swift in Sources */,
 				C8810E7020F3696D001D6FAC /* extensions.swift in Sources */,
+				C8A3F98920F733A400AFA4EC /* GenerationTableViewCell.swift in Sources */,
 				C8D29FD020E5FF7200F93A3A /* AuthService.swift in Sources */,
 				C836E6B420F5EBB100120F0F /* VoucherNavigationController.swift in Sources */,
 				C8810E6A20F33006001D6FAC /* VoucherStore.swift in Sources */,

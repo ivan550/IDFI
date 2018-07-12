@@ -25,8 +25,8 @@ class CertificatesCollectionViewController: UICollectionViewController {
             print("snapshot\(snapshot)")
             
             var temporal = [Certificate]()
-            for user in snapshot.children.allObjects as! [DataSnapshot]{
-                let data = user.value as? [String: AnyObject]
+            for certificate in snapshot.children.allObjects as! [DataSnapshot]{
+                let data = certificate.value as? [String: AnyObject]
             
                 if let name = data!["name"] as? String,
                     let places = data!["places"] as? Int,
