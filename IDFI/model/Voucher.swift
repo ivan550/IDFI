@@ -14,7 +14,7 @@ class Voucher: NSObject, NSCoding {
     var folio: String
     let date: Date
     var imageURL: String?
-    var image: UIImage? = UIImage(named: "icon")!
+    var image: UIImage? = UIImage(named: "voucher")!
     let voucherKey: String
     
     
@@ -30,7 +30,7 @@ class Voucher: NSObject, NSCoding {
     }
     convenience init(random: Bool = false) {
         if random {
-            self.init(name: "nombre", amount: 10.0,folio: "folio", date: Date(), imageURL: "url")
+            self.init(name: "", amount: 10.0,folio: "", date: Date(), imageURL: "")
         } else {
             self.init(name: "", amount: 0.0,folio: "folio", date: Date(), imageURL: "")
             

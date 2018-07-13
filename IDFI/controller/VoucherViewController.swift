@@ -21,8 +21,6 @@ class VoucherViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         addPaddingToTop() /* Espacio en la parte superior para el collectionView */
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 117
         /* Se le dá transparencia al navigation bar */
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
