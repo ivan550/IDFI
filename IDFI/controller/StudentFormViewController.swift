@@ -9,11 +9,12 @@
 import UIKit
 
 class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
-    let studentForm: StudenFormView  = {
-        let view = StudenFormView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    @IBOutlet weak var profileTextField: UITextField!
+//    let studentForm: StudenFormView  = {
+//        let view = StudenFormView()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
     
     
     override func viewDidLoad() {
@@ -21,16 +22,10 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.delegate = self as? UIGestureRecognizerDelegate
         view.addGestureRecognizer(tap)
-        view.addSubview(studentForm)
         textFieldDelagates()
-        NSLayoutConstraint.activate([
-            studentForm.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            studentForm.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            studentForm.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-            studentForm.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
-            ])
+
         createPicker()
-        studentForm.getSendBtn().addTarget(self, action: #selector(sendData), for: .touchUpInside)
+//        studentForm.getSendBtn().addTarget(self, action: #selector(sendData), for: .touchUpInside)
 
     }
     
@@ -38,7 +33,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    let myPickerData = [String](arrayLiteral: "Publico en general", "Alumno FI", "Comuniddad UNAM")
+    let myPickerData = [String](arrayLiteral: "Publico en general", "Alumno FI", "Comunidad UNAM")
     func createPicker() {
         let picker = UIPickerView()
         picker.backgroundColor = .black
@@ -46,15 +41,15 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         picker.delegate = self
         picker.dataSource = self
         /* Se agrega el toolbar y el UIPicker al textField */
-        studentForm.getFieldPicker().inputView = picker
-        studentForm.getFieldPicker().inputAccessoryView = toolBar
+        profileTextField.inputView = picker
+        profileTextField.inputAccessoryView = toolBar
     }
     let toolBar: UIToolbar = {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         toolBar.backgroundColor = .black
         toolBar.tintColor = .red
-        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(StudenFormView.handleTap))
+        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(handleTap))
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         return toolBar
@@ -70,7 +65,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         return myPickerData[row]
     }
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        studentForm.getFieldPicker().text = myPickerData[row]
+        profileTextField.text = myPickerData[row]
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
@@ -86,13 +81,13 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         view.endEditing(true)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        studentForm.getNameField().resignFirstResponder()
-        studentForm.getLastNameField().resignFirstResponder()
+//        studentForm.getNameField().resignFirstResponder()
+//        studentForm.getLastNameField().resignFirstResponder()
         return true
     }
     func textFieldDelagates() {
-        studentForm.getNameField().delegate = self
-        studentForm.getLastNameField().delegate = self
+//        studentForm.getNameField().delegate = self
+//        studentForm.getLastNameField().delegate = self
     }
     @objc func sendData() {
         print("Send data")
