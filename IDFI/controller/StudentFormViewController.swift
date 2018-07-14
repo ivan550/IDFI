@@ -17,7 +17,11 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @IBOutlet weak var socialServiceSwch: UISwitch!
     @IBOutlet weak var languageSwch: UISwitch!
     
-    
+    /* Elementos que se mostrará dependiendo de lo que ingrese el alumno */
+    @IBOutlet weak var degreeOptionStack: UIStackView!
+    @IBOutlet weak var hiddenLbl: UILabel!
+    @IBOutlet weak var dataComplementStack: UIStackView!
+    @IBOutlet weak var basicFormStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +29,15 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.delegate = self as? UIGestureRecognizerDelegate
         view.addGestureRecognizer(tap)
-
+        
+        degreeOptionSwch.addTarget(self, action: #selector(valueChange), for:UIControlEvents.valueChanged)
+        
+        
+        //        dataComplementStack.isHidden = true
+        //        hiddenLbl.isHidden = false
         createPicker()
-//        studentForm.getSendBtn().addTarget(self, action: #selector(sendData), for: .touchUpInside)
-
+        //        studentForm.getSendBtn().addTarget(self, action: #selector(sendData), for: .touchUpInside)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +61,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         toolBar.sizeToFit()
         toolBar.backgroundColor = .black
         toolBar.tintColor = .red
-        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(handleTap))
+        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(visible))
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         return toolBar
@@ -69,6 +78,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         profileTextField.text = myPickerData[row]
+        
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
@@ -83,12 +93,45 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     func handleTap() {
         view.endEditing(true)
     }
+    @objc
+    func visible() {
+        view.endEditing(true) /* Desaparece el teclado */
+        dataComplementStack.isHidden = true
+        basicFormStack.distribution = .fillProportionally
+        hiddenLbl.isHidden = false
+        socialServiceSwch.isOn = false
+        languageSwch.isOn = false
+        /* Se depliega otro campo en los siguientes casos */
+        if profileTextField.text == "Alumno FI" || profileTextField.text == "Comunidad UNAM"{
+            degreeOptionStack.isHidden = false
+            degreeOptionSwch.isOn = false
+            return
+        }
+        degreeOptionStack.isHidden = true
+        hiddenLbl.isHidden = false
+    }
+    @objc
+    func valueChange(mySwitch: UISwitch) {
+        let value = mySwitch.isOn
+        guard value else{
+            hiddenLbl.isHidden = false
+            dataComplementStack.isHidden = true
+            basicFormStack.distribution = .fillProportionally
+            socialServiceSwch.isOn = false
+            languageSwch.isOn = false
+            return
+        }
+        hiddenLbl.isHidden = true
+        dataComplementStack.isHidden = false
+        basicFormStack.distribution = .equalSpacing
+        
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextField.resignFirstResponder()
         lastNameTextField.resignFirstResponder()
         return true
     }
-
+    
     @objc func sendData() {
         print("Send data")
         let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
@@ -98,7 +141,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     @IBAction func tapped(_ sender: UIButton) {
         print("tapped")
-
+        
     }
 }
 

@@ -298,8 +298,8 @@ CQk
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F5Q-vI-ELH">
-                                                <rect key="frame" x="0.0" y="143.5" width="315" height="252.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F5Q-vI-ELH">
+                                                <rect key="frame" x="0.0" y="143.5" width="315" height="170"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohk-Uo-3DH">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="19.5"/>
@@ -307,8 +307,8 @@ CQk
                                                         <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbu-Qm-fkM" customClass="DesignTextField" customModule="IDFI" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="38" width="315" height="30"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbu-Qm-fkM" customClass="DesignTextField" customModule="IDFI" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="29.5" width="315" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -317,7 +317,7 @@ CQk
                                                                 <real key="value" value="15"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.90104238010000004" colorSpace="custom" customColorSpace="sRGB"/>
@@ -328,13 +328,13 @@ CQk
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yN7-Mo-rCq">
-                                                        <rect key="frame" x="0.0" y="86" width="315" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="69.5" width="315" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUJ-Vl-lJY" customClass="DesignTextField" customModule="IDFI" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="125" width="315" height="30"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUJ-Vl-lJY" customClass="DesignTextField" customModule="IDFI" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="100" width="315" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -346,7 +346,7 @@ CQk
                                                                 <color key="value" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.8729398545" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="2"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -354,7 +354,7 @@ CQk
                                                         </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kc0-uk-hKI">
-                                                        <rect key="frame" x="0.0" y="173" width="315" height="30"/>
+                                                        <rect key="frame" x="0.0" y="140" width="315" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Perfil del alumno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD4-kI-WCS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="157.5" height="30"/>
@@ -381,66 +381,66 @@ CQk
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOz-aN-3Pf">
-                                                        <rect key="frame" x="0.0" y="221.5" width="315" height="31"/>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOz-aN-3Pf">
+                                                        <rect key="frame" x="0.0" y="170" width="315" height="0.0"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="¿Opción de titulación?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5f-3W-EAa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alf-HH-tCh">
-                                                                <rect key="frame" x="266" y="0.0" width="51" height="31"/>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="alf-HH-tCh">
+                                                                <rect key="frame" x="266" y="0.0" width="51" height="0.0"/>
                                                                 <color key="onTintColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <variation key="heightClass=compact" distribution="equalSpacing"/>
+                                                <variation key="heightClass=compact" distribution="fillProportionally"/>
                                             </stackView>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-pc-hyj">
-                                                <rect key="frame" x="0.0" y="421" width="315" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-pc-hyj">
+                                                <rect key="frame" x="0.0" y="363.5" width="315" height="205.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Uzs-nq-jIA">
-                                                <rect key="frame" x="0.0" y="446" width="315" height="123"/>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Uzs-nq-jIA">
+                                                <rect key="frame" x="0.0" y="569" width="315" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datos complementarios:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUe-w6-BZ3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59506100171232879" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qB-9T-o6U">
-                                                        <rect key="frame" x="0.0" y="46" width="315" height="31"/>
+                                                        <rect key="frame" x="0.0" y="15" width="315" height="0.0"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servicio social" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUH-XR-MS3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHG-Yn-pE8">
-                                                                <rect key="frame" x="266" y="0.0" width="51" height="31"/>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dHG-Yn-pE8">
+                                                                <rect key="frame" x="266" y="0.0" width="51" height="0.0"/>
                                                                 <color key="onTintColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-vs-uRN">
-                                                        <rect key="frame" x="0.0" y="92" width="315" height="31"/>
+                                                        <rect key="frame" x="0.0" y="30" width="315" height="0.0"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idioma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNj-Os-nj8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOr-H2-uGk">
-                                                                <rect key="frame" x="266" y="0.0" width="51" height="31"/>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oOr-H2-uGk">
+                                                                <rect key="frame" x="266" y="0.0" width="51" height="0.0"/>
                                                                 <color key="onTintColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </switch>
                                                         </subviews>
@@ -474,7 +474,11 @@ CQk
                     </view>
                     <navigationItem key="navigationItem" id="nhH-w4-e1U"/>
                     <connections>
+                        <outlet property="basicFormStack" destination="F5Q-vI-ELH" id="4nB-5X-d8I"/>
+                        <outlet property="dataComplementStack" destination="Uzs-nq-jIA" id="nWo-3b-ySZ"/>
+                        <outlet property="degreeOptionStack" destination="cOz-aN-3Pf" id="Lud-wQ-qg6"/>
                         <outlet property="degreeOptionSwch" destination="alf-HH-tCh" id="jd5-KA-Rns"/>
+                        <outlet property="hiddenLbl" destination="NZf-pc-hyj" id="9cD-HD-C0o"/>
                         <outlet property="languageSwch" destination="oOr-H2-uGk" id="Knz-th-LfL"/>
                         <outlet property="lastNameTextField" destination="JUJ-Vl-lJY" id="HIC-6I-zMW"/>
                         <outlet property="nameTextField" destination="dbu-Qm-fkM" id="ioS-3F-Ogw"/>
