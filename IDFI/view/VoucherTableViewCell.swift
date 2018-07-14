@@ -20,6 +20,7 @@ class VoucherTableViewCell: UITableViewCell {
         amountLbl.adjustsFontForContentSizeCategory = true
         folioLbl.adjustsFontForContentSizeCategory = true
         dateLbl.adjustsFontForContentSizeCategory = true
+        self.accessoryView = UIImageView(image: #imageLiteral(resourceName: "edit"))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -22,22 +22,16 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @IBOutlet weak var hiddenLbl: UILabel!
     @IBOutlet weak var dataComplementStack: UIStackView!
     @IBOutlet weak var basicFormStack: UIStackView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         /* Tap para desaparecer el teclado cuando se seleccione otro lugar de la vista */
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.delegate = self as? UIGestureRecognizerDelegate
         view.addGestureRecognizer(tap)
-        
-        degreeOptionSwch.addTarget(self, action: #selector(valueChange), for:UIControlEvents.valueChanged)
-        
-        
-        //        dataComplementStack.isHidden = true
-        //        hiddenLbl.isHidden = false
+        degreeOptionSwch.addTarget(self, action:#selector(valueChange),for:UIControlEvents.valueChanged)
         createPicker()
         //        studentForm.getSendBtn().addTarget(self, action: #selector(sendData), for: .touchUpInside)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,7 +93,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         dataComplementStack.isHidden = true
         basicFormStack.distribution = .fillProportionally
         hiddenLbl.isHidden = false
-        socialServiceSwch.isOn = false
+//        socialServiceSwch.isOn = false
         languageSwch.isOn = false
         /* Se depliega otro campo en los siguientes casos */
         if profileTextField.text == "Alumno FI" || profileTextField.text == "Comunidad UNAM"{
@@ -132,16 +126,11 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         return true
     }
     
-    @objc func sendData() {
-        print("Send data")
+    @IBAction func addVouchers(_ sender: UIBarButtonItem) {
+        print("Cambiando a agregar vouchers")
         let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
         present(voucherNavBar, animated: true, completion: nil)
-        
     }
     
-    @IBAction func tapped(_ sender: UIButton) {
-        print("tapped")
-        
-    }
 }
 

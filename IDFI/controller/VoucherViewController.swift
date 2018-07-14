@@ -11,19 +11,23 @@ import UIKit
 class VoucherViewController: UITableViewController{
     var voucherStore: VoucherStore!
     var voucherImageStore: VoucherImageStore!
+    let leftBtn: UIButton = {
+        let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+        btn.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        return btn
+    }()
     
-    /* Coloca el item en el navigation controller para poder editar algún renglón */
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        navigationItem.leftBarButtonItem = editButtonItem
-        editButtonItem.title = "Borrar"
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         addPaddingToTop() /* Espacio en la parte superior para el collectionView */
         /* Se le dá transparencia al navigation bar */
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        /* Se introduce un botón personalizado */
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
+//        leftBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -38,11 +42,10 @@ class VoucherViewController: UITableViewController{
         return voucherStore.allIVouchers.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        /* Se crea la celda de tipo personalizada, recuperamos los datos de la celda y los actualizamos */
         let cell = tableView.dequeueReusableCell(withIdentifier: "voucherCell", for: indexPath) as! VoucherTableViewCell
         let voucher = voucherStore.allIVouchers[indexPath.row]
         cell.updateVoucher(voucher)
-        
-        // Configure the cell...
         
         return cell
     }
@@ -73,8 +76,7 @@ class VoucherViewController: UITableViewController{
         /* Actualiza en el store */
         voucherStore.moveVoucher(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
-//    @IBAction func addNewItem(_ sender: UIButton) {
-   @IBAction func addNewItem(_ sender: UIBarButtonItem) {
+    @IBAction func addNewItem(_ sender: UIButton) {
         /* Se crea primero el voucher y se agrega al store */
         let newVoucher = voucherStore.createVoucher()
         /* Se buscado dónde está tal elemento en el array */
@@ -115,11 +117,14 @@ class VoucherViewController: UITableViewController{
                 infoVoucherViewController.voucher = voucher
                 infoVoucherViewController.voucherImageStore = voucherImageStore
                 infoVoucherViewController.voucherNum = row
-                print(row)
             }
         default:
             preconditionFailure("Identificador de segue inesperado")
         }
+    }
+    @IBAction func sendData(_ sender: UIBarButtonItem) {
+        
+        print("Enviando datos ")
     }
     
 }

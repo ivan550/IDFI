@@ -24,7 +24,6 @@
 		C86DD78120DF6D40003C7204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */; };
 		C8786BDC20F742A500A08EA6 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786BDB20F742A500A08EA6 /* StudentsViewController.swift */; };
 		C8786BDE20F75C2F00A08EA6 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786BDD20F75C2F00A08EA6 /* StudentTableViewCell.swift */; };
-		C8810E6220F30955001D6FAC /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8810E6120F30955001D6FAC /* FormViewController.swift */; };
 		C8810E6620F326E7001D6FAC /* VoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8810E6520F326E7001D6FAC /* VoucherViewController.swift */; };
 		C8810E6820F32825001D6FAC /* Voucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8810E6720F32825001D6FAC /* Voucher.swift */; };
 		C8810E6A20F33006001D6FAC /* VoucherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8810E6920F33006001D6FAC /* VoucherStore.swift */; };
@@ -61,7 +60,6 @@
 		C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8786BDB20F742A500A08EA6 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		C8786BDD20F75C2F00A08EA6 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
-		C8810E6120F30955001D6FAC /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		C8810E6520F326E7001D6FAC /* VoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherViewController.swift; sourceTree = "<group>"; };
 		C8810E6720F32825001D6FAC /* Voucher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voucher.swift; sourceTree = "<group>"; };
 		C8810E6920F33006001D6FAC /* VoucherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherStore.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 				C8B5B94320EC9C0500687C2E /* SignupViewController.swift */,
 				C834D36420EDB3A00079CB8E /* StudentFormViewController.swift */,
 				C834D38420EDF5A10079CB8E /* CertificatesCollectionViewController.swift */,
-				C8810E6120F30955001D6FAC /* FormViewController.swift */,
 				C8810E6520F326E7001D6FAC /* VoucherViewController.swift */,
 				C831B4BE20F448690055BA65 /* InfoVoucherViewController.swift */,
 				C836E6B320F5EBB100120F0F /* VoucherNavigationController.swift */,
@@ -339,7 +336,6 @@
 				C8B4628620E59F850082ED09 /* DesignButton.swift in Sources */,
 				C8786BDE20F75C2F00A08EA6 /* StudentTableViewCell.swift in Sources */,
 				C8786BDC20F742A500A08EA6 /* StudentsViewController.swift in Sources */,
-				C8810E6220F30955001D6FAC /* FormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
