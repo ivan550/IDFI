@@ -9,20 +9,22 @@
 import UIKit
 
 class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var profileTextField: UITextField!
-//    let studentForm: StudenFormView  = {
-//        let view = StudenFormView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
+    @IBOutlet weak var degreeOptionSwch: UISwitch!
+    @IBOutlet weak var socialServiceSwch: UISwitch!
+    @IBOutlet weak var languageSwch: UISwitch!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /* Tap para desaparecer el teclado cuando se seleccione otro lugar de la vista */
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.delegate = self as? UIGestureRecognizerDelegate
         view.addGestureRecognizer(tap)
-        textFieldDelagates()
 
         createPicker()
 //        studentForm.getSendBtn().addTarget(self, action: #selector(sendData), for: .touchUpInside)
@@ -34,6 +36,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         // Dispose of any resources that can be recreated.
     }
     let myPickerData = [String](arrayLiteral: "Publico en general", "Alumno FI", "Comunidad UNAM")
+    
     func createPicker() {
         let picker = UIPickerView()
         picker.backgroundColor = .black
@@ -75,20 +78,17 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         return label
     }
     
-    /* Se oculta el teclado cada que se presione enter  o se presiona en otro lugar de la vista*/
+    /* Se oculta el teclado cada que se presione enter  o se presiona en otro lugar de la vista */
     @objc
     func handleTap() {
         view.endEditing(true)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        studentForm.getNameField().resignFirstResponder()
-//        studentForm.getLastNameField().resignFirstResponder()
+        nameTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
         return true
     }
-    func textFieldDelagates() {
-//        studentForm.getNameField().delegate = self
-//        studentForm.getLastNameField().delegate = self
-    }
+
     @objc func sendData() {
         print("Send data")
         let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController

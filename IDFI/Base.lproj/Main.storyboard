@@ -323,6 +323,9 @@ CQk
                                                                 <color key="value" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.90104238010000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="gmH-Mk-xJv" id="gRo-wb-NCt"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yN7-Mo-rCq">
                                                         <rect key="frame" x="0.0" y="86" width="315" height="20.5"/>
@@ -346,6 +349,9 @@ CQk
                                                                 <real key="value" value="2"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="gmH-Mk-xJv" id="hu8-WU-ZZM"/>
+                                                        </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kc0-uk-hKI">
                                                         <rect key="frame" x="0.0" y="173" width="315" height="30"/>
@@ -369,6 +375,9 @@ CQk
                                                                         <color key="value" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.8729398545" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="gmH-Mk-xJv" id="yZz-Mr-QtD"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -465,7 +474,12 @@ CQk
                     </view>
                     <navigationItem key="navigationItem" id="nhH-w4-e1U"/>
                     <connections>
+                        <outlet property="degreeOptionSwch" destination="alf-HH-tCh" id="jd5-KA-Rns"/>
+                        <outlet property="languageSwch" destination="oOr-H2-uGk" id="Knz-th-LfL"/>
+                        <outlet property="lastNameTextField" destination="JUJ-Vl-lJY" id="HIC-6I-zMW"/>
+                        <outlet property="nameTextField" destination="dbu-Qm-fkM" id="ioS-3F-Ogw"/>
                         <outlet property="profileTextField" destination="A7I-ZM-BwJ" id="PKG-Rp-IXD"/>
+                        <outlet property="socialServiceSwch" destination="dHG-Yn-pE8" id="d32-B7-pow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nl-qL-a1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
