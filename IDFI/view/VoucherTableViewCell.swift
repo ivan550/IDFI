@@ -32,7 +32,7 @@ class VoucherTableViewCell: UITableViewCell {
     func updateVoucher(_ voucher: Voucher,_ image: UIImage?){
         self.amountLbl.text = String(voucher.amount)
         self.folioLbl.text = voucher.folio
-        self.dateLbl.text = voucher.date.toString(dateFormat: "yyyy/MMM/dd HH:mm:ss")
+        self.dateLbl.text = voucher.date.toString()
         self.img.image = image ?? UIImage(named: "voucher")
     }
     

@@ -12,6 +12,8 @@ import FirebaseStorage
 class VoucherViewController: UITableViewController{
     var voucherStore: VoucherStore!
     var voucherImageStore: VoucherImageStore!
+    var student: Student!
+    
     let typeImages = "image/jpeg"
     let leftBtn: UIButton = {
         let btn = UIButton()
@@ -156,7 +158,8 @@ class VoucherViewController: UITableViewController{
                             return
                         }
                         voucher.imageURL = url!.absoluteString
-                        print("Esta es la url")
+                        DatabaseService.shared.sendVouchers(voucher)
+                        print("Se guardo la imagen y el voucher en la base de datos")
                         print(url!)
                         
                     }
@@ -167,9 +170,6 @@ class VoucherViewController: UITableViewController{
             
             
         }
-        //        if let url = imageURL{
-        //
-        //        }
     }
     
 }

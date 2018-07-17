@@ -29,9 +29,6 @@ class AuthService{
                 let user = Auth.auth().currentUser
                 if let user = user{
                     onComplete?(nil,user)
-                    DatabaseService.shared.saveStudent(uuid: user.uid)
-                    print("********************************")
-                    print(user.uid)
                 }
             }else {
                 /* Si existe algún error se manejará */
@@ -51,7 +48,23 @@ class AuthService{
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if user != nil{
                 print("Registrado")
-                //                        DatabaseService.shared.saveStudent(uui: user?.uuid)
+                dump(user!)
+                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                    if user != nil {
+                        print("Usuario autenticado")
+                        let user = Auth.auth().currentUser
+                        if let user = user{
+                            onComplete?(nil,user)
+                        }
+                    }else {
+                        /* Si existe algún error se manejará */
+                        guard let error = (error as NSError?) else{
+                            print("Tú eres el error en sesión!!")
+                            return
+                        }
+                        self.handleError(error: error,onComplete: onComplete)
+                    }
+                })
             }else{
                 if let error = (error as NSError?){
                     print(error)

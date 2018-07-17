@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
     
+    @IBOutlet weak var welcomeLbl: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var profileTextField: UITextField!
@@ -22,7 +23,10 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @IBOutlet weak var hiddenLbl: UILabel!
     @IBOutlet weak var dataComplementStack: UIStackView!
     @IBOutlet weak var basicFormStack: UIStackView!
-
+    
+    //    let student: Student!
+    var selectedCert: Certificate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /* Tap para desaparecer el teclado cuando se seleccione otro lugar de la vista */
@@ -31,9 +35,32 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         view.addGestureRecognizer(tap)
         degreeOptionSwch.addTarget(self, action:#selector(valueChange),for:UIControlEvents.valueChanged)
         createPicker()
-        //        studentForm.getSendBtn().addTarget(self, action: #selector(sendData), for: .touchUpInside)
+        //        if let name = nameTextField.text,let lastName = lastNameTextField.text,let profile = profileTextField.text{
+        //            print("hay texto")
+        //        }
+        /* Cerrar sessión*/
+        //         let firebaseAuth = Auth.auth()
+        //        do {
+        //            try firebaseAuth.signOut()
+        //        } catch let signOutError as NSError {
+        //            print ("Error signing out: %@", signOutError)
+        //        }
+        
+        //        /* Borrar cuenta del auth */
+        //        AuthService.shared.user?.delete(completion: { (error) in
+        //            if error != nil {
+        //                // An error happened.
+        //                print("No se pudo crear la cuenta")
+        //            } else {
+        //                // Account deleted.
+        //                print("Cuenta borrada del auth")
+        //            }
+        //        })
+        //        print(AuthService.shared.user!.uid)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        welcomeLbl.text = "Bienvenido al diplomado: \(selectedCert.name)"
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,7 +120,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         dataComplementStack.isHidden = true
         basicFormStack.distribution = .fillProportionally
         hiddenLbl.isHidden = false
-//        socialServiceSwch.isOn = false
+        //        socialServiceSwch.isOn = false
         languageSwch.isOn = false
         /* Se depliega otro campo en los siguientes casos */
         if profileTextField.text == "Alumno FI" || profileTextField.text == "Comunidad UNAM"{
@@ -128,8 +155,19 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     @IBAction func addVouchers(_ sender: UIBarButtonItem) {
         print("Cambiando a agregar vouchers")
-        let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
-        present(voucherNavBar, animated: true, completion: nil)
+        if let name = nameTextField.text,let lastName = lastNameTextField.text,let profile = profileTextField.text{
+            let certId = selectedCert.id
+            let prof = (profile == "Alumno FI" || profile == "Comunidad UNAM" ) ? true : false
+            let student = Student(name: name, lastName: lastName, language: nil, socialService: nil, profileAcadem: prof, certificateId: certId)
+            nextBsrBtn.isEnabled = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            print("herehrehehrhhehrh")
+            let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
+            voucherNavBar.student = student
+            
+            present(voucherNavBar, animated: true, completion: nil)
+        }
+        
     }
     
 }

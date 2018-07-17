@@ -9,17 +9,18 @@
 import UIKit
 
 class SignupViewController: UIViewController,UITextFieldDelegate {
-
-    @IBOutlet weak var passwordTextField: DesignTextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    var selectedCert: Certificate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dump(selectedCert)
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,10 +38,25 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     }
     @IBAction func registerUser(_ sender: UIButton) {
         continueRegister()
-//        performSegue(withIdentifier: "showStudentForm", sender: continueRegister())
+        //        performSegue(withIdentifier: "showStudentForm", sender: continueRegister())
     }
     @IBAction func pressedLogin(_ sender: UIButton) {
-//        performSegue(withIdentifier: "showLogin", sender: nil)
+        //        performSegue(withIdentifier: "showLogin", sender: nil)
+    }
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /* Sí el segue disparado es editVoucher */
+        switch segue.identifier {
+        case "showStudentForm"?:
+            let studentForm = segue.destination as! StudentFormViewController
+            studentForm.selectedCert = selectedCert
+        case "showLogin"?:
+            let login = segue.destination as! LoginViewController
+            login.selectedCert = selectedCert
+        default:
+            preconditionFailure("Identificador de segue inesperado")
+        }
     }
     func continueRegister() {
         /* Se valida la existencia de los datos */

@@ -74,7 +74,7 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
         /* Coloca los datos cuando aparecerá la vista */
         amountTextField.text = "\(voucher.amount)"
         folioTextField.text = voucher.folio
-        dateTextField.text = voucher.date.toString(dateFormat: "yyyy/MMM/dd HH:mm:ss")
+        dateTextField.text = voucher.date.toString()
         let key = voucher.voucherKey
         /* Si se tiene una imágen asociada la coloca */
         if let imageToDisplay = voucherImageStore.image(forKey: key){

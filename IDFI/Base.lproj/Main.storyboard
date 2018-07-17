@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v3u-8C-M1e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K2M-zW-kcq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -80,7 +80,7 @@
                                     <outlet property="nameLbl" destination="cPh-BZ-gMj" id="6Cp-mY-a3B"/>
                                     <outlet property="placesLbl" destination="uWG-xr-QXk" id="4b8-fH-CTV"/>
                                     <outlet property="spinner" destination="fzn-wN-xL2" id="deo-du-f3j"/>
-                                    <segue destination="SuR-Jw-X3z" kind="show" id="O9e-zx-qKr"/>
+                                    <segue destination="SuR-Jw-X3z" kind="show" identifier="showSignup" id="O9e-zx-qKr"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -473,7 +473,7 @@ CQk
                         <viewLayoutGuide key="safeArea" id="Fb1-QC-56a"/>
                     </view>
                     <navigationItem key="navigationItem" id="nhH-w4-e1U">
-                        <barButtonItem key="rightBarButtonItem" title="Continuar" image="continue" id="Dxm-gT-gzv">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Continuar" image="continue" id="Dxm-gT-gzv">
                             <connections>
                                 <action selector="addVouchers:" destination="gmH-Mk-xJv" id="OSq-m1-Fu8"/>
                             </connections>
@@ -490,6 +490,7 @@ CQk
                         <outlet property="nameTextField" destination="dbu-Qm-fkM" id="ioS-3F-Ogw"/>
                         <outlet property="profileTextField" destination="A7I-ZM-BwJ" id="PKG-Rp-IXD"/>
                         <outlet property="socialServiceSwch" destination="dHG-Yn-pE8" id="htF-t7-5fW"/>
+                        <outlet property="welcomeLbl" destination="MRd-jy-f9e" id="Od5-WH-Jnz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nl-qL-a1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -906,7 +907,7 @@ CQk
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="registerUser:" destination="SuR-Jw-X3z" eventType="touchUpInside" id="w97-PK-GJT"/>
-                                                            <segue destination="gmH-Mk-xJv" kind="show" id="meM-As-w79"/>
+                                                            <segue destination="gmH-Mk-xJv" kind="show" identifier="showStudentForm" id="meM-As-w79"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy5-zp-xLJ">

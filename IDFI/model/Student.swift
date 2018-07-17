@@ -11,17 +11,17 @@ import UIKit
 class Student: NSObject {
     var name: String
     var lastName: String
-    var language: Bool?
-    var socialService: Bool?
+    var language: Bool
+    var socialService: Bool
     var profileAcadem: Bool
     var certificateId: String
     
-    init(name: String, lastName: String,language: Bool,socialService: Bool,profileAcadem: Bool,certificateId: String) {
+    init(name: String, lastName: String,language: Bool?,socialService: Bool?,profileAcadem: Bool,certificateId: String) {
         
         self.name = name
         self.lastName = lastName
-        self.language = language
-        self.socialService = socialService
+        self.language = language ?? false
+        self.socialService = socialService ?? false
         self.profileAcadem = profileAcadem
         self.certificateId = certificateId
         

@@ -8,6 +8,8 @@
 let CHILD_STUDENTS = "students"
 let CHILD_CERTIFICATES = "certificates"
 let CHILD_GENERATIONS = "generations"
+let CHILD_VOUCHERS = "vouchers"
+let STORAGE_URL =  "gs://idfi-7c378.appspot.com"
 
 import Foundation
 import FirebaseDatabase
@@ -31,6 +33,9 @@ class DatabaseService{
     var generationRef: DatabaseReference!{
         return mainRef.child(CHILD_GENERATIONS)
     }
+    var voucherRef: DatabaseReference!{
+        return mainRef.child(CHILD_VOUCHERS)
+    }
     /* Referencias al storage */
     var storageRef: StorageReference{
         return Storage.storage().reference()
@@ -39,16 +44,42 @@ class DatabaseService{
         return storageRef.child("certificatesImages")
     }
     var mainStorageRef: StorageReference{
-        return Storage.storage().reference(forURL: "gs://idfi-7c378.appspot.com")
+        return Storage.storage().reference(forURL: STORAGE_URL)
     }
-    var vouchersStorageRef: StorageReference{
-        return mainStorageRef
-    }
+//    var vouchersStorageRef: StorageReference{
+//        return mainStorageRef
+//    }
 
     
-    func saveStudent(uuid: String) {
-        let name: [String:AnyObject] = ["name": "" as AnyObject]
-        self.studentRef.child(uuid).setValue(name)
+    func saveStudent(_ student: Student) {
+        
+        let std: [String:AnyObject] = [
+            "name": "" as AnyObject,
+            "profile":[
+                "name": student.name,
+                "lastName": student.lastName,
+                "language": student.language,
+                "profileAcademic": student.profileAcadem,
+                "socialService": student.socialService
+            ] as AnyObject
+        ]
+        if let uuid = AuthService.shared.user?.uid{
+            self.studentRef.child(uuid).setValue(std)
+        }
+    }
+    func sendVouchers(_ voucher: Voucher){
+        
+        let voucher: [String:AnyObject] = [
+            "amount": String(voucher.amount) as AnyObject,
+            "date": voucher.date.toString() as AnyObject,
+            "folio": voucher.folio as AnyObject,
+            "imageURL": voucher.imageURL as AnyObject,
+            "status": voucher.status as AnyObject,
+            "studentId": AuthService.shared.user?.uid as AnyObject
+        ]
+        self.voucherRef.childByAutoId().setValue(voucher)
+        
+        
     }
     
 }

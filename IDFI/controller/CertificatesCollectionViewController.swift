@@ -16,7 +16,6 @@ class CertificatesCollectionViewController: UICollectionViewController {
     
     
     var certificates = [Certificate]()
-    var selectedCert: [String:Certificate] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +26,13 @@ class CertificatesCollectionViewController: UICollectionViewController {
             var temporal = [Certificate]()
             for certificate in snapshot.children.allObjects as! [DataSnapshot]{
                 let data = certificate.value as? [String: AnyObject]
-            
+                let id = certificate.key
+                
                 if let name = data!["name"] as? String,
                     let places = data!["places"] as? Int,
                     let imageURL = data!["imageURL"] as? String{
-                    temporal.append(Certificate(name: name, imageURL: imageURL,places: places))
-
+                    temporal.append(Certificate(id: id,name: name, imageURL: imageURL,places: places))
+                    
                 }
             }
             self.certificates = temporal
@@ -50,15 +50,26 @@ class CertificatesCollectionViewController: UICollectionViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /* Sí el segue disparado es editVoucher */
+        switch segue.identifier {
+        case "showSignup"?:
+            /* Checamos que fila se seleccionó */
+            if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
+                /* Tomamos el voucher selccionado y se lo pasamos al controlador que llenará los datos del comprobante */
+                let certificate = certificates[indexPath.row]
+                let signup = segue.destination as! SignupViewController
+                signup.selectedCert = certificate
+                dump(certificate)
+            }
+        default:
+            preconditionFailure("Identificador de segue inesperado")
+        }
+    }
+    
     
     // MARK: UICollectionViewDataSource
     
@@ -80,49 +91,11 @@ class CertificatesCollectionViewController: UICollectionViewController {
         cell.updateCertificate(certificate: certificate)
         return cell
     }
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Diplomado seleccionado")
-//        performSegue(withIdentifier: "showRegister", sender: nil)
-    }
-    
-    func downloadCertificateInfo()  {
-        
-    }
     func addPaddingToTop(){
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         collectionView?.contentInset = insets
         collectionView?.scrollIndicatorInsets = insets
     }
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
     
 }
