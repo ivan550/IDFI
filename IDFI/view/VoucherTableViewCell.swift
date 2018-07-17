@@ -29,11 +29,11 @@ class VoucherTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     /* Actualizará los campos en cada celda del tableview */
-    func updateVoucher(_ voucher: Voucher){
+    func updateVoucher(_ voucher: Voucher,_ image: UIImage?){
         self.amountLbl.text = String(voucher.amount)
         self.folioLbl.text = voucher.folio
         self.dateLbl.text = voucher.date.toString(dateFormat: "yyyy/MMM/dd HH:mm:ss")
-        self.img.image = voucher.image
+        self.img.image = image ?? UIImage(named: "voucher")
     }
     
 }

@@ -38,6 +38,12 @@ class DatabaseService{
     var imageStoreRef: StorageReference{
         return storageRef.child("certificatesImages")
     }
+    var mainStorageRef: StorageReference{
+        return Storage.storage().reference(forURL: "gs://idfi-7c378.appspot.com")
+    }
+    var vouchersStorageRef: StorageReference{
+        return mainStorageRef
+    }
 
     
     func saveStudent(uuid: String) {

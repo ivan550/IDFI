@@ -14,7 +14,7 @@ class Voucher: NSObject, NSCoding {
     var folio: String
     let date: Date
     var imageURL: String?
-    var image: UIImage? = UIImage(named: "voucher")!
+    var image: UIImage? 
     let voucherKey: String
     
     

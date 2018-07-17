@@ -32,11 +32,6 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
         } else {
             voucher.amount = 0.00
         }
-        /* Si se tiene una imágen asociada la coloca */
-        let key = voucher.voucherKey
-        if let imageToDisplay = voucherImageStore.image(forKey: key){
-            voucher.image? = imageToDisplay
-        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -70,7 +65,6 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         amountTextField.resignFirstResponder()
         folioTextField.resignFirstResponder()
-        //        dateTextField.resignFirstResponder()
         return true
     }
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {

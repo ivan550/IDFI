@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class VoucherViewController: UITableViewController{
     var voucherStore: VoucherStore!
     var voucherImageStore: VoucherImageStore!
+    let typeImages = "image/jpeg"
     let leftBtn: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
@@ -27,7 +29,7 @@ class VoucherViewController: UITableViewController{
         
         /* Se introduce un botón personalizado */
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
-//        leftBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
+        //        leftBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,7 +47,8 @@ class VoucherViewController: UITableViewController{
         /* Se crea la celda de tipo personalizada, recuperamos los datos de la celda y los actualizamos */
         let cell = tableView.dequeueReusableCell(withIdentifier: "voucherCell", for: indexPath) as! VoucherTableViewCell
         let voucher = voucherStore.allIVouchers[indexPath.row]
-        cell.updateVoucher(voucher)
+        let image = voucherImageStore.image(forKey: voucher.voucherKey)
+        cell.updateVoucher(voucher,image)
         
         return cell
     }
@@ -125,6 +128,48 @@ class VoucherViewController: UITableViewController{
     @IBAction func sendData(_ sender: UIBarButtonItem) {
         
         print("Enviando datos ")
+        /*Se recuperan los comprobantes agregados y la referencia al storage donde se subirán las imégenes */
+        let ref = DatabaseService.shared.mainStorageRef
+        let vouchers = voucherStore.allIVouchers
+        
+        /*  Se incluye el tipo de dato que se subirá */
+        let metaData = StorageMetadata()
+        metaData.contentType = typeImages
+        
+        for voucher in vouchers{
+            let refVouchers = ref.child("vouchers/\(voucher.voucherKey).jpg")
+            
+            /* Se recupera la imagen */
+            if let img = voucherImageStore.image(forKey: voucher.voucherKey),
+                let imageData = UIImageJPEGRepresentation(img, CGFloat(0.05)){
+                
+                /* Se sube la imágen*/
+                _ = refVouchers.putData(imageData, metadata: metaData) { (metadata, error) in
+                    guard let _ = metadata else {
+                        print("Ah ocurrido un error al subir la imagen ")
+                        return
+                    }
+                    /* Se obtiene la url de la imagen para descargar */
+                    refVouchers.downloadURL { (url, error) in
+                        guard url != nil else {
+                            print("Ocurrió un error descargando la url de la imagen ")
+                            return
+                        }
+                        voucher.imageURL = url!.absoluteString
+                        print("Esta es la url")
+                        print(url!)
+                        
+                    }
+                    
+                }
+                
+            }
+            
+            
+        }
+        //        if let url = imageURL{
+        //
+        //        }
     }
     
 }
