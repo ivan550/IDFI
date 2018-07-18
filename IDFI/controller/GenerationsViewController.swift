@@ -12,8 +12,10 @@ import FirebaseDatabase
 private let reuseIdentifier = "generationCell"
 class GenerationsViewController: UITableViewController {
     
+    @IBOutlet weak var certificateNameLbl: UILabel!
     var generations = [Generation]()
     var generationStudents = [String]()
+    var selectedCert: Certificate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,11 @@ class GenerationsViewController: UITableViewController {
             /* Se crea un arreglo temporal que guardará los objetos de tipo generación */
             var temporal = [Generation]()
             for generation in snapshot.children.allObjects as! [DataSnapshot]{
+                /* Sí el identificador del diplomado es diferente en la generación no toma la generación */
+                if let data = generation.value as? [String: AnyObject],
+                    let certId = data["certId"] as? String, certId != self.selectedCert.id{
+                    continue
+                }
                 if let data = generation.value as? [String: AnyObject],
                     let name = data["name"] as? String,
                 let students = data["students"] as? [String:AnyObject]{
@@ -35,6 +42,9 @@ class GenerationsViewController: UITableViewController {
             self.tableView?.reloadData()
         }
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        certificateNameLbl.text = selectedCert.name
     }
     
     override func didReceiveMemoryWarning() {

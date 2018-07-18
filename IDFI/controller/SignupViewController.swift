@@ -47,18 +47,19 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         /* Sí el segue disparado es editVoucher */
-        if continueRegister(){
-            switch segue.identifier {
-            case "showStudentForm"?:
+        switch segue.identifier {
+        case "showStudentForm"?:
+            if continueRegister(){
                 let studentForm = segue.destination as! StudentFormViewController
                 studentForm.selectedCert = selectedCert
-            case "showLogin"?:
-                let login = segue.destination as! LoginViewController
-                login.selectedCert = selectedCert
-            default:
-                preconditionFailure("Identificador de segue inesperado")
-            }
-        }else{ return }
+                
+            } else { return }
+        case "showLogin"?:
+            let login = segue.destination as! LoginViewController
+            login.selectedCert = selectedCert
+        default:
+            preconditionFailure("Identificador de segue inesperado")
+        }
     }
     func continueRegister() -> Bool{
         /* Se valida la existencia de los datos */
