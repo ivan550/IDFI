@@ -473,7 +473,8 @@ CQk
                         <viewLayoutGuide key="safeArea" id="Fb1-QC-56a"/>
                     </view>
                     <navigationItem key="navigationItem" id="nhH-w4-e1U">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Continuar" image="continue" id="Dxm-gT-gzv">
+                        <barButtonItem key="rightBarButtonItem" image="continue" id="Dxm-gT-gzv">
+                            <color key="tintColor" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.8729398545" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addVouchers:" destination="gmH-Mk-xJv" id="OSq-m1-Fu8"/>
                             </connections>

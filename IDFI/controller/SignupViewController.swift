@@ -37,7 +37,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func registerUser(_ sender: UIButton) {
-        continueRegister()
+//        continueRegister()
         //        performSegue(withIdentifier: "showStudentForm", sender: continueRegister())
     }
     @IBAction func pressedLogin(_ sender: UIButton) {
@@ -47,18 +47,20 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         /* Sí el segue disparado es editVoucher */
-        switch segue.identifier {
-        case "showStudentForm"?:
-            let studentForm = segue.destination as! StudentFormViewController
-            studentForm.selectedCert = selectedCert
-        case "showLogin"?:
-            let login = segue.destination as! LoginViewController
-            login.selectedCert = selectedCert
-        default:
-            preconditionFailure("Identificador de segue inesperado")
-        }
+        if continueRegister(){
+            switch segue.identifier {
+            case "showStudentForm"?:
+                let studentForm = segue.destination as! StudentFormViewController
+                studentForm.selectedCert = selectedCert
+            case "showLogin"?:
+                let login = segue.destination as! LoginViewController
+                login.selectedCert = selectedCert
+            default:
+                preconditionFailure("Identificador de segue inesperado")
+            }
+        }else{ return }
     }
-    func continueRegister() {
+    func continueRegister() -> Bool{
         /* Se valida la existencia de los datos */
         if let email = self.emailTextField.text,
             let password = self.passwordTextField.text,
@@ -68,11 +70,11 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
                     self.alert(title: "Error", message: message!)
                     return
                 }
-                print(data!)
-                
             })
+            return true
         }else{
             alert(title:"Usuario y contraseña incorrectos", message: "Ingrese usuario y contraseña para continuar")
+            return false
         }
     }
     func alert(title: String,message: String){

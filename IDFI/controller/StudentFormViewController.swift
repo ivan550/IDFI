@@ -26,6 +26,8 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     //    let student: Student!
     var selectedCert: Certificate!
+    let myPickerData = [String](arrayLiteral: "Publico en general", "Alumno FI", "Comunidad UNAM")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +37,11 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         view.addGestureRecognizer(tap)
         degreeOptionSwch.addTarget(self, action:#selector(valueChange),for:UIControlEvents.valueChanged)
         createPicker()
-        //        if let name = nameTextField.text,let lastName = lastNameTextField.text,let profile = profileTextField.text{
-        //            print("hay texto")
-        //        }
+        /* Eventos que cuando cambian los campos de textos se verifica si están vacíos, si no se habilita el botón para continuar */
+        nameTextField.addTarget(self, action: #selector(isEmpty), for: .editingChanged)
+        lastNameTextField.addTarget(self, action: #selector(isEmpty), for: .editingChanged)
+        profileTextField.addTarget(self, action: #selector(isEmpty), for: .editingChanged)
+
         /* Cerrar sessión*/
         //         let firebaseAuth = Auth.auth()
         //        do {
@@ -60,12 +64,12 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     override func viewWillAppear(_ animated: Bool) {
         welcomeLbl.text = "Bienvenido al diplomado: \(selectedCert.name)"
+        self.navigationItem.rightBarButtonItem!.isEnabled =  false
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    let myPickerData = [String](arrayLiteral: "Publico en general", "Alumno FI", "Comunidad UNAM")
     
     func createPicker() {
         let picker = UIPickerView()
@@ -76,6 +80,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         /* Se agrega el toolbar y el UIPicker al textField */
         profileTextField.inputView = picker
         profileTextField.inputAccessoryView = toolBar
+        profileTextField.text = myPickerData.first!
     }
     let toolBar: UIToolbar = {
         let toolBar = UIToolbar()
@@ -95,11 +100,11 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         return myPickerData.count
     }
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return myPickerData[row]
+        return myPickerData[0]
     }
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         profileTextField.text = myPickerData[row]
-        
+        print("1")
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
@@ -158,14 +163,24 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         if let name = nameTextField.text,let lastName = lastNameTextField.text,let profile = profileTextField.text{
             let certId = selectedCert.id
             let prof = (profile == "Alumno FI" || profile == "Comunidad UNAM" ) ? true : false
-            let student = Student(name: name, lastName: lastName, language: nil, socialService: nil, profileAcadem: prof, certificateId: certId)
-            nextBsrBtn.isEnabled = false
-            self.navigationItem.rightBarButtonItem?.isEnabled = false
-            print("herehrehehrhhehrh")
+            let language = languageSwch.isOn
+            let socialService = socialServiceSwch.isOn
+            /* Se creal al estudiante */
+            let student = Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: prof, certificateId: certId)
             let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
             voucherNavBar.student = student
             
             present(voucherNavBar, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @objc
+    func isEmpty() {
+        if let name = nameTextField.text, !name.isEmpty,let lastName = lastNameTextField.text,!lastName.isEmpty,let profile = profileTextField.text,!profile.isEmpty{
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }else{
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
         
     }

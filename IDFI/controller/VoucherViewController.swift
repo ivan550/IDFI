@@ -28,7 +28,7 @@ class VoucherViewController: UITableViewController{
         /* Se le dá transparencia al navigation bar */
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+        dump(student)
         /* Se introduce un botón personalizado */
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         //        leftBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
