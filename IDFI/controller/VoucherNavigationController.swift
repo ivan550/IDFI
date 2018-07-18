@@ -12,6 +12,7 @@ class VoucherNavigationController: UINavigationController {
     let voucherStore = VoucherStore()
     let voucherImageStore = VoucherImageStore()
     var student: Student!
+    var selectedCert: Certificate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class VoucherNavigationController: UINavigationController {
         vvc.voucherStore = voucherStore
         vvc.voucherImageStore = voucherImageStore
         vvc.student = student
+        vvc.selectedCert = selectedCert
         
         /* Notification center ayudará a saber cuando entra en background y cuando esto suceda, los datos de los comprobantes que se estén registrando se guardarán en disco */
         let notificationCenter = NotificationCenter.default

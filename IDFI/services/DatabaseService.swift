@@ -46,15 +46,12 @@ class DatabaseService{
     var mainStorageRef: StorageReference{
         return Storage.storage().reference(forURL: STORAGE_URL)
     }
-//    var vouchersStorageRef: StorageReference{
-//        return mainStorageRef
-//    }
 
-    
-    func saveStudent(_ student: Student) {
+    func saveStudent(_ student: Student,_ certificateId: String,_ studentID: String) {
         
         let std: [String:AnyObject] = [
-            "name": "" as AnyObject,
+            "rol": false as AnyObject,
+            "certId": certificateId as AnyObject,
             "profile":[
                 "name": student.name,
                 "lastName": student.lastName,
@@ -63,9 +60,8 @@ class DatabaseService{
                 "socialService": student.socialService
             ] as AnyObject
         ]
-        if let uuid = AuthService.shared.user?.uid{
-            self.studentRef.child(uuid).setValue(std)
-        }
+        self.studentRef.child(studentID).setValue(std)
+        
     }
     func sendVouchers(_ voucher: Voucher){
         
@@ -80,6 +76,12 @@ class DatabaseService{
         self.voucherRef.childByAutoId().setValue(voucher)
         
         
+    }
+    func saveGeneration(_ generationKey: String,_ name: String,_ certId: String,_ studentId: String) {
+        self.generationRef.child(generationKey).child("name").setValue(name)
+        self.generationRef.child(generationKey).child("certId").setValue(certId)
+        self.generationRef.child(generationKey).child("students").child(studentId).setValue(true)
+
     }
     
 }

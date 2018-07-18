@@ -104,7 +104,6 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         profileTextField.text = myPickerData[row]
-        print("1")
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
@@ -159,7 +158,6 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     
     @IBAction func addVouchers(_ sender: UIBarButtonItem) {
-        print("Cambiando a agregar vouchers")
         if let name = nameTextField.text,let lastName = lastNameTextField.text,let profile = profileTextField.text{
             let certId = selectedCert.id
             let prof = (profile == "Alumno FI" || profile == "Comunidad UNAM" ) ? true : false
@@ -167,9 +165,10 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             let socialService = socialServiceSwch.isOn
             /* Se creal al estudiante */
             let student = Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: prof, certificateId: certId)
+            /* Se mandan datos al navigation bar que controlará cuando se agregén comprobantes */
             let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
             voucherNavBar.student = student
-            
+            voucherNavBar.selectedCert = selectedCert
             present(voucherNavBar, animated: true, completion: nil)
         }
         

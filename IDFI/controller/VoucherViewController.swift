@@ -13,7 +13,7 @@ class VoucherViewController: UITableViewController{
     var voucherStore: VoucherStore!
     var voucherImageStore: VoucherImageStore!
     var student: Student!
-    
+    var selectedCert: Certificate!
     let typeImages = "image/jpeg"
     let leftBtn: UIButton = {
         let btn = UIButton()
@@ -28,7 +28,6 @@ class VoucherViewController: UITableViewController{
         /* Se le dá transparencia al navigation bar */
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        dump(student)
         /* Se introduce un botón personalizado */
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         //        leftBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
@@ -158,9 +157,13 @@ class VoucherViewController: UITableViewController{
                             return
                         }
                         voucher.imageURL = url!.absoluteString
+                        let genKey = self.calculateGeneration(self.selectedCert.id)
+                        let studentId = AuthService.shared.user?.uid
+                        let student = self.student
+                        let certId = self.selectedCert.id
                         DatabaseService.shared.sendVouchers(voucher)
-                        print("Se guardo la imagen y el voucher en la base de datos")
-                        print(url!)
+                        DatabaseService.shared.saveStudent(student!,certId,studentId!)
+                        DatabaseService.shared.saveGeneration(genKey.first!, genKey.last!, certId, studentId!)
                         
                     }
                     
@@ -170,6 +173,24 @@ class VoucherViewController: UITableViewController{
             
             
         }
+    }
+    func calculateGeneration(_ certKey: String) -> [String] {
+        /* Se construye una clave para la generación actual en la que se registrará */
+        let gen = "gen"
+        let date = Date()
+        let calendar = Calendar.current
+        /* Extrae las iniciales del diplomado seleccionado */
+        let indexStartOfText = certKey.index(certKey.startIndex, offsetBy: 11)
+        let sub = certKey[indexStartOfText...]
+        /* Se obtiene el año y el ciclo escolar */
+        var year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let cycle = month >= 7 ? 1 : 2
+        year = month >= 7 ? year+1 : year
+        
+        let genKey = "\(gen)\(sub)\(year)-\(cycle)" //genDAM2018-2
+        let name = "Generación \(year)-\(cycle)"
+        return [genKey,name]
     }
     
 }
