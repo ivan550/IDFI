@@ -11,6 +11,8 @@ import UIKit
 class StudentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var percentLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

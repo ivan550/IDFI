@@ -12,6 +12,8 @@ import FirebaseDatabase
 private let reuseIdentifier = "studentCell"
 class StudentsViewController: UITableViewController {
 
+    @IBOutlet weak var certificateNameLbl: UILabel!
+    @IBOutlet weak var generationNameLbl: UILabel!
     var students = [Student]()
     var generationStudents = [String]()
     
