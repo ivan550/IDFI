@@ -15,8 +15,10 @@ class StudentsViewController: UITableViewController {
     @IBOutlet weak var certificateNameLbl: UILabel!
     @IBOutlet weak var generationNameLbl: UILabel!
     var students = [Student]()
-    var generationStudents = [String]()
-    
+    var selectedCert: Certificate!
+    var selectedGene: Generation!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
             
@@ -25,7 +27,7 @@ class StudentsViewController: UITableViewController {
             for student in snapshot.children.allObjects as! [DataSnapshot]{
                 /* Si el identificador del studiante se encuentra en el array de estudiantes de la generación se guardan los datos, de otra manera se verifica el siguiente uuid */
                 let uuid = student.key
-                guard self.generationStudents.contains(uuid) else {
+                guard self.selectedGene.studentsId.contains(uuid) else {
                     continue
                 }
                 if let data = student.value as? [String:AnyObject],
@@ -37,7 +39,7 @@ class StudentsViewController: UITableViewController {
                 let language = profile["language"] as? Bool,
                 let socialService = profile["socialService"] as? Bool{
                     
-                    temporal.append(Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: profileAcademic, certificateId: certificateId))
+                    temporal.append(Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: profileAcademic, certificateId: certificateId,id: uuid))
                 }
                 
             }
@@ -45,7 +47,10 @@ class StudentsViewController: UITableViewController {
             self.tableView?.reloadData()
         }
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        certificateNameLbl.text = selectedCert.name
+        generationNameLbl.text = "Alumnos - \(selectedGene.name)"
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
@@ -68,14 +73,21 @@ class StudentsViewController: UITableViewController {
         cell.updateStudent(student)
         return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "showStudentProfile"?:
+            /* Checamos que fila se seleccionó */
+            if let row = tableView.indexPathForSelectedRow?.row {
+                /* Tomamos el estudiante selccionado al controlador que mostrará sus detalles */
+                let student = students[row]
+                let tabBar = segue.destination as! UITabBarController
+                let st = tabBar.viewControllers![0] as! StudentVouchersViewController
+                st.selectedStudent = student
+//                tabBar.selectedStudent = student
+            }
+        default:
+            preconditionFailure("Identificador de segue inesperado")
+        }
     }
-    */
 
 }

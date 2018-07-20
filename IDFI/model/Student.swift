@@ -9,6 +9,7 @@
 import UIKit
 
 class Student: NSObject {
+    var id: String
     var name: String
     var lastName: String
     var language: Bool
@@ -16,7 +17,7 @@ class Student: NSObject {
     var profileAcadem: Bool
     var certificateId: String
     
-    init(name: String, lastName: String,language: Bool?,socialService: Bool?,profileAcadem: Bool,certificateId: String) {
+    init(name: String, lastName: String,language: Bool?,socialService: Bool?,profileAcadem: Bool,certificateId: String,id: String) {
         
         self.name = name
         self.lastName = lastName
@@ -24,6 +25,7 @@ class Student: NSObject {
         self.socialService = socialService ?? false
         self.profileAcadem = profileAcadem
         self.certificateId = certificateId
+        self.id = id
         
         super.init()
     }

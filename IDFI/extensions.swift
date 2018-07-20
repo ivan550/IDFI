@@ -12,7 +12,14 @@ extension Date{
     func toString() -> String
     {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MMM/dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy/MMM/dd"
         return dateFormatter.string(from: self)
+    }
+}
+extension String {
+    var toCustomDate: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.date(from: self)!
     }
 }

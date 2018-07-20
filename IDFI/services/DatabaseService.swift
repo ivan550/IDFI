@@ -43,11 +43,14 @@ class DatabaseService{
     var imageStoreRef: StorageReference{
         return storageRef.child("certificatesImages")
     }
+    var vouchersImageStore: StorageReference{
+        return storageRef.child(CHILD_VOUCHERS)
+    }
     var mainStorageRef: StorageReference{
         return Storage.storage().reference(forURL: STORAGE_URL)
     }
 
-    func saveStudent(_ student: Student,_ certificateId: String,_ studentID: String) {
+    func saveStudent(_ student: Student,_ certificateId: String) {
         
         let std: [String:AnyObject] = [
             "rol": false as AnyObject,
@@ -60,7 +63,7 @@ class DatabaseService{
                 "socialService": student.socialService
             ] as AnyObject
         ]
-        self.studentRef.child(studentID).setValue(std)
+        self.studentRef.child(student.id).setValue(std)
         
     }
     func sendVouchers(_ voucher: Voucher){

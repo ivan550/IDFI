@@ -83,8 +83,8 @@ class GenerationsViewController: UITableViewController {
                 /* Tomamos el voucher selccionado y se lo pasamos al controlador que llenará los datos del comprobante */
                 let generation = generations[row]
                 let studentsViewController = segue.destination as! StudentsViewController
-                studentsViewController.generationStudents = generation.studentsId
-                
+                studentsViewController.selectedGene = generation
+                studentsViewController.selectedCert = selectedCert
             }
         default:
             preconditionFailure("Identificador de segue inesperado")

@@ -28,10 +28,6 @@ class VoucherNavigationController: UINavigationController {
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     @objc func appMovedToBackground() {
         let success = voucherStore.saveChanges()
         if (success) {

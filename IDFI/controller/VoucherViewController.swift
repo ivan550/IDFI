@@ -166,7 +166,7 @@ class VoucherViewController: UITableViewController{
                         let student = self.student
                         let certId = self.selectedCert.id
                         DatabaseService.shared.sendVouchers(voucher)
-                        DatabaseService.shared.saveStudent(student!,certId,studentId!)
+                        DatabaseService.shared.saveStudent(student!,certId)
                         DatabaseService.shared.saveGeneration(genKey.first!, genKey.last!, certId, studentId!)
                         /* Cuando se terminan la acción se oculta el alert de procesando y aparece un msj final al usuario */
                         alert.dismiss(animated: true, completion: nil)

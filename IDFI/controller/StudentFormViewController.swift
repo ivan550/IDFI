@@ -163,8 +163,9 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             let prof = (profile == "Alumno FI" || profile == "Comunidad UNAM" ) ? true : false
             let language = languageSwch.isOn
             let socialService = socialServiceSwch.isOn
+            let studentId = AuthService.shared.user?.uid
             /* Se creal al estudiante */
-            let student = Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: prof, certificateId: certId)
+            let student = Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: prof, certificateId: certId,id: studentId!)
             /* Se mandan datos al navigation bar que controlará cuando se agregén comprobantes y se presenta */
             let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
             voucherNavBar.student = student
