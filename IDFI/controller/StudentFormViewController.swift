@@ -64,7 +64,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     override func viewWillAppear(_ animated: Bool) {
         welcomeLbl.text = "Bienvenido al diplomado: \(selectedCert.name)"
-        self.navigationItem.rightBarButtonItem!.isEnabled =  false
+        isEmpty()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -165,7 +165,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
             let socialService = socialServiceSwch.isOn
             /* Se creal al estudiante */
             let student = Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: prof, certificateId: certId)
-            /* Se mandan datos al navigation bar que controlará cuando se agregén comprobantes */
+            /* Se mandan datos al navigation bar que controlará cuando se agregén comprobantes y se presenta */
             let voucherNavBar = storyboard?.instantiateViewController(withIdentifier: "VoucherNavigationController") as! VoucherNavigationController
             voucherNavBar.student = student
             voucherNavBar.selectedCert = selectedCert

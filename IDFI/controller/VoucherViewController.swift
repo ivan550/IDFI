@@ -15,6 +15,9 @@ class VoucherViewController: UITableViewController{
     var student: Student!
     var selectedCert: Certificate!
     let typeImages = "image/jpeg"
+    let finishTitle = "¡Registro completo!"
+    let finishMessage = "Gracias por registrarse, recibirá una notificación cuando sus datos hayan sido verificados"
+    let errorTitle = "Hubo un error"
     let leftBtn: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
@@ -28,9 +31,9 @@ class VoucherViewController: UITableViewController{
         /* Se le dá transparencia al navigation bar */
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        /* Se introduce un botón personalizado */
+        /* Se introduce un botón personalizado para regresar */
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
-        //        leftBtn.addTarget(self, action: <#T##Selector#>, for: .touchUpInside)
+        leftBtn.addTarget(self, action: #selector(dissmissView), for: .touchUpInside)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -129,6 +132,7 @@ class VoucherViewController: UITableViewController{
     @IBAction func sendData(_ sender: UIBarButtonItem) {
         
         print("Enviando datos ")
+        let alert = sendingDataAlert()
         /*Se recuperan los comprobantes agregados y la referencia al storage donde se subirán las imégenes */
         let ref = DatabaseService.shared.mainStorageRef
         let vouchers = voucherStore.allIVouchers
@@ -147,13 +151,13 @@ class VoucherViewController: UITableViewController{
                 /* Se sube la imágen*/
                 _ = refVouchers.putData(imageData, metadata: metaData) { (metadata, error) in
                     guard let _ = metadata else {
-                        print("Ah ocurrido un error al subir la imagen ")
+                        self.alert(self.errorTitle,error!.localizedDescription)
                         return
                     }
                     /* Se obtiene la url de la imagen para descargar */
                     refVouchers.downloadURL { (url, error) in
                         guard url != nil else {
-                            print("Ocurrió un error descargando la url de la imagen ")
+                            self.alert(self.errorTitle,error!.localizedDescription)
                             return
                         }
                         voucher.imageURL = url!.absoluteString
@@ -164,7 +168,10 @@ class VoucherViewController: UITableViewController{
                         DatabaseService.shared.sendVouchers(voucher)
                         DatabaseService.shared.saveStudent(student!,certId,studentId!)
                         DatabaseService.shared.saveGeneration(genKey.first!, genKey.last!, certId, studentId!)
-                        
+                        /* Cuando se terminan la acción se oculta el alert de procesando y aparece un msj final al usuario */
+                        alert.dismiss(animated: true, completion: nil)
+                        self.alert(self.finishTitle,self.finishMessage)
+                        /* Se regresa a la vista de los diplomados */
                     }
                     
                 }
@@ -192,5 +199,34 @@ class VoucherViewController: UITableViewController{
         let name = "Generación \(year)-\(cycle)"
         return [genKey,name]
     }
+    func sendingDataAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Registrando", message: "Por favor espera...", preferredStyle: .alert)
+        alert.view.tintColor = .black
+        let  activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 15, width: 50, height: 50))
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.startAnimating()
+        alert.view.addSubview(activityIndicator)
+        present(alert,animated: true)
+        return alert
+    }
+
+    func alert(_ title: String,_ message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert,animated: true)
+    }
+    @objc
+    func dissmissView() {
+        /* Si se regresa a la vista anterior se guardan los comprobantes ingresados */
+        self.dismiss(animated: true, completion: nil)
+        let success = voucherStore.saveChanges()
+        if (success) {
+            print("Se guardaron todos los comprobantes en disco")
+        } else {
+            print("No se han podido guardar los comprobantes en disco")
+        }
+    }
+    
     
 }
