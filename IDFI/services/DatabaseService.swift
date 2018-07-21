@@ -60,7 +60,8 @@ class DatabaseService{
                 "lastName": student.lastName,
                 "language": student.language,
                 "profileAcademic": student.profileAcadem,
-                "socialService": student.socialService
+                "socialService": student.socialService,
+                "degreeOption": student.degreeOption
             ] as AnyObject
         ]
         self.studentRef.child(student.id).setValue(std)

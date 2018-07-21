@@ -37,9 +37,10 @@ class StudentsViewController: UITableViewController {
                 let lastName = profile["lastName"] as? String,
                 let profileAcademic = profile["profileAcademic"] as? Bool,
                 let language = profile["language"] as? Bool,
-                let socialService = profile["socialService"] as? Bool{
+                let socialService = profile["socialService"] as? Bool,
+                let degreeOption = profile["degreeOption"] as? Bool{
                     
-                    temporal.append(Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: profileAcademic, certificateId: certificateId,id: uuid))
+                    temporal.append(Student(name: name, lastName: lastName, language: language, socialService: socialService, profileAcadem: profileAcademic, certificateId: certificateId,id: uuid, degreeOption: degreeOption))
                 }
                 
             }
