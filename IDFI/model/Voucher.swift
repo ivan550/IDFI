@@ -16,23 +16,25 @@ class Voucher: NSObject, NSCoding {
     var image: UIImage? 
     let voucherKey: String
     var status: Int8?
+    let note: String
     
     
     
-    init(amount: Float, folio: String,date: Date,imageURL: String,status: Int8) {
+    init(amount: Float, folio: String,date: Date,imageURL: String,status: Int8,note: String) {
         self.amount = amount
         self.folio = folio
         self.date = Date()
         self.imageURL = imageURL
         self.voucherKey = UUID().uuidString
         self.status = 0
+        self.note = note
         super.init()
     }
     convenience init(random: Bool = false) {
         if random {
-            self.init(amount: 10.0,folio: "", date: Date(), imageURL: "",status: 0)
+            self.init(amount: 10.0,folio: "", date: Date(), imageURL: "",status: 0,note: "")
         } else {
-            self.init(amount: 0.0,folio: "folio", date: Date(), imageURL: "",status: 0)
+            self.init(amount: 0.0,folio: "folio", date: Date(), imageURL: "",status: 0,note: "")
             
         }
     }
@@ -44,6 +46,8 @@ class Voucher: NSObject, NSCoding {
         aCoder.encode(imageURL,forKey: "imageURL")
         aCoder.encode(voucherKey,forKey: "voucherKey")
         aCoder.encode(status,forKey: "status")
+        aCoder.encode(note,forKey: "note")
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,6 +57,7 @@ class Voucher: NSObject, NSCoding {
         self.imageURL = aDecoder.decodeObject(forKey: "imageUrl") as! String?
         self.voucherKey = aDecoder.decodeObject(forKey: "voucherKey") as! String
         self.status = aDecoder.decodeObject(forKey: "status") as? Int8
+        self.note = aDecoder.decodeObject(forKey: "note") as! String
 
         super.init()
     }

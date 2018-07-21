@@ -11,12 +11,13 @@ import FirebaseDatabase
 
 private let reuseIdentifier = "studentVoucherCell"
 
-class StudentVouchersViewController: UITableViewController {
+class StudentVouchersViewController: UITableViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     @IBOutlet weak var fullNameLbl: UILabel!
     
     var vouchers = [Voucher]()
     var selectedStudent: Student!
-    
+    let status: [String] = ["Sin verificar","Verificado","No válido","Validado por administrador"]
+    var selectedPicker: IndexPath!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
@@ -36,9 +37,10 @@ class StudentVouchersViewController: UITableViewController {
                     let date = data["date"] as? String,
                 let folio = data["folio"] as? String,
                     let imageURL = data["imageURL"] as? String,
-                    let status = data["status"] as? Int8{
+                    let status = data["status"] as? Int8,
+                    let note = data["note"] as? String{
                     /* Se obtiene el comprobante del estudiante y se guarda en un array  */
-                    temporal.append(Voucher(amount: Float(amount)!, folio: folio, date: date.toCustomDate, imageURL: imageURL, status: status))
+                    temporal.append(Voucher(amount: Float(amount)!, folio: folio, date: date.toCustomDate, imageURL: imageURL, status: status,note: note))
                 }
             }
             /* Se reasigna el arreglo temporal a la variable de la clase que se presentará en el table view*/
@@ -72,12 +74,31 @@ class StudentVouchersViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! StudentVouchersTableViewCell
         let voucher = vouchers[indexPath.row]
         cell.updateVoucher(voucher)
-
         // Configure the cell...
-
+        let picker = UIPickerView()
+        picker.backgroundColor = .black
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        /* Se agrega el toolbar y el UIPicker al textField */
+        cell.statusText.inputView = picker
+        cell.statusText.inputAccessoryView = toolBar
+        selectedPicker = indexPath
+        
+        
         return cell
     }
-    
+
+    let toolBar: UIToolbar = {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        toolBar.backgroundColor = .black
+        toolBar.tintColor = .red
+        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(visible))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        return toolBar
+    }()
 
     /*
     // Override to support conditional editing of the table view.
@@ -115,7 +136,31 @@ class StudentVouchersViewController: UITableViewController {
     */
 
     // MARK: - Navigation
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
-
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return status.count
+    }
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return status[0]
+    }
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        /* Se recupera la celda seleccionada y se cambia en el texto seleccionado */
+        let cl = tableView.cellForRow(at: selectedPicker) as! StudentVouchersTableViewCell
+        cl.statusText.text = status[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        label.textColor = .red
+        label.textAlignment = .center
+        label.text = status[row]
+        return label
+    }
+    @objc
+    func visible() {
+        view.endEditing(true) /* Desaparece el teclado */
+    }
 
 }

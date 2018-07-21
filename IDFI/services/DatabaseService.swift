@@ -75,7 +75,8 @@ class DatabaseService{
             "folio": voucher.folio as AnyObject,
             "imageURL": voucher.imageURL as AnyObject,
             "status": voucher.status as AnyObject,
-            "studentId": AuthService.shared.user?.uid as AnyObject
+            "studentId": AuthService.shared.user?.uid as AnyObject,
+            "note": voucher.note as AnyObject
         ]
         self.voucherRef.childByAutoId().setValue(voucher)
         
