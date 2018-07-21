@@ -63,7 +63,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         //        print(AuthService.shared.user!.uid)
     }
     override func viewWillAppear(_ animated: Bool) {
-        welcomeLbl.text = "Bienvenido al diplomado: \(selectedCert.name)"
+//        welcomeLbl.text = "Bienvenido al diplomado: \(selectedCert.name)"
         isEmpty()
     }
     override func didReceiveMemoryWarning() {

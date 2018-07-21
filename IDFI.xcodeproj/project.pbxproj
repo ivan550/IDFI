@@ -21,6 +21,7 @@
 		C836E6B420F5EBB100120F0F /* VoucherNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C836E6B320F5EBB100120F0F /* VoucherNavigationController.swift */; };
 		C83FCD7720EECE77005F35EC /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83FCD7620EECE77005F35EC /* Certificate.swift */; };
 		C83FCD7B20EEE996005F35EC /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83FCD7A20EEE996005F35EC /* DatabaseService.swift */; };
+		C85B76B921030A0100763F6C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85B76B821030A0100763F6C /* ProfileViewController.swift */; };
 		C86DD78120DF6D40003C7204 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */; };
 		C8786BDC20F742A500A08EA6 /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786BDB20F742A500A08EA6 /* StudentsViewController.swift */; };
 		C8786BDE20F75C2F00A08EA6 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8786BDD20F75C2F00A08EA6 /* StudentTableViewCell.swift */; };
@@ -59,6 +60,7 @@
 		C836E6B320F5EBB100120F0F /* VoucherNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherNavigationController.swift; sourceTree = "<group>"; };
 		C83FCD7620EECE77005F35EC /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		C83FCD7A20EEE996005F35EC /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		C85B76B821030A0100763F6C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C86DD78020DF6D40003C7204 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C8786BDB20F742A500A08EA6 /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		C8786BDD20F75C2F00A08EA6 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				C8A3F98220F72B7700AFA4EC /* GenerationsViewController.swift */,
 				C8786BDB20F742A500A08EA6 /* StudentsViewController.swift */,
 				C8AF7AE82101CF1C00170CA3 /* StudentVouchersViewController.swift */,
+				C85B76B821030A0100763F6C /* ProfileViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				C8AF46EA20E58D4800DEA2B8 /* DesignTextField.swift in Sources */,
 				C8A3F98520F72BB900AFA4EC /* Generation.swift in Sources */,
 				C83FCD7B20EEE996005F35EC /* DatabaseService.swift in Sources */,
+				C85B76B921030A0100763F6C /* ProfileViewController.swift in Sources */,
 				C834D38720EDF8BE0079CB8E /* CertificateCollectionViewCell.swift in Sources */,
 				C83FCD7720EECE77005F35EC /* Certificate.swift in Sources */,
 				C8810E6C20F339E6001D6FAC /* VoucherTableViewCell.swift in Sources */,

@@ -84,6 +84,8 @@ class StudentsViewController: UITableViewController {
                 let st = tabBar.viewControllers![0] as! StudentVouchersViewController
                 st.selectedStudent = student
 //                tabBar.selectedStudent = student
+                let profile = tabBar.viewControllers![1] as! ProfileViewController
+                profile.selectedStudent = student
             }
         default:
             preconditionFailure("Identificador de segue inesperado")
