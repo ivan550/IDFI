@@ -19,6 +19,9 @@ class StudentVouchersViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 140
+        tableView.rowHeight = 140
+        
         DatabaseService.shared.voucherRef.observeSingleEvent(of: .value) { (snapshot) in
             /* Se crea un arreglo temporal que guardará los objetos de tipo generación */
             var temporal = [Voucher]()
