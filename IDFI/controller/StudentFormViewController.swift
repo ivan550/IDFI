@@ -160,7 +160,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @IBAction func addVouchers(_ sender: UIBarButtonItem) {
         if let name = nameTextField.text,let lastName = lastNameTextField.text,let profile = profileTextField.text{
             let certId = selectedCert.id
-            let prof = (profile == "Alumno FI" || profile == "Comunidad UNAM" ) ? true : false
+            let prof = profile
             let language = languageSwch.isOn
             let socialService = socialServiceSwch.isOn
             let degreeOption = degreeOptionSwch.isOn

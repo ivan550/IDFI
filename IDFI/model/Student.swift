@@ -15,10 +15,10 @@ class Student: NSObject {
     var degreeOption: Bool
     var language: Bool
     var socialService: Bool
-    var profileAcadem: Bool
+    var profileAcadem: String
     var certificateId: String
     
-    init(name: String, lastName: String,language: Bool?,socialService: Bool?,profileAcadem: Bool,certificateId: String,id: String,degreeOption: Bool?) {
+    init(name: String, lastName: String,language: Bool?,socialService: Bool?,profileAcadem: String,certificateId: String,id: String,degreeOption: Bool?) {
         
         self.name = name
         self.lastName = lastName

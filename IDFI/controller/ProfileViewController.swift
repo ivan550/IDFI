@@ -26,8 +26,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         fullNameLbl.text = selectedStudent.name + " " + selectedStudent.lastName
         profileLbl.text = String(selectedStudent.profileAcadem)
-//        degreeOptionSwch.isOn = selectedStudent.
-        socialServiceSwch.isOn = selectedStudent.socialService 
+        degreeOptionSwch.isOn = selectedStudent.degreeOption
+        socialServiceSwch.isOn = selectedStudent.socialService
         languageSwch.isOn = selectedStudent.language
     }
 

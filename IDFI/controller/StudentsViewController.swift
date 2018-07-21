@@ -35,7 +35,7 @@ class StudentsViewController: UITableViewController {
                     let profile = data["profile"] as? [String:AnyObject],
                 let name = profile["name"] as? String,
                 let lastName = profile["lastName"] as? String,
-                let profileAcademic = profile["profileAcademic"] as? Bool,
+                let profileAcademic = profile["profileAcademic"] as? String,
                 let language = profile["language"] as? Bool,
                 let socialService = profile["socialService"] as? Bool,
                 let degreeOption = profile["degreeOption"] as? Bool{

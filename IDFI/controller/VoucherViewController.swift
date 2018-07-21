@@ -142,7 +142,7 @@ class VoucherViewController: UITableViewController{
         metaData.contentType = typeImages
         
         for voucher in vouchers{
-            let refVouchers = ref.child("vouchers/\(voucher.voucherKey).jpg")
+            let refVouchers = ref.child("vouchers/\(UUID().uuidString).jpg")
             
             /* Se recupera la imagen */
             if let img = voucherImageStore.image(forKey: voucher.voucherKey),
