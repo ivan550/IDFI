@@ -10,7 +10,7 @@ import UIKit
 import FirebaseStorage
 
 protocol StudentVouchersDelegate {
-    func changedStatus(status: String)
+    func changedStatus(status: String,voucher: Voucher)
 }
 
 class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPickerViewDelegate {
@@ -27,6 +27,7 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
     let status: [String] = ["Sin verificar","Verificado","No válido","Validado por administrador"]
     var selectedStatus: String!
     var delegate: StudentVouchersDelegate?
+    var selectedvoucher: Voucher!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,10 +75,12 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
         amountLbl.text = String(voucher.amount)
         folioLbl.text = voucher.folio
         dateLbl.text = voucher.date.toString()
-        statusText.text = status[Int(voucher.status!)]
+        statusText.text = status[voucher.status]
         noteText.text = voucher.note
         styleImage()
         updateImage(imageURL: voucher.imageURL!)
+        /* Se recupera el voucher seleccionado */
+        selectedvoucher = voucher
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -105,6 +108,6 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
     @objc
     func changedStatus(){
         /* La vista principal se encarga de desaparecer y hacer el cambio del estatus */
-        delegate?.changedStatus(status: selectedStatus)
+        delegate?.changedStatus(status: selectedStatus,voucher: selectedvoucher)
     }
 }

@@ -15,12 +15,12 @@ class Voucher: NSObject, NSCoding {
     var imageURL: String?
     var image: UIImage? 
     let voucherKey: String
-    var status: Int8?
-    let note: String
+    var status: Int
+    var note: String
     
     
     
-    init(amount: Float, folio: String,date: Date,imageURL: String,status: Int8,note: String) {
+    init(amount: Float, folio: String,date: Date,imageURL: String,status: Int,note: String) {
         self.amount = amount
         self.folio = folio
         self.date = Date()
@@ -56,7 +56,7 @@ class Voucher: NSObject, NSCoding {
         self.date = aDecoder.decodeObject(forKey: "date") as! Date
         self.imageURL = aDecoder.decodeObject(forKey: "imageUrl") as! String?
         self.voucherKey = aDecoder.decodeObject(forKey: "voucherKey") as! String
-        self.status = aDecoder.decodeObject(forKey: "status") as? Int8
+        self.status = aDecoder.decodeObject(forKey: "status") as! Int
         self.note = aDecoder.decodeObject(forKey: "note") as! String
 
         super.init()

@@ -18,7 +18,8 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
     var vouchers = [Voucher]()
     var selectedStudent: Student!
     let status: [String] = ["Sin verificar","Verificado","No válido","Validado por administrador"]
-    var selectedPicker: IndexPath!
+    var noteTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
@@ -38,7 +39,7 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
                     let date = data["date"] as? String,
                 let folio = data["folio"] as? String,
                     let imageURL = data["imageURL"] as? String,
-                    let status = data["status"] as? Int8,
+                    let status = data["status"] as? Int,
                     let note = data["note"] as? String{
                     /* Se obtiene el comprobante del estudiante y se guarda en un array  */
                     temporal.append(Voucher(amount: Float(amount)!, folio: folio, date: date.toCustomDate, imageURL: imageURL, status: status,note: note))
@@ -82,9 +83,31 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         return cell
     }
 
-    func changedStatus(status: String) {
-        /* Desaparece el picker */
+    func changedStatus(status: String,voucher: Voucher) {
+        /* Desaparece el picker y muestra un alert para agregar una nota */
         view.endEditing(true)
-        print("Se seleccionó el status: \(status)")
+        voucher.status = self.status.index(of: status)! /* Obtiene índice del array */
+        alert("Estatus del comprobante", "Agregue una nota para describir el movimiento",voucher)
     }
+    func alert(_ title: String,_ message: String,_ voucher: Voucher){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alert) in
+            voucher.note = self.noteTextField.text!
+            self.tableView?.reloadData()
+        }))
+        alert.addTextField { (textField: UITextField) in
+            self.noteTextField = textField
+            self.noteTextField.placeholder = "Nota"
+        }
+        
+        present(alert,animated: true)
+    }
+    func noteText(textField: UITextField!) {
+        noteTextField = textField
+        noteTextField.placeholder = "note"
+        
+    }
+
 }
