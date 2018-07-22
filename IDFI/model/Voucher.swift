@@ -15,7 +15,7 @@ class Voucher: NSObject, NSCoding {
     var imageURL: String?
     var image: UIImage? 
     let voucherKey: String
-    var status: Int
+    var status: Int?
     var note: String
     
     
@@ -56,7 +56,7 @@ class Voucher: NSObject, NSCoding {
         self.date = aDecoder.decodeObject(forKey: "date") as! Date
         self.imageURL = aDecoder.decodeObject(forKey: "imageUrl") as! String?
         self.voucherKey = aDecoder.decodeObject(forKey: "voucherKey") as! String
-        self.status = aDecoder.decodeObject(forKey: "status") as! Int
+        self.status = aDecoder.decodeObject(forKey: "status") as! Int?
         self.note = aDecoder.decodeObject(forKey: "note") as! String
 
         super.init()

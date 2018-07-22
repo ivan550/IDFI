@@ -79,9 +79,10 @@ class StudentsViewController: UITableViewController {
         let student = students[indexPath.row]
         /* Se mandan datos al navigation bar que controlará cuando se agregén comprobantes y se presenta */
         let tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-        let st = tabBar.viewControllers![0] as! StudentVouchersViewController
+        let nav = tabBar.viewControllers![0] as! UINavigationController
+        let st = nav.topViewController as! StudentVouchersViewController
         st.selectedStudent = student
-        //                tabBar.selectedStudent = student
+        st.selectedCert = selectedCert
         let profile = tabBar.viewControllers![1] as! ProfileViewController
         profile.selectedStudent = student
         present(tabBar, animated: true, completion: nil)

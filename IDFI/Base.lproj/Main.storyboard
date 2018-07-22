@@ -1145,7 +1145,7 @@ CQk
             </objects>
             <point key="canvasLocation" x="224.80000000000001" y="2615.4422788605698"/>
         </scene>
-        <!--Comprobantes-->
+        <!--Student Vouchers View Controller-->
         <scene sceneID="GxF-vc-Yce">
             <objects>
                 <tableViewController id="Tor-63-8lw" customClass="StudentVouchersViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
@@ -1298,14 +1298,25 @@ CQk
                             <outlet property="delegate" destination="Tor-63-8lw" id="UTp-2P-Agq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Comprobantes" image="voucher_icon" id="kwS-HB-Ht3"/>
+                    <navigationItem key="navigationItem" id="zQs-Th-q5O">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="O44-UO-Xmu">
+                            <connections>
+                                <action selector="back:" destination="Tor-63-8lw" id="s7R-wq-Npr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="continue" id="tRj-AL-FZy">
+                            <connections>
+                                <action selector="addVouchers:" destination="Tor-63-8lw" id="6Gh-kT-l4l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fullNameLbl" destination="MmD-4A-05u" id="K4c-3p-04l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5t3-hL-3mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3072.8000000000002" y="2615.4422788605698"/>
+            <point key="canvasLocation" x="1100" y="3469.1154422788609"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="zSj-wx-jcG">
@@ -1505,7 +1516,7 @@ CQk
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NI3-h4-0VN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3860" y="2614.5427286356826"/>
+            <point key="canvasLocation" x="1887.2" y="3468.2158920539732"/>
         </scene>
         <!--Generations View Controller-->
         <scene sceneID="4QF-qV-2Ru">
@@ -1600,16 +1611,36 @@ CQk
                         <color key="barTintColor" name="background"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Tor-63-8lw" kind="relationship" relationship="viewControllers" id="RjH-uB-ni5"/>
+                        <segue destination="nTX-rn-hkM" kind="relationship" relationship="viewControllers" id="RjH-uB-ni5"/>
                         <segue destination="cPG-h1-peo" kind="relationship" relationship="viewControllers" id="gtx-YC-rn0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDL-kr-Pq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2133.5999999999999" y="2615.4422788605698"/>
+            <point key="canvasLocation" x="-778" y="3470"/>
+        </scene>
+        <!--Comprobantes-->
+        <scene sceneID="4cY-1e-P0v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nTX-rn-hkM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Comprobantes" image="voucher_icon" id="kwS-HB-Ht3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QyW-gl-O5y">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tor-63-8lw" kind="relationship" relationship="rootViewController" id="j8t-vi-MaR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFN-F7-1gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160.80000000000001" y="3469.1154422788609"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="24" height="23"/>
         <image name="camera_icon" width="29" height="24"/>
         <image name="continue" width="24" height="23"/>
         <image name="escudoUNAM" width="486" height="546"/>

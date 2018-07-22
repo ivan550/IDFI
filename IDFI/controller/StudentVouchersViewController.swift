@@ -17,6 +17,7 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
     
     var vouchers = [Voucher]()
     var selectedStudent: Student!
+    var selectedCert: Certificate!
     let status: [String] = ["Sin verificar","Verificado","No válido","Validado por administrador"]
     var noteTextField: UITextField!
     
@@ -109,5 +110,17 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         noteTextField.placeholder = "note"
         
     }
-
+    
+    
+    @IBAction func addVouchers(_ sender: Any) {
+        let voucherNavBar = storyboard?.instantiateViewController(withIdentifier:"VoucherNavigationController") as! VoucherNavigationController
+        voucherNavBar.student = selectedStudent
+        voucherNavBar.selectedCert = selectedCert
+        present(voucherNavBar, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func back(_ sender: Any) {
+       dismiss(animated: true, completion: nil)
+    }
 }

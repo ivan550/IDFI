@@ -75,7 +75,7 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
         amountLbl.text = String(voucher.amount)
         folioLbl.text = voucher.folio
         dateLbl.text = voucher.date.toString()
-        statusText.text = status[voucher.status]
+        statusText.text = status[voucher.status!]
         noteText.text = voucher.note
         styleImage()
         updateImage(imageURL: voucher.imageURL!)
