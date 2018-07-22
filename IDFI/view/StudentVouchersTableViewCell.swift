@@ -9,7 +9,11 @@
 import UIKit
 import FirebaseStorage
 
-class StudentVouchersTableViewCell: UITableViewCell {
+protocol StudentVouchersDelegate {
+    func changedStatus(status: String)
+}
+
+class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPickerViewDelegate {
 
     @IBOutlet weak var voucherImg: UIImageView!
     @IBOutlet weak var amountLbl: UILabel!
@@ -21,10 +25,28 @@ class StudentVouchersTableViewCell: UITableViewCell {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     let status: [String] = ["Sin verificar","Verificado","No válido","Validado por administrador"]
-    
+    var selectedStatus: String!
+    var delegate: StudentVouchersDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-//        createPicker()
+
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        toolBar.backgroundColor = .black
+        toolBar.tintColor = .red
+        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(changedStatus))
+        toolBar.setItems([doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        let picker = UIPickerView()
+        picker.backgroundColor = .black
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        /* Se agrega el toolbar y el UIPicker al textField */
+        statusText.inputView = picker
+        statusText.inputAccessoryView = toolBar
     }
     func styleImage() {
         self.spinner.startAnimating()
@@ -58,53 +80,31 @@ class StudentVouchersTableViewCell: UITableViewCell {
         updateImage(imageURL: voucher.imageURL!)
     }
 
-//    func createPicker() {
-//        let picker = UIPickerView()
-//        picker.backgroundColor = .black
-//        picker.showsSelectionIndicator = true
-//        picker.delegate = self
-//        picker.dataSource = self
-//        /* Se agrega el toolbar y el UIPicker al textField */
-//        statusText.inputView = picker
-//        statusText.inputAccessoryView = toolBar
-////        statusText.text = status.first!
-//    }
-//    let toolBar: UIToolbar = {
-//        let toolBar = UIToolbar()
-//        toolBar.sizeToFit()
-//        toolBar.backgroundColor = .black
-//        toolBar.tintColor = .red
-//        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(visible))
-//        toolBar.setItems([doneButton], animated: false)
-//        toolBar.isUserInteractionEnabled = true
-//        return toolBar
-//    }()
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return status.count
-//    }
-//    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return status[0]
-//    }
-//    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        statusText.text = status[row]
-//    }
-//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-//        let label = UILabel()
-//        label.textColor = .red
-//        label.textAlignment = .center
-//        label.text = status[row]
-//        return label
-//    }
-//
-//    @objc
-//    func visible() {
-////        view.endEditing(true) /* Desaparece el teclado */
-//        print("desaparecer picker")
-////        self.endEditing(true)
-//    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
 
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return status.count
+    }
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return status[0]
+    }
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        statusText.text = status[row]
+        selectedStatus = statusText.text
+    }
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        label.textColor = .red
+        label.textAlignment = .center
+        label.text = status[row]
+        return label
+    }
+
+    @objc
+    func changedStatus(){
+        /* La vista principal se encarga de desaparecer y hacer el cambio del estatus */
+        delegate?.changedStatus(status: selectedStatus)
+    }
 }
