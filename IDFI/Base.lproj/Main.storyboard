@@ -208,8 +208,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lgK-AK-Bx7"/>
-                                                            <segue destination="f6x-VQ-Qwk" kind="show" identifier="showGenerations" id="fwG-1u-KkJ"/>
+                                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dtq-WY-sIg"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmu-Rz-POD">
@@ -1021,7 +1020,7 @@ CQk
             <objects>
                 <tableViewController id="AZn-Q1-sFQ" customClass="StudentsViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EeT-1N-Pim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="G9o-9h-arv">
@@ -1143,7 +1142,7 @@ CQk
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUl-B6-NdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224.80000000000001" y="2615.4422788605698"/>
+            <point key="canvasLocation" x="1164" y="2615.4422788605698"/>
         </scene>
         <!--Student Vouchers View Controller-->
         <scene sceneID="GxF-vc-Yce">
@@ -1518,7 +1517,7 @@ CQk
             <objects>
                 <tableViewController id="f6x-VQ-Qwk" customClass="GenerationsViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2ye-28-fbK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="background"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -1586,13 +1585,14 @@ CQk
                             <outlet property="delegate" destination="f6x-VQ-Qwk" id="Gec-WC-2XW"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="NiB-d8-rTA"/>
                     <connections>
                         <outlet property="certificateNameLbl" destination="ENB-1P-v3R" id="nAO-CO-cPL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CL-6t-2cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778.39999999999998" y="2616.3418290854574"/>
+            <point key="canvasLocation" x="160.80000000000001" y="2616.3418290854574"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qAd-gM-r7v">
@@ -1632,6 +1632,24 @@ CQk
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFN-F7-1gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="160.80000000000001" y="3469.1154422788609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q8X-de-aSL">
+            <objects>
+                <navigationController storyboardIdentifier="GenerationsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="xyz-mp-hGB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ooU-Qe-u58">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f6x-VQ-Qwk" kind="relationship" relationship="rootViewController" id="U3D-2n-oIc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZfD-kK-9t5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778.39999999999998" y="2616.3418290854574"/>
         </scene>
     </scenes>
     <resources>

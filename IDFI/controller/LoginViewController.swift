@@ -46,7 +46,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.alert(title: "Error", message: message!)
                     return
                 }
-                dump(data!)
+                    /* Vista que aparece si el usuario autenticado es administrador */
+                    let generationsNavBar = self.storyboard?.instantiateViewController(withIdentifier: "GenerationsNavigationController") as! UINavigationController
+                    let generationViewController = generationsNavBar.topViewController as! GenerationsViewController
+                    
+                    generationViewController.selectedCert = self.selectedCert
+                    self.present(generationsNavBar, animated: true, completion: nil)
+
+                
             })
         }else{
             let alert = UIAlertController(title: "Usuario y contraseña incorrectos", message: "Ingrese usuario y contraseña para continuar", preferredStyle: .alert)
@@ -59,18 +66,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(alert,animated: true)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /* Sí el segue disparado es editVoucher */
-        switch segue.identifier {
-        case "showGenerations"?:
-            /* Tomamos el voucher selccionado y se lo pasamos al controlador que llenará los datos del comprobante */
-            let generationViewController = segue.destination as! GenerationsViewController
-            generationViewController.selectedCert = self.selectedCert
-        default:
-            preconditionFailure("Identificador de segue inesperado")
-        }
-    }
-    
     
 }
 
