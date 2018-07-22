@@ -74,23 +74,35 @@ class StudentsViewController: UITableViewController {
         cell.updateStudent(student)
         return cell
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "showStudentProfile"?:
-            /* Checamos que fila se seleccionó */
-            if let row = tableView.indexPathForSelectedRow?.row {
-                /* Tomamos el estudiante selccionado al controlador que mostrará sus detalles */
-                let student = students[row]
-                let tabBar = segue.destination as! UITabBarController
-                let st = tabBar.viewControllers![0] as! StudentVouchersViewController
-                st.selectedStudent = student
-//                tabBar.selectedStudent = student
-                let profile = tabBar.viewControllers![1] as! ProfileViewController
-                profile.selectedStudent = student
-            }
-        default:
-            preconditionFailure("Identificador de segue inesperado")
-        }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /* Tomamos el estudiante selccionado al controlador que mostrará sus detalles */
+        let student = students[indexPath.row]
+        /* Se mandan datos al navigation bar que controlará cuando se agregén comprobantes y se presenta */
+        let tabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        let st = tabBar.viewControllers![0] as! StudentVouchersViewController
+        st.selectedStudent = student
+        //                tabBar.selectedStudent = student
+        let profile = tabBar.viewControllers![1] as! ProfileViewController
+        profile.selectedStudent = student
+        present(tabBar, animated: true, completion: nil)
     }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        switch segue.identifier {
+//        case "showStudentProfile"?:
+//            /* Checamos que fila se seleccionó */
+//            if let row = tableView.indexPathForSelectedRow?.row {
+//                /* Tomamos el estudiante selccionado al controlador que mostrará sus detalles */
+//                let student = students[row]
+//                let tabBar = segue.destination as! UITabBarController
+//                let st = tabBar.viewControllers![0] as! StudentVouchersViewController
+//                st.selectedStudent = student
+////                tabBar.selectedStudent = student
+//                let profile = tabBar.viewControllers![1] as! ProfileViewController
+//                profile.selectedStudent = student
+//            }
+//        default:
+//            preconditionFailure("Identificador de segue inesperado")
+//        }
+//    }
 
 }
