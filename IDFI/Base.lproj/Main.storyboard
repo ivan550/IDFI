@@ -1585,7 +1585,13 @@ CQk
                             <outlet property="delegate" destination="f6x-VQ-Qwk" id="Gec-WC-2XW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NiB-d8-rTA"/>
+                    <navigationItem key="navigationItem" id="NiB-d8-rTA">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar sesión" id="Qhp-ir-k1n">
+                            <connections>
+                                <action selector="logout:" destination="f6x-VQ-Qwk" id="o6y-uF-w2x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="certificateNameLbl" destination="ENB-1P-v3R" id="nAO-CO-cPL"/>
                     </connections>

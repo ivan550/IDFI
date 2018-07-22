@@ -68,7 +68,7 @@ class DatabaseService{
         
     }
     func sendVouchers(_ voucher: Voucher){
-        
+        let id = UUID().uuidString+UUID().uuidString
         let voucher: [String:AnyObject] = [
             "amount": String(voucher.amount) as AnyObject,
             "date": voucher.date.toString() as AnyObject,
@@ -76,9 +76,10 @@ class DatabaseService{
             "imageURL": voucher.imageURL as AnyObject,
             "status": voucher.status as AnyObject,
             "studentId": AuthService.shared.user?.uid as AnyObject,
-            "note": voucher.note as AnyObject
+            "note": voucher.note as AnyObject,
+            "id": id as AnyObject
         ]
-        self.voucherRef.childByAutoId().setValue(voucher)
+        self.voucherRef.child(id).setValue(voucher)
         
         
     }

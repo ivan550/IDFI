@@ -91,4 +91,7 @@ class GenerationsViewController: UITableViewController {
         }
     }
     
+    @IBAction func logout(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 }

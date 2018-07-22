@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         emailTextField.text = ""
         passwordTextField.text = ""
     }
@@ -113,6 +113,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let ProfileViewController = tabBar.viewControllers![1] as! ProfileViewController
         StudentVouchersViewController.selectedStudent = student
         StudentVouchersViewController.selectedCert = selectedCert
+        StudentVouchersViewController.isStudent = true
         ProfileViewController.selectedStudent = student
         present(tabBar, animated: true, completion: nil)
     }

@@ -18,16 +18,19 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
     var vouchers = [Voucher]()
     var selectedStudent: Student!
     var selectedCert: Certificate!
+    var isStudent: Bool = false
     let status: [String] = ["Sin verificar","Verificado","No válido","Validado por administrador"]
+    let noteText = "note"
+    let statusText = "status"
     var noteTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = 140
-        appearRightBtn(isStudent: true)
+        appearRightBtn(isStudent) /* Si es alumno muestra el btn para agregar comprobantes */
         DatabaseService.shared.voucherRef.observeSingleEvent(of: .value) { (snapshot) in
-            /* Se crea un arreglo temporal que guardará los objetos de tipo generación */
+            /* Se crea un arreglo temporal que guardará los objetos de tipo voucher */
             var temporal = [Voucher]()
             for voucher in snapshot.children.allObjects as! [DataSnapshot]{
                 /* Sí el identificador del voucher no le pertence al estudiante no lo agrega al array */
@@ -41,9 +44,10 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
                 let folio = data["folio"] as? String,
                     let imageURL = data["imageURL"] as? String,
                     let status = data["status"] as? Int,
-                    let note = data["note"] as? String{
+                    let note = data["note"] as? String,
+                    let id = data["id"] as? String{
                     /* Se obtiene el comprobante del estudiante y se guarda en un array  */
-                    temporal.append(Voucher(amount: Float(amount)!, folio: folio, date: date.toCustomDate, imageURL: imageURL, status: status,note: note))
+                    temporal.append(Voucher(amount: Float(amount)!, folio: folio, date: date.toCustomDate, imageURL: imageURL, status: status,note: note,id: id))
                 }
             }
             /* Se reasigna el arreglo temporal a la variable de la clase que se presentará en el table view*/
@@ -90,13 +94,20 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         voucher.status = self.status.index(of: status)! /* Obtiene índice del array */
         alert("Estatus del comprobante", "Agregue una nota para describir el movimiento",voucher)
     }
-    func alert(_ title: String,_ message: String,_ voucher: Voucher){
+    func alert(_ title: String,_ message: String,_ selectedVoucher: Voucher){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alert) in
-            voucher.note = self.noteTextField.text!
+            selectedVoucher.note = self.noteTextField.text!
             self.tableView?.reloadData()
+            /* Se actualiza la nota en el voucher al que corresponde el id */
+            let id = selectedVoucher.id
+            let newNote = selectedVoucher.note
+            let newStatus = selectedVoucher.status
+            DatabaseService.shared.voucherRef.child(id).child(self.noteText).setValue(newNote)
+            DatabaseService.shared.voucherRef.child(id).child(self.statusText).setValue(newStatus)
+
         }))
         alert.addTextField { (textField: UITextField) in
             self.noteTextField = textField
@@ -104,11 +115,6 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         }
         
         present(alert,animated: true)
-    }
-    func noteText(textField: UITextField!) {
-        noteTextField = textField
-        noteTextField.placeholder = "note"
-        
     }
     
     @objc func addVouchers() {
@@ -122,7 +128,7 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
     @IBAction func back(_ sender: Any) {
        dismiss(animated: true, completion: nil)
     }
-    func appearRightBtn(isStudent: Bool) {
+    func appearRightBtn(_ isStudent: Bool) {
         let rightBtn: UIButton = {
             let btn = UIButton()
             btn.setImage(#imageLiteral(resourceName: "add_voucher"), for: .normal)
@@ -131,6 +137,7 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         }()
         if isStudent{
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
-            rightBtn.addTarget(self, action: #selector(addVouchers), for: .touchUpInside)        }
+            rightBtn.addTarget(self, action: #selector(addVouchers), for: .touchUpInside)
+        }
     }
 }
