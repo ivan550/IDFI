@@ -25,7 +25,7 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = 140
-        
+        appearRightBtn(isStudent: true)
         DatabaseService.shared.voucherRef.observeSingleEvent(of: .value) { (snapshot) in
             /* Se crea un arreglo temporal que guardará los objetos de tipo generación */
             var temporal = [Voucher]()
@@ -111,8 +111,7 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         
     }
     
-    
-    @IBAction func addVouchers(_ sender: Any) {
+    @objc func addVouchers() {
         let voucherNavBar = storyboard?.instantiateViewController(withIdentifier:"VoucherNavigationController") as! VoucherNavigationController
         voucherNavBar.student = selectedStudent
         voucherNavBar.selectedCert = selectedCert
@@ -122,5 +121,16 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
     
     @IBAction func back(_ sender: Any) {
        dismiss(animated: true, completion: nil)
+    }
+    func appearRightBtn(isStudent: Bool) {
+        let rightBtn: UIButton = {
+            let btn = UIButton()
+            btn.setImage(#imageLiteral(resourceName: "add_voucher"), for: .normal)
+            btn.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+            return btn
+        }()
+        if isStudent{
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
+            rightBtn.addTarget(self, action: #selector(addVouchers), for: .touchUpInside)        }
     }
 }

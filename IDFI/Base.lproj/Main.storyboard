@@ -1304,11 +1304,6 @@ CQk
                                 <action selector="back:" destination="Tor-63-8lw" id="s7R-wq-Npr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="continue" id="tRj-AL-FZy">
-                            <connections>
-                                <action selector="addVouchers:" destination="Tor-63-8lw" id="6Gh-kT-l4l"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="fullNameLbl" destination="MmD-4A-05u" id="K4c-3p-04l"/>
