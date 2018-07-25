@@ -20,8 +20,12 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
     var voucherNum: Int?
     
     var voucher: Voucher!
+    let datePicker = UIDatePicker()
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        showDatePicker()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         view.endEditing(true) /* Desaparece el teclado en caso de que se esté usando */
@@ -81,7 +85,35 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
             imageView.image = imageToDisplay
         }
     }
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+//        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([spaceButton,doneButton], animated: false)
+        
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
+        
+    }
     
+    @objc func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        dateTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
     
     
 }

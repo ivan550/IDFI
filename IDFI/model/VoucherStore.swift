@@ -27,6 +27,9 @@ class VoucherStore {
             allIVouchers.remove(at: index)
         }
     }
+    func removeAll(){
+        allIVouchers.removeAll()
+    }
     func moveVoucher(from fromIndex: Int, to toIndex: Int) {
         if fromIndex == toIndex {
             return

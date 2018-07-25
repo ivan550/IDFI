@@ -20,6 +20,10 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         dump(selectedCert)
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        passwordTextField.text = ""
+        emailTextField.text = ""
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,7 +41,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func registerUser(_ sender: UIButton) {
-//        continueRegister()
+        continueRegister()
         //        performSegue(withIdentifier: "showStudentForm", sender: continueRegister())
     }
     @IBAction func pressedLogin(_ sender: UIButton) {
@@ -48,12 +52,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         /* Sí el segue disparado es editVoucher */
         switch segue.identifier {
-        case "showStudentForm"?:
-            if continueRegister(){
-                let studentForm = segue.destination as! StudentFormViewController
-                studentForm.selectedCert = selectedCert
-                
-            } else { return }
+//        case "showStudentForm"?:
+//            print("Registrar")
         case "showLogin"?:
             let login = segue.destination as! LoginViewController
             login.selectedCert = selectedCert
@@ -61,7 +61,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
             preconditionFailure("Identificador de segue inesperado")
         }
     }
-    func continueRegister() -> Bool{
+    func continueRegister(){
         /* Se valida la existencia de los datos */
         if let email = self.emailTextField.text,
             let password = self.passwordTextField.text,
@@ -71,11 +71,13 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
                     self.alert(title: "Error", message: message!)
                     return
                 }
+                /* Si todo sale bien se pasa a la siguiente vista */
+                let studentForm = self.storyboard?.instantiateViewController(withIdentifier: "StudentFormViewController")  as! StudentFormViewController
+                studentForm.selectedCert = self.selectedCert
+                self.present(studentForm, animated: true, completion: nil)
             })
-            return true
         }else{
             alert(title:"Usuario y contraseña incorrectos", message: "Ingrese usuario y contraseña para continuar")
-            return false
         }
     }
     func alert(title: String,message: String){

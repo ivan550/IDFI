@@ -171,6 +171,7 @@ class VoucherViewController: UITableViewController{
                         /* Cuando se terminan la acción se oculta el alert de procesando y aparece un msj final al usuario */
                         alert.dismiss(animated: true, completion: nil)
                         self.alert(self.finishTitle,self.finishMessage)
+                        self.voucherStore.removeAll()
                         /* Se regresa a la vista de los diplomados */
                     }
                     

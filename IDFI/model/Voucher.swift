@@ -34,7 +34,7 @@ class Voucher: NSObject, NSCoding {
     }
     convenience init(random: Bool = false) {
         if random {
-            self.init(amount: 10.0,folio: "", date: Date(), imageURL: "",status: 0,note: "",id:"")
+            self.init(amount: 0.0,folio: "", date: Date(), imageURL: "",status: 0,note: "",id:"")
         } else {
             self.init(amount: 0.0,folio: "folio", date: Date(), imageURL: "",status: 0,note: "",id:"")
             

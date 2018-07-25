@@ -18,6 +18,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @IBOutlet weak var socialServiceSwch: UISwitch!
     @IBOutlet weak var languageSwch: UISwitch!
     
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     /* Elementos que se mostrará dependiendo de lo que ingrese el alumno */
     @IBOutlet weak var degreeOptionStack: UIStackView!
     @IBOutlet weak var hiddenLbl: UILabel!
@@ -179,11 +180,14 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     @objc
     func isEmpty() {
         if let name = nameTextField.text, !name.isEmpty,let lastName = lastNameTextField.text,!lastName.isEmpty,let profile = profileTextField.text,!profile.isEmpty{
-            self.navigationItem.rightBarButtonItem?.isEnabled = true
+            rightBarButtonItem.isEnabled = true
         }else{
-            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            rightBarButtonItem.isEnabled = false
         }
         
+    }
+    @IBAction func backView(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

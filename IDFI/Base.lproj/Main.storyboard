@@ -272,16 +272,16 @@ CQk
         <!--Student Form View Controller-->
         <scene sceneID="R6W-sz-sZ8">
             <objects>
-                <viewController id="gmH-Mk-xJv" customClass="StudentFormViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentFormViewController" id="gmH-Mk-xJv" customClass="StudentFormViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UEq-fp-zEn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escudofi_rojo" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-FS-15U">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWg-to-kB4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="GsX-C9-epf">
                                         <rect key="frame" x="30" y="30" width="315" height="525"/>
@@ -457,6 +457,26 @@ CQk
                                     <constraint firstAttribute="bottom" secondItem="GsX-C9-epf" secondAttribute="bottom" constant="48" id="yMw-gm-HOZ"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xe-f5-wGq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem id="nhH-w4-e1U">
+                                        <barButtonItem key="leftBarButtonItem" image="back" id="bvz-9T-rbT">
+                                            <color key="tintColor" name="third"/>
+                                            <connections>
+                                                <action selector="backView:" destination="gmH-Mk-xJv" id="bpp-nR-s02"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="continue" id="Dxm-gT-gzv">
+                                            <color key="tintColor" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.8729398545" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="addVouchers:" destination="gmH-Mk-xJv" id="OSq-m1-Fu8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -466,19 +486,14 @@ CQk
                             <constraint firstItem="Fb1-QC-56a" firstAttribute="bottom" secondItem="CWg-to-kB4" secondAttribute="bottom" id="F9z-BI-dgd"/>
                             <constraint firstItem="MGa-FS-15U" firstAttribute="leading" secondItem="Fb1-QC-56a" secondAttribute="leading" id="JaO-ge-YiU"/>
                             <constraint firstItem="Fb1-QC-56a" firstAttribute="trailing" secondItem="MGa-FS-15U" secondAttribute="trailing" id="KDd-gL-LTr"/>
-                            <constraint firstItem="CWg-to-kB4" firstAttribute="top" secondItem="Fb1-QC-56a" secondAttribute="top" id="arW-6t-pBa"/>
+                            <constraint firstItem="Fb1-QC-56a" firstAttribute="trailing" secondItem="2Xe-f5-wGq" secondAttribute="trailing" id="PYH-lu-xA2"/>
+                            <constraint firstItem="2Xe-f5-wGq" firstAttribute="leading" secondItem="Fb1-QC-56a" secondAttribute="leading" id="WcD-Fg-M6y"/>
+                            <constraint firstItem="2Xe-f5-wGq" firstAttribute="top" secondItem="Fb1-QC-56a" secondAttribute="top" id="f1B-PD-PQp"/>
                             <constraint firstItem="CWg-to-kB4" firstAttribute="leading" secondItem="Fb1-QC-56a" secondAttribute="leading" id="mkO-dI-hby"/>
+                            <constraint firstItem="CWg-to-kB4" firstAttribute="top" secondItem="2Xe-f5-wGq" secondAttribute="bottom" id="x1d-W6-IUY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fb1-QC-56a"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nhH-w4-e1U">
-                        <barButtonItem key="rightBarButtonItem" image="continue" id="Dxm-gT-gzv">
-                            <color key="tintColor" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.8729398545" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="addVouchers:" destination="gmH-Mk-xJv" id="OSq-m1-Fu8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="basicFormStack" destination="F5Q-vI-ELH" id="4nB-5X-d8I"/>
                         <outlet property="dataComplementStack" destination="Uzs-nq-jIA" id="nWo-3b-ySZ"/>
@@ -489,13 +504,14 @@ CQk
                         <outlet property="lastNameTextField" destination="JUJ-Vl-lJY" id="HIC-6I-zMW"/>
                         <outlet property="nameTextField" destination="dbu-Qm-fkM" id="ioS-3F-Ogw"/>
                         <outlet property="profileTextField" destination="A7I-ZM-BwJ" id="PKG-Rp-IXD"/>
+                        <outlet property="rightBarButtonItem" destination="Dxm-gT-gzv" id="n81-on-Vg6"/>
                         <outlet property="socialServiceSwch" destination="dHG-Yn-pE8" id="htF-t7-5fW"/>
                         <outlet property="welcomeLbl" destination="MRd-jy-f9e" id="Od5-WH-Jnz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nl-qL-a1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098" y="1057"/>
+            <point key="canvasLocation" x="2096.8000000000002" y="1055.6221889055473"/>
         </scene>
         <!--Info Voucher View Controller-->
         <scene sceneID="RiZ-Os-KZ1">
@@ -637,7 +653,7 @@ CQk
                                             <state key="normal" title="Borrar"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="20"/>
+                                                    <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="2"/>
@@ -658,7 +674,7 @@ CQk
                                             <state key="normal" title="Agregar"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="20"/>
+                                                    <real key="value" value="15"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="2"/>
@@ -756,11 +772,11 @@ CQk
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="sP9-Z2-fcX" firstAttribute="top" secondItem="Enj-T5-szY" secondAttribute="top" constant="11" id="P3V-5K-1rK"/>
-                                        <constraint firstItem="sP9-Z2-fcX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Enj-T5-szY" secondAttribute="leading" constant="115" id="XHr-6c-79j"/>
+                                        <constraint firstItem="sP9-Z2-fcX" firstAttribute="leading" secondItem="Enj-T5-szY" secondAttribute="leading" constant="115" id="XHr-6c-79j"/>
                                         <constraint firstItem="wbg-XQ-tun" firstAttribute="leading" secondItem="Enj-T5-szY" secondAttribute="leading" constant="8" id="bSN-5G-oTV"/>
                                         <constraint firstItem="wbg-XQ-tun" firstAttribute="top" secondItem="Enj-T5-szY" secondAttribute="top" constant="8" id="ftP-XH-LfX"/>
                                         <constraint firstAttribute="bottom" secondItem="sP9-Z2-fcX" secondAttribute="bottom" constant="9.5" id="iu8-YQ-6Mr"/>
-                                        <constraint firstAttribute="trailing" secondItem="sP9-Z2-fcX" secondAttribute="trailing" constant="8" id="qJm-ol-hAd"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sP9-Z2-fcX" secondAttribute="trailing" constant="8" id="qJm-ol-hAd"/>
                                         <constraint firstAttribute="bottom" secondItem="wbg-XQ-tun" secondAttribute="bottom" constant="8" id="tJe-IB-Mjv"/>
                                         <constraint firstAttribute="trailing" secondItem="wbg-XQ-tun" secondAttribute="trailing" constant="240" id="vRC-e8-ML5"/>
                                     </constraints>
@@ -907,7 +923,6 @@ CQk
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="registerUser:" destination="SuR-Jw-X3z" eventType="touchUpInside" id="w97-PK-GJT"/>
-                                                            <segue destination="gmH-Mk-xJv" kind="show" identifier="showStudentForm" id="meM-As-w79"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy5-zp-xLJ">
@@ -1023,27 +1038,27 @@ CQk
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="G9o-9h-arv">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="G9o-9h-arv">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ST0-8g-UyI">
-                                    <rect key="frame" x="30" y="8" width="315" height="7"/>
+                                    <rect key="frame" x="30" y="8" width="315" height="71"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Afinación y Rendimiento de Bases de Datos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-bu-GTi">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="50.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Alumnos - Generación 2018-2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUA-hU-pN4">
-                                            <rect key="frame" x="0.0" y="5" width="315" height="2"/>
+                                            <rect key="frame" x="0.0" y="50.5" width="315" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="RPo-dz-mlV">
-                                            <rect key="frame" x="0.0" y="7" width="315" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="71" width="315" height="0.0"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Ingresos totales:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eus-lk-70e">
                                                     <rect key="frame" x="0.0" y="0.0" width="126.5" height="0.0"/>
@@ -1157,7 +1172,7 @@ CQk
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9iD-Bb-suv">
-                                    <rect key="frame" x="54" y="-31" width="267" height="56.5"/>
+                                    <rect key="frame" x="54" y="1.5" width="267" height="56"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre completo del alumno" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmD-4A-05u">
                                             <rect key="frame" x="0.0" y="0.0" width="267" height="25.5"/>
@@ -1166,7 +1181,7 @@ CQk
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comprobantes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rki-ab-Ouf">
-                                            <rect key="frame" x="0.0" y="36" width="267" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="35.5" width="267" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1522,21 +1537,21 @@ CQk
                         <color key="backgroundColor" name="background"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <color key="sectionIndexBackgroundColor" name="background"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="VB9-Ri-mze">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="VB9-Ri-mze">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ot9-8i-cdz">
-                                    <rect key="frame" x="30" y="8" width="315" height="34"/>
+                                    <rect key="frame" x="30" y="8" width="315" height="98"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Gestión y Mantenimiento de Equipo Médico" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENB-1P-v3R">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="13.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="77.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <color key="textColor" name="Color"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generaciones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABt-lE-YqF">
-                                            <rect key="frame" x="0.0" y="13.5" width="315" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="77.5" width="315" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="first"/>
                                             <nil key="highlightedColor"/>
@@ -1682,6 +1697,9 @@ CQk
         </namedColor>
         <namedColor name="fourth">
             <color red="0.49803921568627452" green="0.0" blue="0.023529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="third">
+            <color red="0.65098039215686276" green="0.031372549019607843" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="third">
             <color red="0.65098039215686276" green="0.031372549019607843" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
