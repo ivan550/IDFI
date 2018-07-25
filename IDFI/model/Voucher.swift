@@ -27,7 +27,7 @@ class Voucher: NSObject, NSCoding {
         self.date = Date()
         self.imageURL = imageURL
         self.voucherKey = UUID().uuidString
-        self.status = 0
+        self.status = status
         self.note = note
         self.id = id
         super.init()
