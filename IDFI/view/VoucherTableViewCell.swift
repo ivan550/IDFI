@@ -13,7 +13,7 @@ class VoucherTableViewCell: UITableViewCell {
     @IBOutlet weak var folioLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet var img: UIImageView!
-    
+    let symbol = "$"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,7 +30,7 @@ class VoucherTableViewCell: UITableViewCell {
     }
     /* Actualizará los campos en cada celda del tableview */
     func updateVoucher(_ voucher: Voucher,_ image: UIImage?){
-        self.amountLbl.text = String(voucher.amount)
+        self.amountLbl.text = symbol+String(voucher.amount)
         self.folioLbl.text = voucher.folio
         self.dateLbl.text = voucher.date.toString()
         self.img.image = image ?? UIImage(named: "voucher")

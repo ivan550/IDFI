@@ -31,6 +31,7 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
         view.endEditing(true) /* Desaparece el teclado en caso de que se esté usando */
         /* Se guardan los campos introducidos */
         voucher.folio = folioTextField.text ?? ""
+        voucher.date = dateTextField.text!.toCustomDate
         if let amount = amountTextField.text, let value = Float(amount){
             voucher.amount = value
         } else {
@@ -86,15 +87,17 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
         }
     }
     func showDatePicker(){
-        //Formate Date
+        /* Formato al datePicker */
+        let loc = Locale(identifier: "es_MX")
         datePicker.datePickerMode = .date
-        
+        datePicker.setValue(UIColor.red, forKeyPath: "textColor")
+        datePicker.locale = loc
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(donedatePicker));
+        doneButton.tintColor = .red
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-//        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
         toolbar.setItems([spaceButton,doneButton], animated: false)
         
@@ -108,10 +111,6 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         dateTextField.text = formatter.string(from: datePicker.date)
-        self.view.endEditing(true)
-    }
-    
-    @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
     

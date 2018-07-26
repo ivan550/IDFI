@@ -470,13 +470,13 @@ CQk
                                 <items>
                                     <navigationItem id="nhH-w4-e1U">
                                         <barButtonItem key="leftBarButtonItem" image="back" id="bvz-9T-rbT">
-                                            <color key="tintColor" name="third"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="backView:" destination="gmH-Mk-xJv" id="bpp-nR-s02"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="continue" id="Dxm-gT-gzv">
-                                            <color key="tintColor" red="0.80392156859999997" green="0.090196078430000007" blue="0.1176470588" alpha="0.8729398545" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="addVouchers:" destination="gmH-Mk-xJv" id="OSq-m1-Fu8"/>
                                             </connections>
@@ -1327,7 +1327,7 @@ CQk
                     </tableView>
                     <navigationItem key="navigationItem" id="zQs-Th-q5O">
                         <barButtonItem key="leftBarButtonItem" image="back" id="O44-UO-Xmu">
-                            <color key="tintColor" name="first"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="back:" destination="Tor-63-8lw" id="s7R-wq-Npr"/>
                             </connections>
@@ -1678,7 +1678,7 @@ CQk
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ooU-Qe-u58">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="first"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="background"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

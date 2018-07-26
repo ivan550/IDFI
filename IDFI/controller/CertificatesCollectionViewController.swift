@@ -20,9 +20,7 @@ class CertificatesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addPaddingToTop() /* Espacio en la parte superior para el collectionView */
-        DatabaseService.shared.certificateRef.observeSingleEvent(of: .value) { (snapshot) in
-            print("snapshot\(snapshot)")
-            
+        DatabaseService.shared.certificateRef.observeSingleEvent(of: .value) { (snapshot) in            
             var temporal = [Certificate]()
             for certificate in snapshot.children.allObjects as! [DataSnapshot]{
                 let data = certificate.value as? [String: AnyObject]

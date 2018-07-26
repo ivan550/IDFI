@@ -25,6 +25,7 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     let status: [String] = ["Sin verificar","Verificado","No válido","Validado por administrador"]
+    let symbol = "$"
     var selectedStatus: String!
     var delegate: StudentVouchersDelegate?
     var selectedvoucher: Voucher!
@@ -51,9 +52,6 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
     }
     func styleImage() {
         self.spinner.startAnimating()
-//        voucherImg.translatesAutoresizingMaskIntoConstraints = false
-//        voucherImg.layer.cornerRadius = 20
-//        voucherImg.layer.masksToBounds = true
     }
     func updateImage(imageURL: String) {
         let httpRef = Storage.storage().reference(forURL: imageURL)
@@ -72,7 +70,7 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
         })
     }
     func updateVoucher(_ voucher: Voucher)  {
-        amountLbl.text = String(voucher.amount)
+        amountLbl.text = symbol+String(voucher.amount)
         folioLbl.text = voucher.folio
         dateLbl.text = voucher.date.toString()
         statusText.text = status[voucher.status!]

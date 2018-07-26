@@ -11,7 +11,7 @@ class Voucher: NSObject, NSCoding {
     
     var amount: Float
     var folio: String
-    let date: Date
+    var date: Date
     var imageURL: String?
     var image: UIImage? 
     let voucherKey: String

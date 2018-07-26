@@ -17,8 +17,6 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dump(selectedCert)
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         passwordTextField.text = ""
@@ -37,23 +35,18 @@ class SignupViewController: UIViewController,UITextFieldDelegate {
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    @IBAction func cancelRegister(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
+    
     @IBAction func registerUser(_ sender: UIButton) {
         continueRegister()
-        //        performSegue(withIdentifier: "showStudentForm", sender: continueRegister())
     }
     @IBAction func pressedLogin(_ sender: UIButton) {
-        //        performSegue(withIdentifier: "showLogin", sender: nil)
+        
     }
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         /* Sí el segue disparado es editVoucher */
         switch segue.identifier {
-//        case "showStudentForm"?:
-//            print("Registrar")
         case "showLogin"?:
             let login = segue.destination as! LoginViewController
             login.selectedCert = selectedCert

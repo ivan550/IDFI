@@ -43,25 +43,6 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         lastNameTextField.addTarget(self, action: #selector(isEmpty), for: .editingChanged)
         profileTextField.addTarget(self, action: #selector(isEmpty), for: .editingChanged)
 
-        /* Cerrar sessión*/
-        //         let firebaseAuth = Auth.auth()
-        //        do {
-        //            try firebaseAuth.signOut()
-        //        } catch let signOutError as NSError {
-        //            print ("Error signing out: %@", signOutError)
-        //        }
-        
-        //        /* Borrar cuenta del auth */
-        //        AuthService.shared.user?.delete(completion: { (error) in
-        //            if error != nil {
-        //                // An error happened.
-        //                print("No se pudo crear la cuenta")
-        //            } else {
-        //                // Account deleted.
-        //                print("Cuenta borrada del auth")
-        //            }
-        //        })
-        //        print(AuthService.shared.user!.uid)
     }
     override func viewWillAppear(_ animated: Bool) {
         welcomeLbl.text = "Bienvenido al diplomado: \(selectedCert.name)"
@@ -125,7 +106,6 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
         dataComplementStack.isHidden = true
         basicFormStack.distribution = .fillProportionally
         hiddenLbl.isHidden = false
-        //        socialServiceSwch.isOn = false
         languageSwch.isOn = false
         /* Se depliega otro campo en los siguientes casos */
         if profileTextField.text == "Alumno FI" || profileTextField.text == "Comunidad UNAM"{

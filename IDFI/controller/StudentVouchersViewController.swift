@@ -58,6 +58,7 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
     }
     override func viewWillAppear(_ animated: Bool) {
         fullNameLbl.text = selectedStudent.name + " " + selectedStudent.lastName
+        self.tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,8 +84,11 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         cell.updateVoucher(voucher)
         // Configure the cell...
         cell.delegate = self
-        
-        
+        /* Si es estudiante no deja editar el status */
+        if isStudent{
+            cell.statusText.isEditable = false
+            cell.statusText.isSelectable = false
+        }
         return cell
     }
 
