@@ -117,6 +117,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         ProfileViewController.selectedStudent = student
         present(tabBar, animated: true, completion: nil)
     }
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 
