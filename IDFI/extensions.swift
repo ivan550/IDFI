@@ -7,19 +7,23 @@
 //
 
 import UIKit
+let locale = Locale(identifier: "es_MX")
 
 extension Date{
     func toString() -> String
     {
+        
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MMM/dd"
+        dateFormatter.locale = locale
+        dateFormatter.dateFormat = "dd/MMM/yyyy"
         return dateFormatter.string(from: self)
     }
 }
 extension String {
     var toCustomDate: Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = locale
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.date(from: self)!
     }
 }
