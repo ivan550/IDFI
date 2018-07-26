@@ -144,4 +144,19 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
             rightBtn.addTarget(self, action: #selector(addVouchers), for: .touchUpInside)
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /* Si se desea hacer zoom se le pasa la imágen */
+        switch segue.identifier {
+        case "showZoom"?:
+            /* Checamos que fila se seleccionó */
+            if let row = tableView.indexPathForSelectedRow?.row {
+                /* Tomamos el voucher selccionado y se le pasa la imagen */
+                let voucher = vouchers[row]
+                let zoomImageViewController = segue.destination as! ZoomImageViewController
+                zoomImageViewController.selectedVoucher = voucher
+            }
+        default:
+            preconditionFailure("Identificador de segue inesperado")
+        }
+    }
 }

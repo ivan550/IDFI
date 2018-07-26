@@ -53,7 +53,7 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
     func styleImage() {
         self.spinner.startAnimating()
     }
-    func updateImage(imageURL: String) {
+    func updateImage(imageURL: String,voucher: Voucher) {
         let httpRef = Storage.storage().reference(forURL: imageURL)
         httpRef.getData(maxSize: 8*1024*1024, completion: { (data, error) in
             if error != nil{
@@ -61,9 +61,11 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
                 return
             }else{
                 DispatchQueue.main.async(execute: {
-                    self.voucherImg?.image = UIImage(data: data!)
+                    voucher.image = UIImage(data: data!)
+                    self.voucherImg.image = voucher.image
                     self.spinner.stopAnimating()
                     self.spinner.isHidden = true
+                    
                 })
             }
             
@@ -76,7 +78,7 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
         statusText.text = status[voucher.status!]
         noteText.text = voucher.note
         styleImage()
-        updateImage(imageURL: voucher.imageURL!)
+        updateImage(imageURL: voucher.imageURL!,voucher: voucher)
         /* Se recupera el voucher seleccionado */
         selectedvoucher = voucher
     }

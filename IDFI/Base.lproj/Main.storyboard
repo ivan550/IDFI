@@ -1268,7 +1268,7 @@ CQk
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" text="Nota:" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Smt-Qw-eHX">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" editable="NO" text="Nota:" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smt-Qw-eHX">
                                                     <rect key="frame" x="0.0" y="48" width="166" height="75.5"/>
                                                     <color key="textColor" name="FI"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -1317,6 +1317,7 @@ CQk
                                     <outlet property="spinner" destination="rcK-zL-8Ab" id="55p-dl-yfF"/>
                                     <outlet property="statusText" destination="gc2-CD-7Nn" id="S0O-Lx-RdS"/>
                                     <outlet property="voucherImg" destination="n8D-sc-ZJW" id="l3Z-k6-1O7"/>
+                                    <segue destination="wac-hD-Zhc" kind="show" identifier="showZoom" id="ddu-2O-iZa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1326,6 +1327,7 @@ CQk
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="zQs-Th-q5O">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Rls-XO-miC"/>
                         <barButtonItem key="leftBarButtonItem" image="back" id="O44-UO-Xmu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -1340,6 +1342,49 @@ CQk
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5t3-hL-3mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1100" y="3469.1154422788609"/>
+        </scene>
+        <!--Zoom Image View Controller-->
+        <scene sceneID="hIG-Lc-bno">
+            <objects>
+                <viewController id="wac-hD-Zhc" customClass="ZoomImageViewController" customModule="IDFI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="40E-ii-vXE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="U7r-7I-seX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4te-Fz-2rU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4te-Fz-2rU" firstAttribute="top" secondItem="U7r-7I-seX" secondAttribute="top" id="CXz-Cx-UWL"/>
+                                    <constraint firstAttribute="trailing" secondItem="4te-Fz-2rU" secondAttribute="trailing" id="Mco-bE-X6D"/>
+                                    <constraint firstAttribute="bottom" secondItem="4te-Fz-2rU" secondAttribute="bottom" id="Zvw-ro-ZcB"/>
+                                    <constraint firstItem="4te-Fz-2rU" firstAttribute="leading" secondItem="U7r-7I-seX" secondAttribute="leading" id="qIA-cp-LSf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20779267131979684" green="0.20779267131979684" blue="0.20779267131979684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="opq-fj-X3E" firstAttribute="trailing" secondItem="U7r-7I-seX" secondAttribute="trailing" id="D5t-qw-cbo"/>
+                            <constraint firstItem="4te-Fz-2rU" firstAttribute="width" secondItem="40E-ii-vXE" secondAttribute="width" id="Sw1-jY-EB6"/>
+                            <constraint firstItem="U7r-7I-seX" firstAttribute="leading" secondItem="opq-fj-X3E" secondAttribute="leading" id="Y77-By-voa"/>
+                            <constraint firstItem="opq-fj-X3E" firstAttribute="bottom" secondItem="U7r-7I-seX" secondAttribute="bottom" id="Zij-Ko-Le9"/>
+                            <constraint firstItem="4te-Fz-2rU" firstAttribute="height" secondItem="40E-ii-vXE" secondAttribute="height" id="nhq-T2-FuZ"/>
+                            <constraint firstItem="U7r-7I-seX" firstAttribute="top" secondItem="opq-fj-X3E" secondAttribute="top" id="oeF-YX-Dn3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="opq-fj-X3E"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="4te-Fz-2rU" id="mKz-Kg-iiQ"/>
+                        <outlet property="scrollView" destination="U7r-7I-seX" id="fBt-iW-0X8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mc4-GX-dk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="4289"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="zSj-wx-jcG">
