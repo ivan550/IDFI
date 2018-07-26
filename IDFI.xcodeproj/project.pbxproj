@@ -30,6 +30,7 @@
 		C8810E6A20F33006001D6FAC /* VoucherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8810E6920F33006001D6FAC /* VoucherStore.swift */; };
 		C8810E6C20F339E6001D6FAC /* VoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8810E6B20F339E6001D6FAC /* VoucherTableViewCell.swift */; };
 		C8810E7020F3696D001D6FAC /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8810E6F20F3696D001D6FAC /* extensions.swift */; };
+		C8830DB82109AC1E002F45A3 /* ZoomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8830DB72109AC1E002F45A3 /* ZoomImageViewController.swift */; };
 		C8A3F98320F72B7700AFA4EC /* GenerationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3F98220F72B7700AFA4EC /* GenerationsViewController.swift */; };
 		C8A3F98520F72BB900AFA4EC /* Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3F98420F72BB900AFA4EC /* Generation.swift */; };
 		C8A3F98720F72C4A00AFA4EC /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3F98620F72C4A00AFA4EC /* Student.swift */; };
@@ -69,6 +70,7 @@
 		C8810E6920F33006001D6FAC /* VoucherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherStore.swift; sourceTree = "<group>"; };
 		C8810E6B20F339E6001D6FAC /* VoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherTableViewCell.swift; sourceTree = "<group>"; };
 		C8810E6F20F3696D001D6FAC /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		C8830DB72109AC1E002F45A3 /* ZoomImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageViewController.swift; sourceTree = "<group>"; };
 		C8A3F98220F72B7700AFA4EC /* GenerationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationsViewController.swift; sourceTree = "<group>"; };
 		C8A3F98420F72BB900AFA4EC /* Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generation.swift; sourceTree = "<group>"; };
 		C8A3F98620F72C4A00AFA4EC /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				C8786BDB20F742A500A08EA6 /* StudentsViewController.swift */,
 				C8AF7AE82101CF1C00170CA3 /* StudentVouchersViewController.swift */,
 				C85B76B821030A0100763F6C /* ProfileViewController.swift */,
+				C8830DB72109AC1E002F45A3 /* ZoomImageViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				C8A3F98320F72B7700AFA4EC /* GenerationsViewController.swift in Sources */,
 				C8A3F98720F72C4A00AFA4EC /* Student.swift in Sources */,
 				C8AF7AEB2101D02900170CA3 /* StudentVouchersTableViewCell.swift in Sources */,
+				C8830DB82109AC1E002F45A3 /* ZoomImageViewController.swift in Sources */,
 				C8810E7020F3696D001D6FAC /* extensions.swift in Sources */,
 				C8A3F98920F733A400AFA4EC /* GenerationTableViewCell.swift in Sources */,
 				C8D29FD020E5FF7200F93A3A /* AuthService.swift in Sources */,
