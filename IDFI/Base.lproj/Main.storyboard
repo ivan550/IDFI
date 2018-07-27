@@ -59,7 +59,6 @@
                                         </activityIndicatorView>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="uWG-xr-QXk" firstAttribute="leading" relation="lessThanOrEqual" secondItem="RoY-hs-kd2" secondAttribute="leadingMargin" constant="93" id="340-gE-LPk"/>
                                     <constraint firstItem="cPh-BZ-gMj" firstAttribute="leading" secondItem="RoY-hs-kd2" secondAttribute="leading" constant="10" id="5jD-WG-jvy"/>
