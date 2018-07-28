@@ -18,6 +18,7 @@ class VoucherViewController: UITableViewController{
     let finishTitle = "¡Registro completo!"
     let finishMessage = "Gracias por registrarse, recibirá una notificación cuando sus datos hayan sido verificados"
     let errorTitle = "Hubo un error"
+    let beginViewIdentifier = "StartApp"
     let leftBtn: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
@@ -34,6 +35,7 @@ class VoucherViewController: UITableViewController{
         /* Se introduce un botón personalizado para regresar */
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         leftBtn.addTarget(self, action: #selector(dissmissView), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -92,6 +94,7 @@ class VoucherViewController: UITableViewController{
             /* Agrega el nuevo renglón a la tabla */
             tableView.insertRows(at: [indexPath], with: .automatic)
         }
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
     }
     @IBAction func toggleEditingMode(_ sender: UIButton) {
         // If you are currently in editing mode...
@@ -131,7 +134,6 @@ class VoucherViewController: UITableViewController{
     }
     @IBAction func sendData(_ sender: UIBarButtonItem) {
         
-        print("Enviando datos ")
         let alert = sendingDataAlert()
         /*Se recuperan los comprobantes agregados y la referencia al storage donde se subirán las imégenes */
         let ref = DatabaseService.shared.mainStorageRef
@@ -170,9 +172,9 @@ class VoucherViewController: UITableViewController{
                         DatabaseService.shared.saveGeneration(genKey.first!, genKey.last!, certId, studentId!)
                         /* Cuando se terminan la acción se oculta el alert de procesando y aparece un msj final al usuario */
                         alert.dismiss(animated: true, completion: nil)
-                        self.alert(self.finishTitle,self.finishMessage)
                         self.voucherStore.removeAll()
                         /* Se regresa a la vista de los diplomados */
+                        self.alert(self.finishTitle,self.finishMessage)
                     }
                     
                 }
@@ -214,7 +216,11 @@ class VoucherViewController: UITableViewController{
 
     func alert(_ title: String,_ message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alert) -> Void
+            in
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            self.displayBeginView()
+        }))
         present(alert,animated: true)
     }
     @objc
@@ -228,6 +234,10 @@ class VoucherViewController: UITableViewController{
             print("No se han podido guardar los comprobantes en disco")
         }
     }
-    
+    func displayBeginView() {
+        /* Se regresa a la vista principal */
+        let navBar = self.storyboard?.instantiateViewController(withIdentifier: beginViewIdentifier) as! UINavigationController
+        self.present(navBar, animated: true, completion: nil)
+    }
     
 }
