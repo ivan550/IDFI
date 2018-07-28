@@ -703,10 +703,10 @@ CQk
                                             <rect key="frame" x="8" y="8" width="93" height="103.5"/>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sP9-Z2-fcX">
-                                            <rect key="frame" x="115" y="11" width="218" height="99"/>
+                                            <rect key="frame" x="145" y="11" width="188" height="99"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dku-60-tNM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="218" height="33"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="33"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvX-fh-atn">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="33"/>
@@ -715,7 +715,7 @@ CQk
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="fasdfasdfasdfsadfasdfasdf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVt-c5-G9Q">
-                                                            <rect key="frame" x="66.5" y="0.0" width="151.5" height="33"/>
+                                                            <rect key="frame" x="66.5" y="0.0" width="121.5" height="33"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -723,7 +723,7 @@ CQk
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dw7-wb-xPY">
-                                                    <rect key="frame" x="0.0" y="33" width="218" height="33"/>
+                                                    <rect key="frame" x="0.0" y="33" width="188" height="33"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXo-6Q-QtM">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="33"/>
@@ -732,7 +732,7 @@ CQk
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="folio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8G-1o-ChK">
-                                                            <rect key="frame" x="66.5" y="0.0" width="151.5" height="33"/>
+                                                            <rect key="frame" x="66.5" y="0.0" width="121.5" height="33"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -740,7 +740,7 @@ CQk
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="irf-Jv-C7N">
-                                                    <rect key="frame" x="0.0" y="66" width="218" height="33"/>
+                                                    <rect key="frame" x="0.0" y="66" width="188" height="33"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzU-0f-fyk">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="33"/>
@@ -749,7 +749,7 @@ CQk
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="fecha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G71-El-NjF">
-                                                            <rect key="frame" x="66.5" y="0.0" width="151.5" height="33"/>
+                                                            <rect key="frame" x="66.5" y="0.0" width="121.5" height="33"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -765,7 +765,7 @@ CQk
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="sP9-Z2-fcX" firstAttribute="top" secondItem="Enj-T5-szY" secondAttribute="top" constant="11" id="P3V-5K-1rK"/>
-                                        <constraint firstItem="sP9-Z2-fcX" firstAttribute="leading" secondItem="Enj-T5-szY" secondAttribute="leading" constant="115" id="XHr-6c-79j"/>
+                                        <constraint firstItem="sP9-Z2-fcX" firstAttribute="leading" secondItem="Enj-T5-szY" secondAttribute="leading" constant="145" id="XHr-6c-79j"/>
                                         <constraint firstItem="wbg-XQ-tun" firstAttribute="leading" secondItem="Enj-T5-szY" secondAttribute="leading" constant="8" id="bSN-5G-oTV"/>
                                         <constraint firstItem="wbg-XQ-tun" firstAttribute="top" secondItem="Enj-T5-szY" secondAttribute="top" constant="8" id="ftP-XH-LfX"/>
                                         <constraint firstAttribute="bottom" secondItem="sP9-Z2-fcX" secondAttribute="bottom" constant="9.5" id="iu8-YQ-6Mr"/>
