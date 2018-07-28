@@ -22,7 +22,7 @@ class StudentTableViewCell: UITableViewCell {
 
     }
     func updateStudent(_ student: Student) {
-        nameLbl.text = student.name
+        nameLbl.text = student.name+" "+student.lastName
     }
 
 }
