@@ -142,6 +142,8 @@ class StudentVouchersViewController: UITableViewController, StudentVouchersDeleg
         if isStudent{
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
             rightBtn.addTarget(self, action: #selector(addVouchers), for: .touchUpInside)
+        }else{
+            self.navigationItem.leftBarButtonItem?.image = UIImage(named: "back")
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
