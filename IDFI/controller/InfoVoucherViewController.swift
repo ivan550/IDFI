@@ -90,13 +90,14 @@ class InfoVoucherViewController: UIViewController,UITextFieldDelegate,UINavigati
         /* Formato al datePicker */
         let loc = Locale(identifier: "es_MX")
         datePicker.datePickerMode = .date
-        datePicker.setValue(UIColor.red, forKeyPath: "textColor")
+        datePicker.backgroundColor = UIColor(named: "background")
+        datePicker.setValue(UIColor(named: "first"), forKeyPath: "textColor")
         datePicker.locale = loc
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(donedatePicker));
-        doneButton.tintColor = .red
+        doneButton.tintColor = UIColor(named: "FI")
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         toolbar.setItems([spaceButton,doneButton], animated: false)

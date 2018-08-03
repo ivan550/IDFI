@@ -19,7 +19,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8Nd-Cj-u4R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="FI"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kd7-G3-mA8">
                             <size key="itemSize" width="350" height="323"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -45,7 +45,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUGARES DISPONIBLES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWG-xr-QXk">
                                             <rect key="frame" x="101" y="8" width="241" height="25"/>
-                                            <color key="backgroundColor" name="FI"/>
+                                            <color key="backgroundColor" red="0.80392156862745101" green="0.093485186976049781" blue="0.13113630371975785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="q8S-FI-R2G"/>
                                             </constraints>
@@ -59,6 +59,7 @@
                                         </activityIndicatorView>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" name="FI"/>
                                 <constraints>
                                     <constraint firstItem="uWG-xr-QXk" firstAttribute="leading" relation="lessThanOrEqual" secondItem="RoY-hs-kd2" secondAttribute="leadingMargin" constant="93" id="340-gE-LPk"/>
                                     <constraint firstItem="cPh-BZ-gMj" firstAttribute="leading" secondItem="RoY-hs-kd2" secondAttribute="leading" constant="10" id="5jD-WG-jvy"/>
@@ -276,7 +277,7 @@ CQk
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escudofi_rojo" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-FS-15U">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escudofi_negro" translatesAutoresizingMaskIntoConstraints="NO" id="MGa-FS-15U">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWg-to-kB4">
@@ -291,7 +292,7 @@ CQk
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Bienvenido al diplomado Desarrollo de aplicaciones móviles iOS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-jy-f9e">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="93.5"/>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="26"/>
-                                                        <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="first"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -302,7 +303,7 @@ CQk
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohk-Uo-3DH">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="silver"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbu-Qm-fkM" customClass="DesignTextField" customModule="IDFI" customModuleProvider="target">
@@ -328,7 +329,7 @@ CQk
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yN7-Mo-rCq">
                                                         <rect key="frame" x="0.0" y="69.5" width="315" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="silver"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUJ-Vl-lJY" customClass="DesignTextField" customModule="IDFI" customModuleProvider="target">
@@ -357,7 +358,7 @@ CQk
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Perfil del alumno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD4-kI-WCS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="157.5" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" name="silver"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A7I-ZM-BwJ" customClass="DesignTextField" customModule="IDFI" customModuleProvider="target">
@@ -390,7 +391,7 @@ CQk
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="alf-HH-tCh">
                                                                 <rect key="frame" x="266" y="0.0" width="51" height="0.0"/>
-                                                                <color key="onTintColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="onTintColor" name="first"/>
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
@@ -424,7 +425,7 @@ CQk
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dHG-Yn-pE8">
                                                                 <rect key="frame" x="266" y="0.0" width="51" height="0.0"/>
-                                                                <color key="onTintColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="onTintColor" name="first"/>
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
@@ -439,7 +440,7 @@ CQk
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oOr-H2-uGk">
                                                                 <rect key="frame" x="266" y="0.0" width="51" height="0.0"/>
-                                                                <color key="onTintColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="onTintColor" name="first"/>
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
@@ -448,7 +449,7 @@ CQk
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.8088077910999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.015686274509803921" green="0.082352941176470587" blue="0.20392156862745098" alpha="0.87821061643835618" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="GsX-C9-epf" secondAttribute="trailing" constant="30" id="6dl-SE-whm"/>
                                     <constraint firstItem="GsX-C9-epf" firstAttribute="top" secondItem="CWg-to-kB4" secondAttribute="top" constant="30" id="Z7B-Ti-9Hb"/>
@@ -458,7 +459,7 @@ CQk
                             </view>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xe-f5-wGq">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" name="background"/>
                                 <items>
                                     <navigationItem id="nhH-w4-e1U">
                                         <barButtonItem key="leftBarButtonItem" image="back" id="bvz-9T-rbT">
@@ -582,6 +583,7 @@ CQk
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZY-o3-E5y">
                                         <rect key="frame" x="0.0" y="150" width="359" height="24"/>
+                                        <color key="tintColor" name="first"/>
                                         <state key="normal" image="camera_icon">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -599,7 +601,7 @@ CQk
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="background"/>
+                        <color key="backgroundColor" name="FI"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Lee-0K-Iyw" firstAttribute="trailing" secondItem="6fL-xa-ooe" secondAttribute="trailing" constant="8" id="94k-pB-qX4"/>
@@ -635,7 +637,7 @@ CQk
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="gDi-VH-Yzu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="background"/>
+                        <color key="backgroundColor" name="FI"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="9cU-fE-Moa">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -646,7 +648,7 @@ CQk
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-ZP-lIv" customClass="DesignButton" customModule="IDFI" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
-                                            <color key="backgroundColor" name="third"/>
+                                            <color key="backgroundColor" red="0.65098039215686276" green="0.037097475443526602" blue="0.073688318397952521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Borrar"/>
@@ -664,9 +666,9 @@ CQk
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m36-2O-8ZL" customClass="DesignButton" customModule="IDFI" customModuleProvider="target">
                                             <rect key="frame" x="187.5" y="0.0" width="171.5" height="30"/>
-                                            <color key="backgroundColor" red="0.0" green="0.16862745100000001" blue="0.47843137250000001" alpha="0.790276113" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="third"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                            <color key="tintColor" white="1" alpha="0.82336258559999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Agregar"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -683,7 +685,7 @@ CQk
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" name="background"/>
+                            <color key="backgroundColor" name="FI"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="V9h-su-zKL" secondAttribute="bottom" constant="22" id="0Cc-7P-Kts"/>
                                 <constraint firstItem="V9h-su-zKL" firstAttribute="leading" secondItem="9cU-fE-Moa" secondAttribute="leading" constant="8" id="Nt6-Fb-N9c"/>
@@ -711,13 +713,13 @@ CQk
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvX-fh-atn">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="33"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="silver"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="fasdfasdfasdfsadfasdfasdf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVt-c5-G9Q">
                                                             <rect key="frame" x="66.5" y="0.0" width="121.5" height="33"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -728,13 +730,13 @@ CQk
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXo-6Q-QtM">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="33"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="silver"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="folio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8G-1o-ChK">
                                                             <rect key="frame" x="66.5" y="0.0" width="121.5" height="33"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -745,13 +747,13 @@ CQk
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzU-0f-fyk">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="33"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="silver"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="fecha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G71-El-NjF">
                                                             <rect key="frame" x="66.5" y="0.0" width="121.5" height="33"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -774,7 +776,7 @@ CQk
                                         <constraint firstAttribute="trailing" secondItem="wbg-XQ-tun" secondAttribute="trailing" constant="240" id="vRC-e8-ML5"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="background"/>
+                                <color key="backgroundColor" name="FI"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="amountLbl" destination="wVt-c5-G9Q" id="mca-f0-GRT"/>
@@ -793,7 +795,7 @@ CQk
                     <navigationItem key="navigationItem" title="Comprobantes" id="PxJ-Da-7zH">
                         <barButtonItem key="backBarButtonItem" title="Guardar" id="gZ3-Ly-34c"/>
                         <barButtonItem key="rightBarButtonItem" tag="90" title="Enviar" style="done" id="9CB-B2-lIg">
-                            <color key="tintColor" name="FI"/>
+                            <color key="tintColor" name="first"/>
                             <connections>
                                 <action selector="sendData:" destination="Kw7-aF-cU5" id="bEE-zK-7An"/>
                             </connections>
@@ -987,6 +989,9 @@ CQk
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="background"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1006,7 +1011,7 @@ CQk
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.20784313725490197" green="0.32156862745098042" blue="0.59215686274509804" alpha="0.40694563356164382" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.20784313725490197" green="0.32156862745098042" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1033,30 +1038,30 @@ CQk
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EeT-1N-Pim">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="background"/>
+                        <color key="backgroundColor" name="FI"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                        <color key="sectionIndexBackgroundColor" name="background"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="G9o-9h-arv">
+                        <color key="sectionIndexBackgroundColor" name="FI"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="G9o-9h-arv">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ST0-8g-UyI">
-                                    <rect key="frame" x="30" y="2" width="315" height="33"/>
+                                    <rect key="frame" x="30" y="2" width="315" height="97"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="Afinación y Rendimiento de Bases de Datos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2T-bu-GTi">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="22.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="65.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <color key="textColor" name="Color"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Alumnos - Generación 2018-2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUA-hU-pN4">
-                                            <rect key="frame" x="0.0" y="22.5" width="315" height="10.5"/>
+                                            <rect key="frame" x="0.0" y="65.5" width="315" height="31.5"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                             <color key="textColor" name="third"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="RPo-dz-mlV">
-                                            <rect key="frame" x="0.0" y="33" width="315" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="97" width="315" height="0.0"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Ingresos totales:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eus-lk-70e">
                                                     <rect key="frame" x="0.0" y="0.0" width="126.5" height="0.0"/>
@@ -1087,7 +1092,7 @@ CQk
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" name="background"/>
+                            <color key="backgroundColor" name="FI"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ST0-8g-UyI" secondAttribute="trailing" constant="30" id="TyH-0o-t6F"/>
                                 <constraint firstAttribute="bottom" secondItem="ST0-8g-UyI" secondAttribute="bottom" constant="30" id="j8s-2r-PEo"/>
@@ -1115,13 +1120,13 @@ CQk
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOMBRE COMPLETO DEL ALUMNO" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-vR-Ip2">
                                                     <rect key="frame" x="0.0" y="0.0" width="246" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="second"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre-registro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKo-zn-Exz">
                                                     <rect key="frame" x="0.0" y="41" width="246" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="third"/>
+                                                    <color key="textColor" name="second"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1136,7 +1141,7 @@ CQk
                                         <constraint firstItem="Lx3-ik-elN" firstAttribute="centerY" secondItem="cBK-h5-Q2P" secondAttribute="centerY" id="nlx-Yh-4so"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="background"/>
+                                <color key="backgroundColor" name="FI"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="nameLbl" destination="UKh-vR-Ip2" id="e79-8q-jmH"/>
@@ -1166,24 +1171,24 @@ CQk
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="P91-b3-Ebr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="background"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="PGf-Rp-PbI">
+                        <color key="backgroundColor" name="FI"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="PGf-Rp-PbI">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9iD-Bb-suv">
-                                    <rect key="frame" x="30" y="2" width="315" height="64"/>
+                                    <rect key="frame" x="30" y="2" width="315" height="97"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre completo del alumno" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmD-4A-05u">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="27.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="60.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comprobantes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rki-ab-Ouf">
-                                            <rect key="frame" x="0.0" y="37.5" width="315" height="26.5"/>
+                                            <rect key="frame" x="0.0" y="70.5" width="315" height="26.5"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
-                                            <color key="textColor" name="FI"/>
+                                            <color key="textColor" name="third"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1217,6 +1222,7 @@ CQk
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q19-Tz-fVP">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="silver"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="$12000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-hZ-GFN">
@@ -1233,6 +1239,7 @@ CQk
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbX-H3-BrE">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="silver"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="folio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdE-Qr-HGs">
@@ -1249,6 +1256,7 @@ CQk
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dku-lE-5TT">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="silver"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="fecha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGc-KC-NeL">
@@ -1261,7 +1269,7 @@ CQk
                                                 </stackView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" editable="NO" text="Nota" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smt-Qw-eHX">
                                                     <rect key="frame" x="0.0" y="58" width="166" height="50"/>
-                                                    <color key="textColor" name="FI"/>
+                                                    <color key="textColor" name="third"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -1299,7 +1307,7 @@ CQk
                                         <constraint firstItem="lpe-yf-a0w" firstAttribute="top" secondItem="ajb-fo-ubf" secondAttribute="top" constant="16" id="uJb-Ap-QDS"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="background"/>
+                                <color key="backgroundColor" name="FI"/>
                                 <connections>
                                     <outlet property="amountLbl" destination="aaE-hZ-GFN" id="07Q-31-fBZ"/>
                                     <outlet property="dateLbl" destination="XGc-KC-NeL" id="MFS-Uy-s1e"/>
@@ -1427,7 +1435,7 @@ CQk
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.82758989726027399" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstItem="btz-Fx-y6P" firstAttribute="centerX" secondItem="wvR-ay-uib" secondAttribute="centerX" id="9WO-hx-lw1"/>
                                     <constraint firstItem="btz-Fx-y6P" firstAttribute="top" secondItem="wvR-ay-uib" secondAttribute="top" constant="79" id="Frw-ub-t0z"/>
@@ -1497,7 +1505,7 @@ CQk
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6vv-XQ-wnJ">
                                                         <rect key="frame" x="266" y="0.0" width="51" height="20.5"/>
-                                                        <color key="onTintColor" red="0.0" green="0.27426382469999999" blue="0.56860723349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" name="first"/>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -1512,7 +1520,7 @@ CQk
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aLI-bb-csm">
                                                         <rect key="frame" x="266" y="0.0" width="51" height="20.5"/>
-                                                        <color key="onTintColor" red="0.0" green="0.27426382469999999" blue="0.56860723349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" name="first"/>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -1527,14 +1535,14 @@ CQk
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hel-Uo-pXK">
                                                         <rect key="frame" x="266" y="0.0" width="51" height="20.5"/>
-                                                        <color key="onTintColor" red="0.0" green="0.27426382469999999" blue="0.56860723349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" name="first"/>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.49803921568627452" green="0.0" blue="0.023529411764705882" alpha="0.8964308647260274" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="FI"/>
                                 <constraints>
                                     <constraint firstItem="ast-L5-S9x" firstAttribute="leading" secondItem="bn1-9e-gS2" secondAttribute="leading" constant="30" id="0q2-bw-rJe"/>
                                     <constraint firstItem="VPC-0q-ZxE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bn1-9e-gS2" secondAttribute="top" constant="120" id="Cd6-DV-O4t"/>
@@ -1548,7 +1556,7 @@ CQk
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="third"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="bn1-9e-gS2" firstAttribute="top" secondItem="wvR-ay-uib" secondAttribute="bottom" constant="-0.5" id="0wR-8x-MyL"/>
                             <constraint firstItem="bn1-9e-gS2" firstAttribute="leading" secondItem="gEY-dp-f3u" secondAttribute="leading" id="5Oz-pw-S3g"/>
@@ -1586,24 +1594,24 @@ CQk
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2ye-28-fbK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="background"/>
+                        <color key="backgroundColor" name="FI"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <color key="sectionIndexBackgroundColor" name="background"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="VB9-Ri-mze">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="VB9-Ri-mze">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ot9-8i-cdz">
-                                    <rect key="frame" x="30" y="2" width="315" height="37"/>
+                                    <rect key="frame" x="30" y="2" width="315" height="101"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Gestión y Mantenimiento de Equipo Médico" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENB-1P-v3R">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="10.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="74.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <color key="textColor" name="Color"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generaciones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABt-lE-YqF">
-                                            <rect key="frame" x="0.0" y="10.5" width="315" height="26.5"/>
+                                            <rect key="frame" x="0.0" y="74.5" width="315" height="26.5"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="22"/>
                                             <color key="textColor" name="third"/>
                                             <nil key="highlightedColor"/>
@@ -1611,7 +1619,7 @@ CQk
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" name="background"/>
+                            <color key="backgroundColor" name="FI"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ot9-8i-cdz" secondAttribute="trailing" constant="30" id="6Hb-bo-00S"/>
                                 <constraint firstItem="ot9-8i-cdz" firstAttribute="leading" secondItem="VB9-Ri-mze" secondAttribute="leading" constant="30" id="PwF-uO-Vy5"/>
@@ -1639,7 +1647,7 @@ CQk
                                         <constraint firstItem="IYW-39-PXv" firstAttribute="centerX" secondItem="Wr2-KU-dAg" secondAttribute="centerX" id="bfM-5Y-Uq2"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="background"/>
+                                <color key="backgroundColor" name="FI"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="nameLbl" destination="IYW-39-PXv" id="Tcm-bj-C4d"/>
@@ -1676,7 +1684,7 @@ CQk
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="jPj-XP-cx0">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="FI"/>
+                        <color key="tintColor" name="first"/>
                         <color key="barTintColor" name="background"/>
                     </tabBar>
                     <connections>
@@ -1735,7 +1743,6 @@ CQk
         <image name="continue" width="24" height="23"/>
         <image name="escudoUNAM" width="486" height="546"/>
         <image name="escudofi_negro" width="1500" height="2100"/>
-        <image name="escudofi_rojo" width="331" height="392"/>
         <image name="profileImage" width="800" height="800"/>
         <image name="profile_icon" width="30" height="30"/>
         <image name="voucher_icon" width="30" height="30"/>
@@ -1743,19 +1750,22 @@ CQk
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="FI">
-            <color red="0.80392156862745101" green="0.090196078431372548" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.031372549019607843" green="0.16470588235294117" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="background">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.015686274509803921" green="0.082352941176470587" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="first">
-            <color red="0.98431372549019602" green="0.41960784313725491" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.82745098039215681" green="0.53725490196078429" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="second">
-            <color red="0.89411764705882357" green="0.24705882352941178" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.82745098039215681" green="0.53725490196078429" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="third">
-            <color red="0.65098039215686276" green="0.031372549019607843" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.40392156862745099" green="0.2627450980392157" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

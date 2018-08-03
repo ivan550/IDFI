@@ -35,14 +35,17 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
 
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        toolBar.backgroundColor = .black
-        toolBar.tintColor = .red
+        toolBar.backgroundColor = UIColor(named: "background")
+        toolBar.tintColor = UIColor(named: "FI")
         let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(changedStatus))
-        toolBar.setItems([doneButton], animated: true)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([spaceButton,doneButton], animated: false)
+        
         toolBar.isUserInteractionEnabled = true
         
         let picker = UIPickerView()
-        picker.backgroundColor = .black
+        picker.backgroundColor = UIColor(named: "background")
         picker.showsSelectionIndicator = true
         picker.delegate = self
         picker.dataSource = self
@@ -99,7 +102,7 @@ class StudentVouchersTableViewCell: UITableViewCell, UIPickerViewDataSource,UIPi
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
-        label.textColor = .red
+        label.textColor = UIColor(named: "first")
         label.textAlignment = .center
         label.text = status[row]
         return label

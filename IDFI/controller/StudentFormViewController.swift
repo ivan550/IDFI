@@ -27,7 +27,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     //    let student: Student!
     var selectedCert: Certificate!
-    let myPickerData = [String](arrayLiteral: "Publico en general", "Alumno FI", "Comunidad UNAM")
+    let myPickerData = [String](arrayLiteral: "Público en general", "Alumno FI", "Comunidad UNAM")
 
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     
     func createPicker() {
         let picker = UIPickerView()
-        picker.backgroundColor = .black
+        picker.backgroundColor = UIColor(named: "background")
         picker.showsSelectionIndicator = true
         picker.delegate = self
         picker.dataSource = self
@@ -67,10 +67,11 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     let toolBar: UIToolbar = {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-        toolBar.backgroundColor = .black
-        toolBar.tintColor = .red
+        toolBar.backgroundColor = UIColor(named: "background")
+        toolBar.tintColor = UIColor(named: "FI")
         let doneButton = UIBarButtonItem(title: "Ok", style: .plain, target: self, action: #selector(visible))
-        toolBar.setItems([doneButton], animated: false)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton,doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         return toolBar
     }()
@@ -89,7 +90,7 @@ class StudentFormViewController: UIViewController,UIPickerViewDelegate,UIPickerV
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
-        label.textColor = .red
+        label.textColor = UIColor(named: "first")
         label.textAlignment = .center
         label.text = myPickerData[row]
         return label
